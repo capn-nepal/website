@@ -1,0 +1,30 @@
+.voices {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding: var(--spacing-large) var(--spacing-super-large);
+        gap: var(--spacing-enormous);
+        flex-grow: 1;
+        margin: 0 auto;
+        max-width: var(--width-page-max);
+
+        .heading {
+            text-align: center;
+            color: var(--color-text-accent);
+            font-weight: var(--font-weight-extra-bold);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-extra-large);
+
+            .card {
+                min-height: 20rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: var(--spacing-universal);
+    gap: var(--spacing-universal);
+
+    .definition {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: var(--spacing-large);
+        padding: var(--spacing-large) var(--spacing-enormous);
+        margin: 0 auto;
+        max-width: 70rem;
+
+        .definitionHeading {
+            color: var(--color-text-accent);
+            font-weight: var(--font-weight-medium);
+
+            span {
+                font-weight: var(--font-weight-extra-bold);
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-large) var(--spacing-super-large);
+    margin: 0 auto;
+    z-index: 100000;
+    width: 100%;
+
+    .content {
+        display: flex;
+        align-items: center;
+        padding: var(--spacing-super-small) var(--spacing-extra-small);
+        width: 100%;
+        max-width: var(--width-page-max);
+        background-color: var(--color-background);
+        border-radius: var(--border-radius-large);
+        box-shadow: 0rem 30rem 40rem rgba(0, 48, 82, 0.1), 0px 1rem 4rem rgba(0, 48, 82, 0.2);
+
+        .image {
+            height: 2.2rem;
+            width: 2.2rem;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            gap: var(--spacing-large);
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.smallJourney {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-extra-large);
+        padding: var(--spacing-large) var(--spacing-super-large);
+        flex-grow: 1;
+        margin: 0 auto;
+        max-width: var(--width-page-max);
+
+        .heading {
+            text-align: center;
+            color: var(--color-text-accent);
+            font-weight: var(--font-weight-medium);
+
+            span {
+                font-weight: var(--font-weight-extra-bold);
+            }
+        }
+
+        .image {
+            width: var(--width-page-max);
+            height: auto;
+            object-fit: contain;
+        }
+    }
+}

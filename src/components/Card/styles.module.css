@@ -1,0 +1,60 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    gap: var(--spacing-medium);
+    padding: var(--spacing-large);
+    background-color: #ecf7f8;
+    color: var(--color-text-on-dark);
+    border-radius: var(--border-radius-large);
+
+    .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        border-radius: var(--border-radius-large);
+        filter: brightness(40%);
+    }
+
+    .dateContainer {
+        position: relative;
+        flex-shrink: 0;
+        z-index: 10;
+
+        .date {
+            font-weight: var(--font-weight-bold);
+            font-size: var(--font-size-large);
+        }
+    }
+
+    .title {
+        position: relative;
+        flex-shrink: 0;
+        z-index: 10;
+        color: var(--color-text-on-dark);
+    }
+
+    .emptyDiv {
+        flex-grow: 1;
+    }
+
+    .description {
+        position: relative;
+        flex-shrink: 0;
+        z-index: 10;
+        font-size: var(--font-size-small);
+    }
+
+    &.noImage {
+        color: var(--color-text);
+
+        .title {
+            color: var(--color-heading);
+        }
+    }
+}

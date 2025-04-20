@@ -1,0 +1,40 @@
+.recentWorksSection {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        display: flex;
+        padding: var(--spacing-large) var(--spacing-super-large);
+        flex-direction: column;
+        gap: var(--spacing-extra-large);
+        flex-grow: 1;
+        margin: 0 auto;
+        max-width: var(--width-page-max);
+
+        .topContent {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            gap: var(--spacing-super-large);
+
+            .heading {
+                max-width: 60rem;
+                color: var(--color-text-accent);
+                font-weight: var(--font-weight-medium);
+
+                span {
+                    font-weight: var(--font-weight-extra-bold);
+                }
+            }
+        }
+
+        .bottomContent {
+            display: flex;
+            gap: var(--spacing-medium);
+
+            .card {
+                height: 24rem;
+            }
+        }
+    }
+}

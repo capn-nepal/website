@@ -1,0 +1,49 @@
+.eventsSection {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        display: grid;
+        grid-gap: var(--spacing-medium);
+        grid-template-columns: 1.5fr 1fr;
+        padding: var(--spacing-large) var(--spacing-super-large);
+        flex-grow: 1;
+        margin: 0 auto;
+        max-width: var(--width-page-max);
+
+        .leftContent {
+            display: flex;
+            flex-direction: column;
+            justify-items: flex-start;
+            align-items: flex-start;
+            gap: var(--spacing-super-large);
+
+            .heading {
+                max-width: 40rem;
+                color: var(--color-text-accent);
+                font-weight: var(--font-weight-medium);
+
+                span {
+                    font-weight: var(--font-weight-extra-bold);
+                }
+            }
+            .subHeading {
+                max-width: 40rem;
+            }
+
+            .card {
+                height: 20rem;
+            }
+        }
+
+        .rightContent {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-medium);
+
+            .card {
+                flex-grow: 1;
+            }
+        }
+    }
+}

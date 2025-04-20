@@ -1,0 +1,93 @@
+.pillarsSection {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--spacing-large) var(--spacing-super-large);
+        gap: var(--spacing-super-large);
+        flex-grow: 1;
+        margin: 0 auto;
+        max-width: var(--width-page-max);
+
+        .heading {
+            text-align: center;
+        }
+
+        .pillarContainer {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--spacing-large);
+            width: 100%;
+
+            .leftContainer {
+                display: flex;
+                flex-direction: column;
+                flex-grow: 1;
+                gap: var(--spacing-medium);
+
+                .headingContainer {
+                    position: relative;
+
+                    .number {
+                        position: absolute;
+                        left: -1rem;
+                        bottom: -0.3rem;
+                        color: var(--color-primary);
+                        opacity: 50%;
+                        font-size: var(--font-size-galactic);
+                        font-weight: var(--font-weight-boldest);
+                        font-family: var(--font-heading);
+                        z-index: 1;
+                    }
+
+                    .title {
+                        position: relative;
+                        color: var(--color-text);
+                        z-index: 2;
+                    }
+                }
+
+                .description {
+                    max-width: 60rem;
+                }
+            }
+
+            .rightContainer {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                width: 32rem;
+
+                .pillarsImage {
+                    width: 8rem;
+                    height: 8rem;
+                    object-fit: cover;
+                }
+
+                .image {
+                    width: 12rem;
+                    height: 12rem;
+                    object-fit: cover;
+                    transform: translate(-25%, -36%);
+                    border-radius: var(--border-radius-medium);
+                    filter: saturate(15%);
+                }
+            }
+        }
+
+        .second {
+            flex-direction: row-reverse;
+
+            .rightContainer {
+                align-items: flex-start;
+
+                .image {
+                    transform: translate(25%, -36%);
+                }
+            }
+        }
+    }
+}
