@@ -3,8 +3,8 @@ import { _cs } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import ImageScrollCard from '#components/ImageScrollCard';
-import peopleImage from '#public/people.png';
 import himalayaImage from '#public/himalaya.png';
+import peopleImage from '#public/people.png';
 
 import styles from './styles.module.css';
 

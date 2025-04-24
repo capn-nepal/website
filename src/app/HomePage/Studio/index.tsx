@@ -3,12 +3,12 @@ import { _cs } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import ImageScrollCard from '#components/ImageScrollCard';
+import Link from '#components/Link';
 import sosPodcast1 from '#public/sosPodcast1.png';
 import sosPodcast2 from '#public/sosPodcast2.png';
 import voxpopImage from '#public/voxpopImage.png';
 
 import styles from './styles.module.css';
-import Link from '@/components/Link';
 
 const description = 'From the streets to the studio—hear the voices shaping the fight for equal citizenship through podcasts and voxpop features.';
 
