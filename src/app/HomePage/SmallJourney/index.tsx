@@ -23,7 +23,7 @@ export default function SmallJourney(props: Props) {
                 >
                     Years of Action, Voices of Change:
                     <br />
-                    <span>CAPN's Journey</span>
+                    <span>CAPN&apos;s Journey</span>
                 </Heading>
                 <Image
                     className={styles.image}

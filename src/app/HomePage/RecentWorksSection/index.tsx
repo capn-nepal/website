@@ -18,7 +18,7 @@ export default function RecentWorksSection() {
                     >
                         Empowering Communities:
                         <br />
-                        <span>CAPN's Recent Works & Events</span>
+                        <span>CAPN&apos;s Recent Works & Events</span>
                     </Heading>
                     <Button>
                         View all
