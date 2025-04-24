@@ -3,9 +3,9 @@ import { _cs } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import ImageScrollCard from '#components/ImageScrollCard';
-import girlImage from '#public/girl.jpg';
-import boyImage from '#public/boy.png';
 import annualReport from '#public/annualReport.png';
+import boyImage from '#public/boy.png';
+import girlImage from '#public/girl.jpg';
 
 import styles from './styles.module.css';
 
