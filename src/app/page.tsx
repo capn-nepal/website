@@ -26,7 +26,7 @@ export default function Home() {
                     className={styles.definitionHeading}
                     size="large"
                 >
-                    We are the Citizenship Affected People's Network (CAPN), a
+                    We are the Citizenship Affected People&apos;s Network (CAPN), a
                     civil society organization advocating for
                     <span> gender-equal and inclusive citizenship rights </span>
                     in Nepal.

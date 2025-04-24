@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - 'main'
+
+env:
+  GITHUB_WORKFLOW: true
+
+jobs:
+  ci:
+    name: Lint + Type Checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: 'pnpm'
+
+      # Pre-commit
+      - uses: actions/setup-python@v5
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Install dependencies
+        run: pnpm install --prefer-online
+
+      - name: Check
+        run: pre-commit run -vvv --all-files
+
+      # FIXME: Check build after creating fixtures

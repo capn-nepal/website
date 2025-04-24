@@ -1,7 +1,7 @@
 import React from 'react';
+import { IoOpenOutline } from 'react-icons/io5';
 import { _cs } from '@togglecorp/fujs';
 import NextLink, { type LinkProps as NextLinkProps } from 'next/link';
-import { IoOpenOutline } from 'react-icons/io5';
 
 import styles from './styles.module.css';
 
