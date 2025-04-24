@@ -25,9 +25,9 @@
 
         .rightContainer {
             display: grid;
-            grid-template-columns: 0.9fr 12rem;
             grid-template-rows: auto auto;
             gap: var(--spacing-small);
+            width: 100%;
 
             .img1,
             .img2,

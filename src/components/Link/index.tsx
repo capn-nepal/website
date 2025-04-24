@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoOpenOutline } from 'react-icons/io5';
+import { HiArrowUpRight } from 'react-icons/hi2';
 import { _cs } from '@togglecorp/fujs';
 import NextLink, { type LinkProps as NextLinkProps } from 'next/link';
 
@@ -53,7 +53,7 @@ function Link(props: Props) {
             href={href}
         >
             {children}
-            {showIcon && <IoOpenOutline className={styles.icon} />}
+            {showIcon && <HiArrowUpRight className={styles.icon} />}
         </NextLink>
     );
 }

@@ -43,6 +43,7 @@
             height: 20rem;
             object-fit: cover;
             border-radius: var(--border-radius-medium);
+            max-width: 100%;
         }
 
         .logo {

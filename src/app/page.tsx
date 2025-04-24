@@ -45,7 +45,6 @@ export default function Home() {
             <PillarsSection />
             <Divider />
             <SmallJourney />
-            <Divider />
             <Community />
             <Divider />
             <Voices />

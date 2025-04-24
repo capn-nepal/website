@@ -8,7 +8,7 @@ import comLogo from '#public/partnerLogos/com.png';
 import familyLogo from '#public/partnerLogos/family.png';
 import isiLogo from '#public/partnerLogos/isi.png';
 import nfaLogo from '#public/partnerLogos/nfa.png';
-import scrLogo from '#public/partnerLogos/scr.png';
+import scrLogo from '#public/partnerLogos/scr.jpg';
 import statelessLogo from '#public/partnerLogos/stateless.png';
 
 import styles from './styles.module.css';

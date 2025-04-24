@@ -4,6 +4,7 @@
     background-color: var(--color-secondary);
     color: var(--color-text-on-secondary);
     min-height: 90vh;
+    max-width: 100%;
 
     .content {
         display: grid;
@@ -45,6 +46,7 @@
             justify-self: flex-end;
             width: auto;
             object-fit: contain;
+            max-width: 100%;
         }
     }
 }

@@ -3,9 +3,12 @@ import { _cs } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import ImageScrollCard from '#components/ImageScrollCard';
-import image1 from '#public/community.jpg';
+import sosPodcast1 from '#public/sosPodcast1.png';
+import sosPodcast2 from '#public/sosPodcast2.png';
+import voxpopImage from '#public/voxpopImage.png';
 
 import styles from './styles.module.css';
+import Link from '@/components/Link';
 
 const description = 'From the streets to the studio—hear the voices shaping the fight for equal citizenship through podcasts and voxpop features.';
 
@@ -26,14 +29,20 @@ export default function Studio(props: Props) {
                     >
                         {description}
                     </Heading>
+                    <Link
+                        // TODO: Add Episode link
+                        href="/"
+                        showIcon
+                    >
+                        See All Episodes
+                    </Link>
                 </div>
                 <div className={styles.wrapper}>
                     <div className={styles.rightContainer}>
                         <div className={styles.img1}>
                             <ImageScrollCard
                                 className={styles.image}
-                                title="Girl who lost her country"
-                                images={[image1]}
+                                images={[sosPodcast1]}
                                 link="/"
                                 variant="small"
                             />
@@ -41,8 +50,7 @@ export default function Studio(props: Props) {
                         <div className={styles.img2}>
                             <ImageScrollCard
                                 className={styles.image}
-                                title="Girl who lost her country"
-                                images={[image1]}
+                                images={[sosPodcast2]}
                                 link="/"
                                 variant="small"
                             />
@@ -50,8 +58,7 @@ export default function Studio(props: Props) {
                         <div className={styles.img3}>
                             <ImageScrollCard
                                 className={styles.image}
-                                title="Girl who lost her country"
-                                images={[image1]}
+                                images={[voxpopImage]}
                                 link="/"
                                 variant="small"
                             />

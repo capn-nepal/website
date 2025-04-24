@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card from '#components/Card';
 import Heading from '#components/Heading';
-import testImage from '#public/image2.png';
+import presentationImage from '#public/presentation.jpg';
 
 import styles from './styles.module.css';
 
@@ -28,24 +28,24 @@ export default function EventsSection() {
                     </Heading>
                     <Card
                         className={styles.card}
-                        date="2025-04-22"
+                        date="2025-06-10"
                         title="Launch event of the CAPN's Strategic Goals"
-                        description="10:00AM, @CAPN Office, Sanepa"
-                        image={testImage}
+                        description="10:00AM-3:30PM, @CAPN Office, Sanepa"
+                        image={presentationImage}
                     />
                 </div>
                 <div className={styles.rightContent}>
                     <Card
                         className={styles.card}
-                        date="2025-04-22"
-                        title="Launch event of the CAPN's Strategic Goals"
-                        description="10:00AM, @CAPN Office, Sanepa"
+                        date="2025-06-10"
+                        title="Legal Advocacy Seminar"
+                        description="10:00AM-3:30PM, @CAPN Office, Sanepa"
                     />
                     <Card
                         className={styles.card}
-                        date="2025-04-22"
-                        title="Launch event of the CAPN's Strategic Goals"
-                        description="10:00AM, @CAPN Office, Sanepa"
+                        date="2025-06-10"
+                        title="Legal Advocacy Seminar"
+                        description="10:00AM-3:30PM, @CAPN Office, Sanepa"
                     />
                 </div>
             </div>

@@ -1,5 +1,11 @@
 import React from 'react';
-import { IoLogoInstagram } from 'react-icons/io5';
+import {
+    IoLogoInstagram,
+    IoLogoFacebook,
+    IoLogoYoutube,
+    IoLogoLinkedin,
+    IoLogoXbox,
+} from 'react-icons/io5';
 import { _cs } from '@togglecorp/fujs';
 import Image from 'next/image';
 
@@ -73,6 +79,10 @@ export default function Footer(props: Props) {
                             </Heading>
                             <div className={styles.icons}>
                                 <IoLogoInstagram />
+                                <IoLogoFacebook />
+                                <IoLogoYoutube />
+                                <IoLogoLinkedin />
+                                <IoLogoXbox />
                             </div>
                         </div>
                     </div>

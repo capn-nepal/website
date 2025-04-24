@@ -3,7 +3,8 @@ import React from 'react';
 import Button from '#components/Button';
 import Card from '#components/Card';
 import Heading from '#components/Heading';
-import testImage from '#public/image1.png';
+import vocies1Image from '#public/voices1.jpg';
+import vocies2Image from '#public/voices2.jpg';
 
 import styles from './styles.module.css';
 
@@ -27,17 +28,15 @@ export default function RecentWorksSection() {
                 <div className={styles.bottomContent}>
                     <Card
                         className={styles.card}
-                        date="2025-04-22"
-                        title="Launch event of the CAPN's Strategic Goals"
-                        description="10:00AM, @CAPN Office, Sanepa"
-                        image={testImage}
+                        date="2025-08-10"
+                        title="Study on Implementation of citizenship laws in Nepal"
+                        image={vocies1Image}
                     />
                     <Card
                         className={styles.card}
-                        date="2025-04-22"
-                        title="Launch event of the CAPN's Strategic Goals"
-                        description="10:00AM, @CAPN Office, Sanepa"
-                        image={testImage}
+                        date="2025-08-10"
+                        title="Paralegal Program"
+                        image={vocies2Image}
                     />
                 </div>
             </div>
