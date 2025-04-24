@@ -19,6 +19,12 @@
         width: var(--width-page-max);
         max-width: var(--width-page-max);
 
+        @media screen and (max-width: 60rem) {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
         .leftContainer {
             display: flex;
             align-items: center;

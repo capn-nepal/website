@@ -3,7 +3,8 @@ import { _cs } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import ImageScrollCard from '#components/ImageScrollCard';
-import testImage from '#public/image2.png';
+import peopleImage from '#public/people.png';
+import himalayaImage from '#public/himalaya.png';
 
 import styles from './styles.module.css';
 
@@ -26,15 +27,15 @@ export default function Voices(props: Props) {
                 <div className={styles.cards}>
                     <ImageScrollCard
                         className={styles.card}
-                        title="Without citizenship, I felt invisible. Gaining it changed everything"
-                        images={[testImage]}
+                        title="&quot;Without citizenship, I felt invisible. Gaining it changed everything&quot;"
+                        images={[peopleImage]}
                         link="/"
                     />
                     <ImageScrollCard
                         className={styles.card}
                         title="Creative Collaboration for Change"
                         description="This space highlights artwork, photography, and creative expressions from individuals affected showcasing their talent, resilience, and stories beyond the struggle."
-                        images={[testImage]}
+                        images={[himalayaImage]}
                         link="/"
                     />
                 </div>

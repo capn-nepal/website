@@ -3,7 +3,9 @@ import { _cs } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import ImageScrollCard from '#components/ImageScrollCard';
-import image1 from '#public/community.jpg';
+import girlImage from '#public/girl.jpg';
+import boyImage from '#public/boy.png';
+import annualReport from '#public/annualReport.png';
 
 import styles from './styles.module.css';
 
@@ -25,16 +27,7 @@ export default function Reports(props: Props) {
                             <ImageScrollCard
                                 className={styles.image}
                                 title="Girl who lost her country"
-                                images={[image1]}
-                                link="/"
-                                variant="small"
-                            />
-                        </div>
-                        <div className={styles.img2}>
-                            <ImageScrollCard
-                                className={styles.image}
-                                title="Girl who lost her country"
-                                images={[image1]}
+                                images={[girlImage]}
                                 link="/"
                                 variant="small"
                             />
@@ -42,8 +35,17 @@ export default function Reports(props: Props) {
                         <div className={styles.img3}>
                             <ImageScrollCard
                                 className={styles.image}
-                                title="Girl who lost her country"
-                                images={[image1]}
+                                title="Annual Report Fiscal Year 2021 to 2023"
+                                images={[annualReport]}
+                                link="/"
+                                variant="small"
+                            />
+                        </div>
+                        <div className={styles.img2}>
+                            <ImageScrollCard
+                                className={styles.image}
+                                title="School Outreach Program comprehensive Report"
+                                images={[boyImage]}
                                 link="/"
                                 variant="small"
                             />

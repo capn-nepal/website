@@ -9,6 +9,7 @@
         padding: var(--spacing-large) var(--spacing-super-large);
         flex-grow: 1;
         margin: 0 auto;
+        width: 100%;
         max-width: var(--width-page-max);
 
         .heading {
@@ -25,6 +26,7 @@
             width: var(--width-page-max);
             height: auto;
             object-fit: contain;
+            max-width: 100%;
         }
     }
 }

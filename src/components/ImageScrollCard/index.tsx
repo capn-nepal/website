@@ -10,7 +10,7 @@ import styles from './styles.module.css';
 interface Props {
     className?: string;
     images: StaticImageData[];
-    title: string;
+    title?: string;
     description?: string;
     link: string;
     variant?: 'small' | 'normal';
