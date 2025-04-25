@@ -1,18 +1,12 @@
-version: '3.8'
-
 services:
   next:
-    build: .
+    build:
+      context: .
+      target: dev
     command: sh -c 'pnpm install && pnpm run dev'
+    volumes:
+      - ./:/code
     ports:
       - '3000:3000'
     env_file:
       .env.local
-
-  checks:
-    build: .
-    command: sh -c 'pre-commit run -vvv --all-files'
-    env_file:
-      - .env.local
-    profiles:
-      - test
