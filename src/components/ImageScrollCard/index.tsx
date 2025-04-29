@@ -13,7 +13,8 @@ interface Props {
     title?: string;
     description?: string;
     link: string;
-    variant?: 'small' | 'normal';
+    size?: 'small' | 'normal';
+    variant?: 'gallery' | 'article';
 }
 
 export default function Card(props: Props) {
@@ -23,7 +24,8 @@ export default function Card(props: Props) {
         images,
         description,
         link,
-        variant = 'normal',
+        size = 'normal',
+        variant = 'article',
     } = props;
 
     return (
@@ -42,7 +44,7 @@ export default function Card(props: Props) {
             )}
             <Heading
                 className={styles.title}
-                size={variant === 'normal' ? 'extraLarge' : 'extraSmall'}
+                size={size === 'normal' ? 'large' : 'extraSmall'}
             >
                 {title}
             </Heading>
@@ -51,13 +53,13 @@ export default function Card(props: Props) {
                     {description}
                 </div>
             )}
-            {variant === 'normal' && (
+            {size === 'normal' && (
                 <Link
                     className={styles.link}
                     href={link}
                     showIcon
                 >
-                    Learn More
+                    {variant === 'gallery' ? 'View Gallery' : 'Learn More'}
                 </Link>
             )}
         </div>

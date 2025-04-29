@@ -44,7 +44,7 @@ export default function Studio(props: Props) {
                                 className={styles.image}
                                 images={[sosPodcast1]}
                                 link="/"
-                                variant="small"
+                                size="small"
                             />
                         </div>
                         <div className={styles.img2}>
@@ -52,7 +52,7 @@ export default function Studio(props: Props) {
                                 className={styles.image}
                                 images={[sosPodcast2]}
                                 link="/"
-                                variant="small"
+                                size="small"
                             />
                         </div>
                         <div className={styles.img3}>
@@ -60,7 +60,7 @@ export default function Studio(props: Props) {
                                 className={styles.image}
                                 images={[voxpopImage]}
                                 link="/"
-                                variant="small"
+                                size="small"
                             />
                         </div>
                     </div>
