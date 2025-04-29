@@ -69,5 +69,30 @@
                 font-weight: var(--font-weight-medium);
             }
         }
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+
+            .leftContainer {
+                display: flex;
+                flex-direction: column;
+                order: 2;
+
+                .img1, .img2, .img3 {
+                    grid-column: auto;
+                    grid-row: auto;
+                    align-self: unset;
+
+                    .image {
+                        height: 10rem;
+                    }
+                }
+            }
+
+            .rightContainer {
+                order: -1;
+            }
+        }
     }
 }

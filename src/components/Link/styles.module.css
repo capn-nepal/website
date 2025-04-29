@@ -27,6 +27,16 @@
         }
     }
 
+    &.reverse {
+        color: var(--color-text);
+
+        &:hover {
+            background-color: var(--color-primary);
+            text-decoration: unset;
+            transition: 0.2s all ease-in-out;
+        }
+    }
+
     &.buttonTransparent {
         transition: 0.2s all ease-in-out;
         border: var(--width-separator-thin) solid var(--color-primary);
