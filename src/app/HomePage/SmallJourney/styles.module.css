@@ -28,5 +28,9 @@
             object-fit: contain;
             max-width: 100%;
         }
+
+        .link {
+            text-align: center;
+        }
     }
 }

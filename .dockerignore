@@ -3,12 +3,7 @@
 # dependencies
 /node_modules
 /.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+.pnp.js
 .pnpm-store
 
 # testing
@@ -21,22 +16,24 @@
 # production
 /build
 
-# misc
+# misc/sensitive
 .DS_Store
-*.pem
+.env
+.env.local
+secrets
 
 # debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
+pnpm-debug.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+
+# editor config
+.vscode/
+
+# generated types
+src/generated/
+cache/

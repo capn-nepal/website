@@ -29,7 +29,7 @@ export default function Reports(props: Props) {
                                 title="Girl who lost her country"
                                 images={[girlImage]}
                                 link="/"
-                                variant="small"
+                                size="small"
                             />
                         </div>
                         <div className={styles.img3}>
@@ -38,7 +38,7 @@ export default function Reports(props: Props) {
                                 title="Annual Report Fiscal Year 2021 to 2023"
                                 images={[annualReport]}
                                 link="/"
-                                variant="small"
+                                size="small"
                             />
                         </div>
                         <div className={styles.img2}>
@@ -47,7 +47,7 @@ export default function Reports(props: Props) {
                                 title="School Outreach Program comprehensive Report"
                                 images={[boyImage]}
                                 link="/"
-                                variant="small"
+                                size="small"
                             />
                         </div>
                     </div>

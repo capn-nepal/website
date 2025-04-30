@@ -3,6 +3,7 @@ import { _cs } from '@togglecorp/fujs';
 import Image from 'next/image';
 
 import Heading from '#components/Heading';
+import Link from '#components/Link';
 import roadmapSmall from '#public/roadmapSmall.png';
 
 import styles from './styles.module.css';
@@ -30,6 +31,13 @@ export default function SmallJourney(props: Props) {
                     src={roadmapSmall}
                     alt=""
                 />
+                <Link
+                    className={styles.link}
+                    href="/"
+                    showIcon
+                >
+                    View Complete Journey
+                </Link>
             </div>
         </div>
     );

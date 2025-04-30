@@ -10,6 +10,7 @@
         flex-grow: 1;
         margin: 0 auto;
         max-width: var(--width-page-max);
+        width: 100%;
 
         .topContent {
             display: flex;
@@ -29,7 +30,8 @@
         }
 
         .bottomContent {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: var(--spacing-medium);
 
             .card {

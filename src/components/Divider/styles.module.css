@@ -1,6 +1,6 @@
 .divider {
     width: 100vw;
-    padding: var(--spacing-enormous) 0;
+    padding: var(--spacing-large) 0;
 
     .image {
         width: 100vw;

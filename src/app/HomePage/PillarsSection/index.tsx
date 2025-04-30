@@ -25,112 +25,114 @@ export default function PillarsSection() {
                 >
                     CAPN’S Three Pillars for Citizenship Justice
                 </Heading>
-                <div className={styles.pillarContainer}>
-                    <div className={styles.leftContainer}>
-                        <div className={styles.headingContainer}>
-                            <div className={styles.number}>
-                                01
+                <div className={styles.pillarsContainer}>
+                    <div className={styles.pillarContainer}>
+                        <div className={styles.leftContainer}>
+                            <div className={styles.headingContainer}>
+                                <div className={styles.number}>
+                                    01
+                                </div>
+                                <Heading
+                                    className={styles.title}
+                                    size="large"
+                                >
+                                    Legal Advocacy
+                                </Heading>
                             </div>
-                            <Heading
-                                className={styles.title}
-                                size="large"
-                            >
-                                Legal Advocacy
-                            </Heading>
-                        </div>
-                        <div className={styles.description}>
-                            {legalAdvocacy}
-                        </div>
-                        <Link
-                            href="/"
-                            showIcon
-                        >
-                            Learn More
-                        </Link>
-                    </div>
-                    <div className={styles.rightContainer}>
-                        <Image
-                            className={styles.pillarsImage}
-                            src={pillar}
-                            alt="legal-advocacy"
-                        />
-                        <Image
-                            className={styles.image}
-                            src={pillar1}
-                            alt="legal-advocacy"
-                        />
-                    </div>
-                </div>
-                <div className={_cs(styles.pillarContainer, styles.second)}>
-                    <div className={styles.leftContainer}>
-                        <div className={styles.headingContainer}>
-                            <div className={styles.number}>
-                                02
+                            <div className={styles.description}>
+                                {legalAdvocacy}
                             </div>
-                            <Heading
-                                className={styles.title}
-                                size="large"
+                            <Link
+                                href="/"
+                                showIcon
                             >
-                                Safe Haven
-                            </Heading>
+                                Learn More
+                            </Link>
                         </div>
-                        <div className={styles.description}>
-                            {safeHaven}
+                        <div className={styles.rightContainer}>
+                            <Image
+                                className={styles.pillarsImage}
+                                src={pillar}
+                                alt="legal-advocacy"
+                            />
+                            <Image
+                                className={styles.image}
+                                src={pillar1}
+                                alt="legal-advocacy"
+                            />
                         </div>
-                        <Link
-                            href="/"
-                            showIcon
-                        >
-                            Learn More
-                        </Link>
                     </div>
-                    <div className={styles.rightContainer}>
-                        <Image
-                            className={styles.pillarsImage}
-                            src={pillar}
-                            alt="pillar"
-                        />
-                        <Image
-                            className={styles.image}
-                            src={pillar2}
-                            alt="safe-haven"
-                        />
-                    </div>
-                </div>
-                <div className={styles.pillarContainer}>
-                    <div className={styles.leftContainer}>
-                        <div className={styles.headingContainer}>
-                            <div className={styles.number}>
-                                03
+                    <div className={_cs(styles.pillarContainer, styles.second)}>
+                        <div className={styles.leftContainer}>
+                            <div className={styles.headingContainer}>
+                                <div className={styles.number}>
+                                    02
+                                </div>
+                                <Heading
+                                    className={styles.title}
+                                    size="large"
+                                >
+                                    Safe Haven
+                                </Heading>
                             </div>
-                            <Heading
-                                className={styles.title}
-                                size="large"
+                            <div className={styles.description}>
+                                {safeHaven}
+                            </div>
+                            <Link
+                                href="/"
+                                showIcon
                             >
-                                Social Awareness
-                            </Heading>
+                                Learn More
+                            </Link>
                         </div>
-                        <div className={styles.description}>
-                            {socialAwareness}
+                        <div className={styles.rightContainer}>
+                            <Image
+                                className={styles.pillarsImage}
+                                src={pillar}
+                                alt="pillar"
+                            />
+                            <Image
+                                className={styles.image}
+                                src={pillar2}
+                                alt="safe-haven"
+                            />
                         </div>
-                        <Link
-                            href="/"
-                            showIcon
-                        >
-                            Learn More
-                        </Link>
                     </div>
-                    <div className={styles.rightContainer}>
-                        <Image
-                            className={styles.pillarsImage}
-                            src={pillar}
-                            alt="pillar"
-                        />
-                        <Image
-                            className={styles.image}
-                            src={pillar3}
-                            alt="social-awareness"
-                        />
+                    <div className={styles.pillarContainer}>
+                        <div className={styles.leftContainer}>
+                            <div className={styles.headingContainer}>
+                                <div className={styles.number}>
+                                    03
+                                </div>
+                                <Heading
+                                    className={styles.title}
+                                    size="large"
+                                >
+                                    Social Awareness
+                                </Heading>
+                            </div>
+                            <div className={styles.description}>
+                                {socialAwareness}
+                            </div>
+                            <Link
+                                href="/"
+                                showIcon
+                            >
+                                Learn More
+                            </Link>
+                        </div>
+                        <div className={styles.rightContainer}>
+                            <Image
+                                className={styles.pillarsImage}
+                                src={pillar}
+                                alt="pillar"
+                            />
+                            <Image
+                                className={styles.image}
+                                src={pillar3}
+                                alt="social-awareness"
+                            />
+                        </div>
                     </div>
                 </div>
             </div>

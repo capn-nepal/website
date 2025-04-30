@@ -10,6 +10,7 @@
         flex-grow: 1;
         margin: 0 auto;
         max-width: var(--width-page-max);
+        width: 100%;
 
         .heading {
             text-align: center;
@@ -19,7 +20,7 @@
 
         .cards {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             gap: var(--spacing-extra-large);
 
             .card {

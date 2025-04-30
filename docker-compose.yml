@@ -1,0 +1,12 @@
+services:
+  next:
+    build:
+      context: .
+      target: dev
+    command: sh -c 'pnpm install && pnpm run dev'
+    volumes:
+      - ./:/code
+    ports:
+      - '3000:3000'
+    env_file:
+      .env.local

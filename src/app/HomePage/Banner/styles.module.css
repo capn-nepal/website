@@ -3,17 +3,17 @@
     flex-direction: column;
     background-color: var(--color-secondary);
     color: var(--color-text-on-secondary);
+    padding: 0 var(--spacing-super-large);
     min-height: 90vh;
-    max-width: 100%;
 
     .content {
         display: grid;
         grid-gap: var(--spacing-medium);
         grid-template-columns: 1.5fr 1fr;
         flex-grow: 1;
-        padding: 0 var(--spacing-super-large);
         padding-top: calc(2 * var(--spacing-large) + 2.2rem + 2 * var(--spacing-super-small) + var(--spacing-mega-large));
         margin: 0 auto;
+        width: 100%;
         max-width: var(--width-page-max);
 
         .leftContent {
@@ -41,12 +41,59 @@
         }
 
         .image {
-            height: 70vh;
+            height: 72vh;
             align-self: flex-end;
             justify-self: flex-end;
             width: auto;
             object-fit: contain;
-            max-width: 100%;
+        }
+
+        @media (max-width: 1280px) {
+            .leftContent {
+                .headings {
+                    .heading {
+                        font-size: calc(var(--font-size-galactic) * var(--multiplier) * var(--multiplier));
+                    }
+                }
+            }
+            .image {
+                height: 50vh;
+            }
+        }
+
+        @media (max-width: 1080px) {
+            .leftContent {
+                .headings {
+                    .heading {
+                        font-size: calc(var(--font-size-galactic) * var(--multiplier));
+                    }
+                }
+            }
+            .image {
+                height: 40vh;
+            }
+        }
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .leftContent {
+                align-items: center;
+
+                .headings {
+                    .heading {
+                        text-align: center;
+                        font-size: var(--font-size-galactic);
+                    }
+                }
+            }
+            .image {
+                justify-self: center;
+                place-self: center;
+            }
         }
     }
 }
