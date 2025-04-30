@@ -1,4 +1,4 @@
-FROM node:22-bookworm as dev
+FROM node:22-bookworm AS dev
 
 RUN apt-get update -y \
     && apt-get install -y --no-install-recommends \
