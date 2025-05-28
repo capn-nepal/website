@@ -1,0 +1,49 @@
+.banner {
+    display: flex;
+    flex-direction: column;
+
+    .contentSection {
+        background-color: var(--color-tertiary);
+        min-height: 50vh;
+        padding: calc(2 * var(--spacing-large) + 2.2rem + 2 * var(--spacing-super-small) + var(--spacing-mega-large)) var(--spacing-super-large) 0 var(--spacing-super-large);
+        width: 100%;
+
+        .content {
+            max-width: var(--width-page-max);
+            margin: 0 auto;
+
+            .eyebrowHeading {
+                color: var(--color-primary);
+                font-weight: var(--font-weight-medium);
+            }
+
+            .heading {
+                color: var(--color-text-on-secondary);
+            }
+        }
+    }
+
+    .bannerImage {
+        padding: 0 var(--spacing-super-large);
+        margin: 0 auto;
+        max-width: var(--width-page-max);
+        width: 100%;
+
+        .aboutUsImage {
+            max-width: var(--width-page-max);
+            width: 100%;
+            height: 30rem;
+            object-fit: cover;
+            transform: translate(0%, -20%);
+            filter: saturate(15%);
+        }
+    }
+
+    @media (max-width: 1014px) {
+        .bannerImage {
+            .aboutUsImage {
+                transform: translate(0);
+            }
+        }
+    }
+}

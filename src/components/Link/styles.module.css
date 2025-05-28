@@ -2,7 +2,6 @@
     display: block;
     color: var(--color-text-link);
     padding: var(--spacing-super-small) 0;
-    text-transform: uppercase;
 
     .icon {
         flex-shrink: 0;
@@ -11,6 +10,21 @@
 
     &:hover {
         text-decoration: underline;
+    }
+
+
+    &.navigation {
+        color: var(--color-text);
+
+        &.active {
+            color: var(--color-text-link);
+        }
+
+        &:hover {
+            color: var(--color-text-link);
+            text-decoration: underline;
+            transition: 0.2s all ease-in-out;
+        }
     }
 
     &.button {
@@ -28,6 +42,7 @@
     }
 
     &.reverse {
+        text-transform: uppercase;
         color: var(--color-text);
 
         &:hover {

@@ -1,0 +1,96 @@
+.values {
+    padding: var(--spacing-mega-large) var(--spacing-super-large);
+
+    .valuesContent {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+        width: 100%;
+        max-width: var(--width-page-max);
+        padding: var(--spacing-gigantic) var(--spacing-universal);
+        gap: var(--spacing-super-large);
+        color: var(--color-secondary-light);
+        background-color: var(--color-text);
+        border-radius: var(--border-radius-large);
+
+        .valueHeading {
+            color: var(--color-secondary-light);
+        }
+
+        .description {
+            text-wrap: balance;
+            text-align: center;
+        }
+
+        .valuesList {
+            display: flex;
+            flex-direction: column;
+
+            .valueSection {
+                display: grid;
+                grid-template-columns: 1fr 0.5fr 0.5fr 1.5fr;
+                grid-gap: var(--spacing-large);
+                height: 12rem;
+
+                .separator {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    height: 100%;
+
+                    .outerCircle {
+                        height: 2rem;
+                        width: 1.75rem;
+                        border: 2px solid var(--color-secondary-light);
+                        border-radius: var(--border-radius-large);
+                    }
+
+                    .innerCircle {
+                        height: 100%;
+                        border: 2px solid var(--color-tertiary-dark);
+                        border-radius: var(--border-radius-large);
+                        background-color: var(--color-secondary-light);
+                    }
+
+                    .line {
+                        width: 2px;
+                        background-color: var(--color-secondary-light);
+                        height: 100%;
+                    }
+                }
+
+                .valueIcon {
+                    width: 3rem;
+                    height: 3rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .valuesContent {
+            .description {
+                text-wrap: pretty;
+            }
+
+            .valuesList {
+                gap: var(--spacing-large);
+
+                .valueSection {
+                    display: flex;
+                    flex-direction: column;
+                    border-bottom: 1px solid var(--color-secondary-light);
+
+                    .heading {
+                        font-weight: var(--font-weight-extra-bold);
+                    }
+
+                    .separator {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

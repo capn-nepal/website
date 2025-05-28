@@ -5,22 +5,22 @@ import Heading from '#components/Heading';
 import Link from '#components/Link';
 import Page from '#components/Page';
 
-import Banner from './HomePage/Banner';
-import Community from './HomePage/Community';
-import EventsSection from './HomePage/EventsSection';
-import PillarsSection from './HomePage/PillarsSection';
-import RecentWorksSection from './HomePage/RecentWorksSection';
-import Reports from './HomePage/Reports';
-import SmallJourney from './HomePage/SmallJourney';
-import Studio from './HomePage/Studio';
-import Voices from './HomePage/Voices';
+import Community from './home/Community';
+import EventsSection from './home/EventsSection';
+import HomeBanner from './home/HomeBanner';
+import PillarsSection from './home/PillarsSection';
+import RecentWorksSection from './home/RecentWorksSection';
+import Reports from './home/Reports';
+import SmallJourney from './home/SmallJourney';
+import Studio from './home/Studio';
+import Voices from './home/Voices';
 
 import styles from './page.module.css';
 
 export default function Home() {
     return (
         <Page contentClassName={styles.page}>
-            <Banner />
+            <HomeBanner />
             <section className={styles.definition}>
                 <Heading
                     className={styles.definitionHeading}
