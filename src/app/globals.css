@@ -16,6 +16,8 @@
     --color-secondary-dark: #007376;
     --color-primary-dark: #e5a01f;
     --color-tertiary-dark: #05445e;
+    --color-secondary-light: #ECF7F8;
+    --color-card: var(--color-secondary-light);
 
     --color-text: #3f3f3f;
     --color-text-accent: #05445e;
@@ -27,10 +29,11 @@
     --font-weight-medium: 400;
     --font-weight-semi-bold: 500;
     --font-weight-bold: 600;
-    --font-weight-extra-bold: 600;
+    --font-weight-extra-bold: 700;
     --font-weight-boldest: 900;
 
     --width-page-max: 80rem;
+    --width-page-min: 60rem;
     --width-separator-thin: 1px;
 
     --border-radius-large: 16px;
@@ -97,8 +100,9 @@ a {
     text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-    html {
-        color-scheme: dark;
-    }
-}
+/* NOTE: Disabling Dark mode */
+/* @media (prefers-color-scheme: dark) { */
+/*     html { */
+/*         color-scheme: dark; */
+/*     } */
+/* } */

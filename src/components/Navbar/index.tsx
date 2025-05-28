@@ -7,6 +7,7 @@ import React, {
 import { MdMenu } from 'react-icons/md';
 import { _cs } from '@togglecorp/fujs';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 import Button from '#components/Button';
 import Link from '#components/Link';
@@ -22,6 +23,8 @@ export default function Navbar(props: Props) {
     const {
         className,
     } = props;
+
+    const pathname = usePathname();
 
     const [isNavShown, setNavShown] = useState(false);
 
@@ -40,11 +43,41 @@ export default function Navbar(props: Props) {
                     />
                 </div>
                 <div className={_cs(isNavShown && styles.navShown, styles.links)}>
-                    <p>About</p>
-                    <p>Work</p>
-                    <p>Resources</p>
-                    <p>Updates</p>
-                    <p>Contact</p>
+                    <Link
+                        href="/about"
+                        variant="navigation"
+                        active={pathname === '/about/'}
+                    >
+                        About
+                    </Link>
+                    <Link
+                        href="/"
+                        variant="navigation"
+                        active={pathname === '/work/'}
+                    >
+                        Work
+                    </Link>
+                    <Link
+                        href="/"
+                        variant="navigation"
+                        active={pathname === '/resources/'}
+                    >
+                        Resources
+                    </Link>
+                    <Link
+                        href="/"
+                        variant="navigation"
+                        active={pathname === '/updates/'}
+                    >
+                        Updates
+                    </Link>
+                    <Link
+                        href="/"
+                        variant="navigation"
+                        active={pathname === '/contact/'}
+                    >
+                        Contact
+                    </Link>
                 </div>
                 <Link
                     className={styles.supportLink}

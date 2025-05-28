@@ -1,0 +1,66 @@
+.goals {
+    display: flex;
+    padding: var(--spacing-super-large);
+
+    .goalsContent {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-large);
+        margin: 0 auto;
+        max-width: var(--width-page-max);
+    }
+
+    .goalLists {
+        display: grid;
+        grid-gap: var(--spacing-large);
+        grid-template-columns: 1.5fr 1fr;
+
+        .goalImage {
+            width: 100%;
+            height: 24rem;
+            object-fit: cover;
+        }
+
+        .listCard {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-extra-large);
+
+            .card {
+                padding: var(--spacing-large);
+                background-color: var(--color-card);
+                height: 17rem;
+                border-radius: var(--border-radius-large);
+
+                .cardTitle {
+                    position: relative;
+
+                    .number {
+                        position: relative;
+                        color: var(--color-primary);
+                        opacity: 50%;
+                        font-size: var(--font-size-galactic);
+                        font-weight: var(--font-weight-boldest);
+                        font-family: var(--font-heading);
+                        z-index: 1;
+                    }
+
+                    .title {
+                        position: absolute;
+                        left: 1.3rem;
+                        top: 1.7rem;
+                        padding-top: var(--spacing-large);
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .goalLists {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

@@ -7,7 +7,7 @@ import banner from '#public/banner.svg';
 
 import styles from './styles.module.css';
 
-export default function Banner() {
+export default function HomeBanner() {
     return (
         <div className={styles.banner}>
             <div className={styles.content}>
