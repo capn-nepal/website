@@ -41,6 +41,10 @@
     --border-radius-small: 12px;
     --border-radius-extra-small: 8px;
 
+    --border-radius-popup: 3px;
+    --blur-radius-popup: 1px;
+    --color-shadow: rgba(0,0,0,.5);
+
         /* Font size */
     --font-size-super-small: calc(var(--font-size-base) / (var(--multiplier) * var(--multiplier) * var(--multiplier)));
     --font-size-extra-small: calc(var(--font-size-base) / (var(--multiplier) * var(--multiplier)));

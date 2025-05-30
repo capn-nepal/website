@@ -13,6 +13,8 @@ import Button from '#components/Button';
 import Link from '#components/Link';
 import logo from '#public/logo.png';
 
+import PopupButton from '../PopupButton';
+
 import styles from './styles.module.css';
 
 interface Props {
@@ -43,13 +45,32 @@ export default function Navbar(props: Props) {
                     />
                 </div>
                 <div className={_cs(isNavShown && styles.navShown, styles.links)}>
-                    <Link
-                        href="/about"
-                        variant="navigation"
-                        active={pathname === '/about/'}
+                    <PopupButton
+                        persistent={false}
+                        label="About"
                     >
-                        About
-                    </Link>
+                        <Link
+                            href="/about/approach"
+                            variant="navigation"
+                            active={pathname === '/about/approach/'}
+                        >
+                            Our Approach
+                        </Link>
+                        <Link
+                            href="/about"
+                            variant="navigation"
+                            active={pathname === '/about/'}
+                        >
+                            Our Journey
+                        </Link>
+                        <Link
+                            href="/about"
+                            variant="navigation"
+                            active={pathname === '/about/'}
+                        >
+                            Our Members
+                        </Link>
+                    </PopupButton>
                     <Link
                         href="/"
                         variant="navigation"
