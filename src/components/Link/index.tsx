@@ -5,10 +5,11 @@ import NextLink, { type LinkProps as NextLinkProps } from 'next/link';
 
 import styles from './styles.module.css';
 
-type Variant = 'transparent' | 'button' | 'buttonTransparent' | 'icon' | 'underline' | 'reverse';
+type Variant = 'navigation' | 'transparent' | 'button' | 'buttonTransparent' | 'icon' | 'underline' | 'reverse';
 const variantToStyleMap: {
     [key in Variant]: string | undefined;
 } = {
+    navigation: styles.navigation,
     transparent: undefined,
     button: styles.button,
     underline: styles.underline,
@@ -26,6 +27,7 @@ interface Props extends Omit<NextLinkProps, 'locale'> {
     variant?: Variant;
     title?: React.ReactNode;
     showIcon?: boolean;
+    active?: boolean;
 }
 
 // NOTE: this does not support relative links
@@ -38,6 +40,7 @@ function Link(props: Props) {
         title,
         href,
         showIcon,
+        active,
         ...rest
     } = props;
 
@@ -47,6 +50,7 @@ function Link(props: Props) {
                 className,
                 styles.link,
                 variantToStyleMap[variant],
+                active && styles.active,
             )}
             // eslint-disable-next-line
             {...rest}

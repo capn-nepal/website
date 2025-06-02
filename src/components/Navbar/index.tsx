@@ -7,10 +7,13 @@ import React, {
 import { MdMenu } from 'react-icons/md';
 import { _cs } from '@togglecorp/fujs';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 import Button from '#components/Button';
 import Link from '#components/Link';
 import logo from '#public/logo.png';
+
+import PopupButton from '../PopupButton';
 
 import styles from './styles.module.css';
 
@@ -22,6 +25,8 @@ export default function Navbar(props: Props) {
     const {
         className,
     } = props;
+
+    const pathname = usePathname();
 
     const [isNavShown, setNavShown] = useState(false);
 
@@ -40,11 +45,60 @@ export default function Navbar(props: Props) {
                     />
                 </div>
                 <div className={_cs(isNavShown && styles.navShown, styles.links)}>
-                    <p>About</p>
-                    <p>Work</p>
-                    <p>Resources</p>
-                    <p>Updates</p>
-                    <p>Contact</p>
+                    <PopupButton
+                        persistent={false}
+                        label="About"
+                    >
+                        <Link
+                            href="/about/approach"
+                            variant="navigation"
+                            active={pathname === '/about/approach/'}
+                        >
+                            Our Approach
+                        </Link>
+                        <Link
+                            href="/about"
+                            variant="navigation"
+                            active={pathname === '/about/'}
+                        >
+                            Our Journey
+                        </Link>
+                        <Link
+                            href="/about"
+                            variant="navigation"
+                            active={pathname === '/about/'}
+                        >
+                            Our Members
+                        </Link>
+                    </PopupButton>
+                    <Link
+                        href="/"
+                        variant="navigation"
+                        active={pathname === '/work/'}
+                    >
+                        Work
+                    </Link>
+                    <Link
+                        href="/"
+                        variant="navigation"
+                        active={pathname === '/resources/'}
+                    >
+                        Resources
+                    </Link>
+                    <Link
+                        href="/"
+                        variant="navigation"
+                        active={pathname === '/updates/'}
+                    >
+                        Updates
+                    </Link>
+                    <Link
+                        href="/"
+                        variant="navigation"
+                        active={pathname === '/contact/'}
+                    >
+                        Contact
+                    </Link>
                 </div>
                 <Link
                     className={styles.supportLink}

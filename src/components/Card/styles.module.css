@@ -5,7 +5,7 @@
     box-sizing: border-box;
     gap: var(--spacing-medium);
     padding: var(--spacing-large);
-    background-color: #ecf7f8;
+    background-color: var(--color-card);
     color: var(--color-text-on-dark);
     border-radius: var(--border-radius-large);
 

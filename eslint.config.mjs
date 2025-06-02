@@ -35,7 +35,8 @@ const appConfigs = compat.config({
         '@typescript-eslint',
         'react-refresh',
         'simple-import-sort',
-        'import-newlines'
+        'import-newlines',
+        'postcss-modules',
     ],
     settings: {
         'import/parsers': {
