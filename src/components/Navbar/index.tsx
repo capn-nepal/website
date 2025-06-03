@@ -57,9 +57,9 @@ export default function Navbar(props: Props) {
                             Our Approach
                         </Link>
                         <Link
-                            href="/about"
+                            href="/about/journey"
                             variant="navigation"
-                            active={pathname === '/about/'}
+                            active={pathname === '/about/journey/'}
                         >
                             Our Journey
                         </Link>
