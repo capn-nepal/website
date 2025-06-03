@@ -1,0 +1,71 @@
+.banner {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: var(--width-page-max);
+
+    .heading {
+        min-height: 50vh;
+        padding: calc(2 * var(--spacing-large) + 2.2rem + 2 * var(--spacing-super-small) + var(--spacing-mega-large)) var(--spacing-super-large) 0 var(--spacing-super-large);
+        width: 100%;
+
+        .yellow {
+            color: var(--color-primary);
+        }
+    }
+}
+
+.content {
+    display: flex;
+    padding: var(--spacing-super-large);
+    max-width: var(--width-page-max);
+    margin: 0 auto;
+
+    .timelineEventCard {
+        display: grid;
+        padding: var(--spacing-large) 0;
+        grid-gap: var(--spacing-extra-large);
+        grid-template-columns: 1.5fr 1fr;
+
+        .timelineCardList {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-large);
+
+            .card {
+                height: 20rem;
+                position: relative;
+
+                .year {
+                    position: relative;
+                    color: var(--color-primary);
+                    opacity: 50%;
+                    font-size: var(--font-size-galactic);
+                    font-weight: var(--font-weight-boldest);
+                    font-family: var(--font-heading);
+                    z-index: 1;
+                }
+
+                .description {
+                    position: absolute;
+                    left: 1.3rem;
+                    top: 2rem;
+                    padding-top: var(--spacing-large);
+                    z-index: 2;
+                }
+            }
+        }
+
+        .imageList {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-extra-large);
+
+            .timelineImage {
+                width: 100%;
+                height: 20rem;
+                object-fit: cover;
+            }
+        }
+    }
+}
