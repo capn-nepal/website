@@ -1,0 +1,125 @@
+.pillar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-super-large);
+    max-width: var(--width-page-max);
+    margin: 0 auto;
+
+    .pillarSection {
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+        grid-gap: var(--spacing-gigantic);
+
+        &.imageLeft {
+            grid-template-columns: 1fr 4fr;
+        }
+
+        .pillarContent {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-large);
+            margin: 0 auto;
+            max-width: var(--width-page-max);
+
+            .pillarDescription {
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-universal);
+
+                @media (max-width: 768px) {
+                    gap: var(--spacing-large);
+                }
+
+                .quote {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--spacing-small);
+                    font-style: italic;
+                }
+            }
+        }
+
+        .pillarImage {
+            width: 15rem;
+            height: 15rem;
+            object-fit: cover;
+            border-radius: var(--border-radius-small);
+
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+
+            &.imageLeft {
+                flex-direction: column;
+            }
+
+            .pillarImage {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    .keyAreas {
+        font-weight: var(--font-weight-extra-bold);
+    }
+
+    .card {
+        display: flex;
+        background-color: var(--color-secondary);
+        border-radius: var(--border-radius-extra-small);
+        padding: var(--spacing-medium);
+
+        @media (max-width: 768px) {
+            flex-wrap: wrap;
+        }
+
+        .links {
+            display: flex;
+
+            .linkDescription {
+                color: var(--color-text-on-dark);
+            }
+        }
+
+        .separator {
+            margin: 0 var(--spacing-mega-large);
+            width: 2px;
+            background-color: var(--color-secondary-light);
+            height: 8rem;
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+    .cardImageLeft {
+        background-color: var(--color-secondary-light);
+
+        .links {
+            display: flex;
+
+            .title {
+                color: var(--color-secondary);
+            }
+
+            .linkDescription {
+                color: var(--color-text);
+            }
+        }
+
+        .separator {
+            background-color: var(--color-primary)
+        }
+    }
+
+    @media (max-width: 768px) {
+        padding: var(--spacing-medium);
+    }
+}
