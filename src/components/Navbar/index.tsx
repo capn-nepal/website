@@ -71,13 +71,18 @@ export default function Navbar(props: Props) {
                             Our Members
                         </Link>
                     </PopupButton>
-                    <Link
-                        href="/"
-                        variant="navigation"
-                        active={pathname === '/work/'}
+                    <PopupButton
+                        persistent={false}
+                        label="Work"
                     >
-                        Work
-                    </Link>
+                        <Link
+                            href="/work/pillar"
+                            variant="navigation"
+                            active={pathname === '/work/pillar/'}
+                        >
+                            Pillar
+                        </Link>
+                    </PopupButton>
                     <Link
                         href="/"
                         variant="navigation"
