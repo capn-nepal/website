@@ -24,7 +24,6 @@
     }
 
     .bannerImage {
-        padding: 0 var(--spacing-super-large);
         margin: 0 auto;
         max-width: var(--width-page-max);
         width: 100%;
