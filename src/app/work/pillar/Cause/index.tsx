@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import { MdArrowOutward } from 'react-icons/md';
-import Button from '@/components/Button';
+import Image from 'next/image';
 
+import Button from '#components/Button';
 import Advocacy from '#public/advocacy.jpg';
 
 import styles from './styles.module.css';
@@ -23,8 +23,11 @@ export default function Cause() {
     return (
         <div className={styles.cause}>
             <div className={styles.imageGrid}>
-                {images.map((img, index) => (
-                    <div key={index} className={styles.imageWrapper}>
+                {images?.map((img) => (
+                    <div
+                        key={img.alt}
+                        className={styles.imageWrapper}
+                    >
                         <Image
                             className={styles.causeImage}
                             src={img.src}

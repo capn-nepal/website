@@ -3,7 +3,6 @@ import Advocacy from '#public/advocacy.jpg';
 import PillarSection from '../PillarSection';
 
 export default function SafeHaven() {
-
     return (
         <PillarSection
             heading="Safe Haven"

@@ -10,8 +10,8 @@ export default function LegalAdvocacy() {
             imageAlt="Legal Advocacy image"
             quote="CAPN engages with government and key stakeholders to advocate for gender-equal citizenship laws in Nepal. It supports both policy-level reform and individuals affected by discriminatory laws through legal aid and casework."
             attribution="DEEPTI GURUNG"
-            headingDescription='CAPN engages with government and key stakeholders to advocate for gender-equal citizenship laws in Nepal. It supports both policy-level reform and individuals affected by discriminatory laws through legal aid and casework.'
-            imagePosition='right'
+            headingDescription="CAPN engages with government and key stakeholders to advocate for gender-equal citizenship laws in Nepal. It supports both policy-level reform and individuals affected by discriminatory laws through legal aid and casework."
+            imagePosition="right"
             links={[
                 {
                     title: 'Policy & Legislative Advocacy',

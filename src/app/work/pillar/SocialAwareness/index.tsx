@@ -11,7 +11,7 @@ export default function SocialAwareness() {
             imageAlt="Social Awareness image"
             quote="CAPN’s awareness campaigns don’t just educate—they build solidarity. They remind us that behind every policy, there are real lives and stories."
             attribution="Gender Rights Advocate"
-            imagePosition='right'
+            imagePosition="right"
             headingDescription="CAPN drives public awareness to challenge misconceptions, inform communities, and amplify voices of those impacted by Nepal’s gender-unequal citizenship laws. Through creative media, research, and education, we spark national conversations and empower people with the truth."
             links={[
                 {
@@ -32,7 +32,7 @@ export default function SocialAwareness() {
                     href: '',
                     description:
                         'Evidence-based insights that inform the public and shape advocacy efforts.',
-                }, 
+                },
             ]}
         />
     );

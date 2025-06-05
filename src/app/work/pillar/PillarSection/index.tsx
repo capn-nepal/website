@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from 'next/image';
-import Link from '@/components/Link';
+
 import Heading from '#components/Heading';
+import Link from '#components/Link';
 
 import styles from './styles.module.css';
 
@@ -12,7 +13,7 @@ type LinkItem = {
 
 type Props = {
     heading: string;
-    imageSrc: StaticImageData;
+    imageSrc: string | StaticImageData;
     headingDescription: string;
     imageAlt: string;
     quote: string;
@@ -37,10 +38,9 @@ export default function PillarSection(props: Props) {
 
     return (
         <div className={styles.pillar}>
-            <div
-                className={`${styles.pillarSection}
-                    ${imagePosition === 'left' ? styles.imageLeft : ''
-                }`}
+            <div className={`${styles.pillarSection}
+                ${imagePosition === 'left' ? styles.imageLeft : ''
+        }`}
             >
                 {imagePosition === 'left' && (
                     <Image
@@ -56,7 +56,9 @@ export default function PillarSection(props: Props) {
                     <div className={styles.pillarDescription}>
                         {headingDescription}
                         <div className={styles.quote}>
-                            "{quote}"
+                            &quot;
+                            {quote}
+                            &quot;
                             <Heading size="extraSmall">
                                 {attribution}
                             </Heading>
@@ -77,12 +79,12 @@ export default function PillarSection(props: Props) {
             <div
                 className={`${styles.card}
                     ${imagePosition === 'left' ? styles.cardImageLeft : ''
-                }`}
+        }`}
             >
-                {links.map((link, index) => (
+                {links?.map((link, index) => (
                     <div
                         className={styles.links}
-                        key={index}
+                        key={link.title}
                     >
                         <div>
                             <Link

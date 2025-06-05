@@ -54,12 +54,6 @@
             flex-wrap: wrap;
         }
 
-        .notes {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-extra-small);
-        }
-
         .button {
             display: flex;
             align-items: center;
