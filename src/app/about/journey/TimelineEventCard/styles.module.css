@@ -1,0 +1,37 @@
+.timelineCard {
+    display: grid;
+    width: 100%;
+    height: 20rem;
+    grid-gap: var(--spacing-extra-large);
+    grid-template-columns: 1.5fr 1fr;
+
+    .timelineImage {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: var(--border-radius-small);
+    }
+
+    .card {
+        position: relative;
+
+        .year {
+            position: relative;
+            color: var(--color-primary);
+            opacity: 50%;
+            font-size: var(--font-size-galactic);
+            font-weight: var(--font-weight-boldest);
+            font-family: var(--font-heading);
+            z-index: 1;
+        }
+
+        .description {
+            position: absolute;
+            left: 1.3rem;
+            top: 2rem;
+            padding-top: var(--spacing-large);
+            z-index: 2;
+        }
+    }
+}
+
