@@ -18,6 +18,7 @@ interface Props {
     date?: string;
     description?: string;
     link?: string;
+    isExternalLink?: boolean;
 }
 
 export default function Card(props: Props) {
@@ -28,6 +29,7 @@ export default function Card(props: Props) {
         date: fullDate,
         description,
         link,
+        isExternalLink = false,
     } = props;
 
     const dateStrings = useMemo((): { date: string, month: string } | undefined => {
@@ -82,6 +84,7 @@ export default function Card(props: Props) {
                 )}
                 variant="div"
                 href={link}
+                target={isExternalLink ? '_blank' : ''}
             >
                 {children}
             </Link>

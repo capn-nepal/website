@@ -99,13 +99,32 @@ export default function Navbar(props: Props) {
                             Events
                         </Link>
                     </PopupButton>
-                    <Link
-                        href="/"
-                        variant="navigation"
-                        active={pathname === '/resources/'}
+                    <PopupButton
+                        label="Resources"
+                        persistent={false}
                     >
-                        Resources
-                    </Link>
+                        <Link
+                            href="/resources/reports"
+                            variant="navigation"
+                            active={pathname === '/resources/reports/'}
+                        >
+                            Reports
+                        </Link>
+                        <Link
+                            href="/resources/videos"
+                            variant="navigation"
+                            active={pathname === '/resources/videos'}
+                        >
+                            Videos
+                        </Link>
+                        <Link
+                            href="/resources/gallery"
+                            variant="navigation"
+                            active={pathname === '/resources/gallery'}
+                        >
+                            Gallery
+                        </Link>
+                    </PopupButton>
                     <Link
                         href="/updates/"
                         variant="navigation"
