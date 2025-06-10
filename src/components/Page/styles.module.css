@@ -1,6 +1,7 @@
 .page {
     display: flex;
     flex-direction: column;
+    gap: var(--spacing-universal);
     min-height: 100vh;
 
     .navbar {
@@ -11,7 +12,10 @@
     }
 
     .mainContent {
+        display: flex;
+        flex-direction: column;
         flex-grow: 1;
+        gap: var(--spacing-universal);
     }
 
     .footer {

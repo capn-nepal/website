@@ -5,7 +5,7 @@ import NextLink, { type LinkProps as NextLinkProps } from 'next/link';
 
 import styles from './styles.module.css';
 
-type Variant = 'navigation' | 'transparent' | 'button' | 'buttonTransparent' | 'icon' | 'underline' | 'reverse';
+type Variant = 'navigation' | 'transparent' | 'button' | 'buttonTransparent' | 'icon' | 'underline' | 'reverse' | 'div';
 const variantToStyleMap: {
     [key in Variant]: string | undefined;
 } = {
@@ -16,6 +16,7 @@ const variantToStyleMap: {
     buttonTransparent: styles.buttonTransparent,
     reverse: styles.reverse,
     icon: styles.icon,
+    div: styles.div,
 };
 
 interface Props extends Omit<NextLinkProps, 'locale'> {
@@ -48,7 +49,7 @@ function Link(props: Props) {
         <NextLink
             className={_cs(
                 className,
-                styles.link,
+                variant === 'div' ? undefined : styles.link,
                 variantToStyleMap[variant],
                 active && styles.active,
             )}

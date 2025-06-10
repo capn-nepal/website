@@ -5,6 +5,7 @@ import Heading from '#components/Heading';
 import Link from '#components/Link';
 import Page from '#components/Page';
 
+import { events } from './events/page';
 import Community from './home/Community';
 import EventsSection from './home/EventsSection';
 import HomeBanner from './home/HomeBanner';
@@ -38,7 +39,10 @@ export default function Home() {
                     Get to know us better
                 </Link>
             </section>
-            <EventsSection />
+            <EventsSection
+                events={events}
+                max={3}
+            />
             <Divider />
             <RecentWorksSection />
             <Divider />
