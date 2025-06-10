@@ -5,7 +5,6 @@ import Heading from '#components/Heading';
 import Link from '#components/Link';
 import Page from '#components/Page';
 
-import { events } from './events/page';
 import Community from './home/Community';
 import EventsSection from './home/EventsSection';
 import HomeBanner from './home/HomeBanner';
@@ -15,6 +14,7 @@ import Reports from './home/Reports';
 import SmallJourney from './home/SmallJourney';
 import Studio from './home/Studio';
 import Voices from './home/Voices';
+import { events } from './dummyData';
 
 import styles from './page.module.css';
 

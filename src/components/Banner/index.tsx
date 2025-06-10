@@ -1,5 +1,7 @@
 import { isDefined } from '@togglecorp/fujs';
-import Image, { type StaticImageData } from 'next/image';
+import { type StaticImageData } from 'next/image';
+
+import ImageWrapper from '#components/ImageWrapper';
 
 import Heading from '../Heading';
 
@@ -8,7 +10,7 @@ import styles from './styles.module.css';
 interface Props {
     eyebrowHeading?: string;
     heading?: React.ReactNode;
-    bannerImageSrc?: StaticImageData;
+    bannerImageSrc?: StaticImageData | string;
 }
 
 export default function Banner(props: Props) {
@@ -17,6 +19,7 @@ export default function Banner(props: Props) {
         heading,
         bannerImageSrc,
     } = props;
+
     return (
         <div className={styles.banner}>
             <div className={styles.contentSection}>
@@ -33,8 +36,8 @@ export default function Banner(props: Props) {
             </div>
             {isDefined(bannerImageSrc) && (
                 <div className={styles.bannerImage}>
-                    <Image
-                        className={styles.aboutUsImage}
+                    <ImageWrapper
+                        className={styles.image}
                         src={bannerImageSrc}
                         alt="Banner Image"
                     />

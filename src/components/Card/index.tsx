@@ -59,7 +59,7 @@ export default function Card(props: Props) {
             <div className={styles.emptyDiv} />
             <Heading
                 className={styles.title}
-                size="large"
+                size="medium"
             >
                 {title}
             </Heading>

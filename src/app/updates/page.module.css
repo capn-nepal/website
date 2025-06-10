@@ -1,5 +1,5 @@
-.eventPage {
-    .otherEvents {
+.updates {
+    .otherUpdates {
         display: grid;
         grid-gap: var(--spacing-medium);
         grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
