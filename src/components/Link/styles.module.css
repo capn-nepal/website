@@ -12,7 +12,6 @@
         text-decoration: underline;
     }
 
-
     &.navigation {
         color: var(--color-text);
 
@@ -89,6 +88,16 @@
         &:hover {
             background-color: var(--color-accent);
             text-decoration: unset;
+        }
+    }
+
+    &.div {
+        display: unset;
+        color: unset;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: none;
         }
     }
 }

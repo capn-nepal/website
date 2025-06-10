@@ -7,6 +7,7 @@ import {
 import Image, { type StaticImageData } from 'next/image';
 
 import Heading from '#components/Heading';
+import Link from '#components/Link';
 
 import styles from './styles.module.css';
 
@@ -16,6 +17,7 @@ interface Props {
     title: string;
     date?: string;
     description?: string;
+    link?: string;
 }
 
 export default function Card(props: Props) {
@@ -25,6 +27,7 @@ export default function Card(props: Props) {
         image,
         date: fullDate,
         description,
+        link,
     } = props;
 
     const dateStrings = useMemo((): { date: string, month: string } | undefined => {
@@ -38,14 +41,8 @@ export default function Card(props: Props) {
         };
     }, [fullDate]);
 
-    return (
-        <div
-            className={_cs(
-                styles.card,
-                className,
-                isNotDefined(image) && styles.noImage,
-            )}
-        >
+    const children = (
+        <>
             {image && (
                 <Image
                     className={styles.image}
@@ -71,6 +68,35 @@ export default function Card(props: Props) {
                     {description}
                 </div>
             )}
+        </>
+    );
+
+    if (link) {
+        return (
+            <Link
+                className={_cs(
+                    styles.card,
+                    className,
+                    isNotDefined(image) && styles.noImage,
+                    styles.link,
+                )}
+                variant="div"
+                href={link}
+            >
+                {children}
+            </Link>
+        );
+    }
+
+    return (
+        <div
+            className={_cs(
+                styles.card,
+                className,
+                isNotDefined(image) && styles.noImage,
+            )}
+        >
+            {children}
         </div>
     );
 }

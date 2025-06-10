@@ -1,0 +1,22 @@
+.events {
+    display: flex;
+    flex-direction: column;
+
+    .pastEvents {
+        display: grid;
+        grid-gap: var(--spacing-medium);
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        flex-grow: 1;
+        margin: 0 auto;
+        max-width: var(--width-page-max);
+        width: 100%;
+
+        .card {
+            min-height: 19vh;
+        }
+    }
+
+    @media (max-width: 768px) {
+        gap: var(--spacing-enormous);
+    }
+}

@@ -6,7 +6,7 @@ import {
 
 import styles from './styles.module.css';
 
-type SizeTypes = 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge' | 'superLarge';
+export type SizeTypes = 'extraSmall' | 'small' | 'medium' | 'large' | 'extraLarge' | 'superLarge';
 type FontTypes = 'heading' | 'normal';
 
 const sizeToStyleMap: {

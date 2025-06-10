@@ -1,0 +1,20 @@
+.section {
+    display: flex;
+    flex-direction: column;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: var(--spacing-large) 0;
+        gap: var(--spacing-galactic);
+        flex-grow: 1;
+        margin: 0 auto;
+        max-width: var(--width-page-max);
+        width: 100%;
+
+        .heading {
+            text-align: center;
+        }
+    }
+}
