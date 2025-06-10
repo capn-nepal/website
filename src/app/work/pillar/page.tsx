@@ -8,9 +8,11 @@ import LegalAdvocacy from './LegalAdvocacy';
 import SafeHaven from './SafeHaven';
 import SocialAwareness from './SocialAwareness';
 
+import styles from './page.module.css';
+
 export default function Work() {
     return (
-        <Page>
+        <Page className={styles.work}>
             <Banner
                 bannerImageSrc={PillarImage}
                 eyebrowHeading="Our Approach"
