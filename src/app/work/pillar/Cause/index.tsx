@@ -2,6 +2,7 @@ import { MdArrowOutward } from 'react-icons/md';
 import Image from 'next/image';
 
 import Button from '#components/Button';
+import Heading from '#components/Heading';
 import Advocacy from '#public/advocacy.jpg';
 
 import styles from './styles.module.css';
@@ -38,10 +39,14 @@ export default function Cause() {
             </div>
             <div className={styles.overlay}>
                 <div className={styles.supportCause}>
-                    <div>
+                    <Heading
+                        size="medium"
+                        className={styles.heading}
+                    >
                         Support our fight for equal citizenship -
-                        <div> everyone deserves to belong.</div>
-                    </div>
+                        <br />
+                        everyone deserves to belong.
+                    </Heading>
                     <Button className={styles.button}>
                         SUPPORT OUR CAUSE
                         <MdArrowOutward />

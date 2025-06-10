@@ -1,4 +1,5 @@
 import Advocacy from '#public/advocacy.jpg';
+import Pillar3 from '#public/pillar3.png';
 
 import AdvocacySection from '../PillarSection';
 
@@ -8,6 +9,7 @@ export default function SocialAwareness() {
             heading="Social Awareness"
             // TODO: Add real image form the figma
             imageSrc={Advocacy}
+            pillarSrc={Pillar3}
             imageAlt="Social Awareness image"
             quote="CAPN’s awareness campaigns don’t just educate—they build solidarity. They remind us that behind every policy, there are real lives and stories."
             attribution="Gender Rights Advocate"

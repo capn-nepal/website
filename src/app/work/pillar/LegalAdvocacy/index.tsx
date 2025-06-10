@@ -1,4 +1,5 @@
 import Advocacy from '#public/advocacy.jpg';
+import Pillar1 from '#public/pillar1.png';
 
 import PillarSection from '../PillarSection';
 
@@ -8,6 +9,7 @@ export default function LegalAdvocacy() {
             heading="Legal Advocacy"
             imageSrc={Advocacy}
             imageAlt="Legal Advocacy image"
+            pillarSrc={Pillar1}
             quote="CAPN engages with government and key stakeholders to advocate for gender-equal citizenship laws in Nepal. It supports both policy-level reform and individuals affected by discriminatory laws through legal aid and casework."
             attribution="DEEPTI GURUNG"
             headingDescription="CAPN engages with government and key stakeholders to advocate for gender-equal citizenship laws in Nepal. It supports both policy-level reform and individuals affected by discriminatory laws through legal aid and casework."

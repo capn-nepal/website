@@ -1,4 +1,5 @@
 import Advocacy from '#public/advocacy.jpg';
+import Pillar2 from '#public/pillar2.png';
 
 import PillarSection from '../PillarSection';
 
@@ -8,6 +9,7 @@ export default function SafeHaven() {
             heading="Safe Haven"
             // TODO: Add the real image from figma
             imageSrc={Advocacy}
+            pillarSrc={Pillar2}
             imageAlt="Safe Haven image"
             quote="Without citizenship, access to education, work, and healthcare becomes a distant dream. Safe Haven gives us tools to survive—and thrive."
             attribution="Participant, Kuala Lumpur Showcase"
