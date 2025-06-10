@@ -7,7 +7,7 @@ import Page from '#components/Page';
 import Section from '#components/Section';
 import AboutUsImage from '#public/aboutUsImage.jpg';
 
-import { events as staticEvents } from '../page';
+import { events as staticEvents } from '../../dummyData';
 
 import styles from './page.module.css';
 
@@ -20,11 +20,17 @@ export async function generateStaticParams() {
     return events.map((item) => ({ id: item.id }));
 }
 
-export default async function EventDetailPage({ params }: { params: { id: string } }) {
+type PageProps = {
+    params: Promise<{
+        id: string;
+    }>;
+};
+
+export default async function EventDetailPage({ params }: PageProps) {
     const events = await getEvents();
     const {
         id,
-    } = params;
+    } = await params;
 
     const eventDetails = events?.find((item) => item.id === id);
     const lessEvents = events?.filter((item) => item.id !== id).slice(0, 4);
