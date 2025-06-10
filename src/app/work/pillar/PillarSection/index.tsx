@@ -1,7 +1,9 @@
-import Image, { StaticImageData } from 'next/image';
+import { _cs } from '@togglecorp/fujs';
+import Image, { type StaticImageData } from 'next/image';
 
 import Heading from '#components/Heading';
 import Link from '#components/Link';
+import Quote from '#public/quote.png';
 
 import styles from './styles.module.css';
 
@@ -14,6 +16,7 @@ type LinkItem = {
 type Props = {
     heading: string;
     imageSrc: string | StaticImageData;
+    pillarSrc: string | StaticImageData;
     headingDescription: string;
     imageAlt: string;
     quote: string;
@@ -27,6 +30,7 @@ export default function PillarSection(props: Props) {
     const {
         heading,
         imageSrc,
+        pillarSrc,
         imageAlt,
         quote,
         attribution,
@@ -38,9 +42,8 @@ export default function PillarSection(props: Props) {
 
     return (
         <div className={styles.pillar}>
-            <div className={`${styles.pillarSection}
-                ${imagePosition === 'left' ? styles.imageLeft : ''
-        }`}
+            <div
+                className={_cs(styles.pillarSection, imagePosition === 'left' && styles.imageLeft)}
             >
                 {imagePosition === 'left' && (
                     <Image
@@ -50,18 +53,38 @@ export default function PillarSection(props: Props) {
                     />
                 )}
                 <div className={styles.pillarContent}>
-                    <Heading size={headingSize}>
-                        {heading}
-                    </Heading>
+                    <div className={styles.pillarHeading}>
+                        <Image
+                            className={styles.pillarIcon}
+                            src={pillarSrc}
+                            alt={imageAlt}
+                        />
+                        <Heading
+                            size={headingSize}
+                            className={styles.pillarHeading}
+                        >
+                            {heading}
+                        </Heading>
+                    </div>
                     <div className={styles.pillarDescription}>
                         {headingDescription}
+                        <Image
+                            className={styles.middleImage}
+                            alt={imageAlt}
+                            src={imageSrc}
+                        />
+                        <Image
+                            className={styles.quoteIcon}
+                            alt="quote icon"
+                            src={Quote}
+                        />
                         <div className={styles.quote}>
                             &quot;
                             {quote}
                             &quot;
-                            <Heading size="extraSmall">
+                            <div className={styles.attribution}>
                                 {attribution}
-                            </Heading>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -73,20 +96,18 @@ export default function PillarSection(props: Props) {
                     />
                 )}
             </div>
-            <div className={styles.keyAreas}>
+            <Heading size="small" className={styles.keyAreas}>
                 Key Areas of Work
-            </div>
+            </Heading>
             <div
-                className={`${styles.card}
-                    ${imagePosition === 'left' ? styles.cardImageLeft : ''
-        }`}
+                className={_cs(styles.card, imagePosition === 'left' && styles.cardImageLeft)}
             >
                 {links?.map((link, index) => (
                     <div
                         className={styles.links}
                         key={link.title}
                     >
-                        <div>
+                        <div className={styles.linksContent}>
                             <Link
                                 className={styles.title}
                                 href={link.href}
