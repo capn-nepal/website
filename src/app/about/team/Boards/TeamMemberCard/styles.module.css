@@ -1,0 +1,22 @@
+.cardWrapper {
+    position: relative;
+    height: 30rem;
+    width: 100%;
+
+    .memberDetails {
+        position: absolute;
+        padding: var(--spacing-small);
+        color: var(--color-text-on-dark);
+        z-index: 1;
+        top: 1rem;
+        left: 1rem;
+
+        .memberHeading {
+            color: var(--color-text-on-dark);
+        }
+    }
+
+    .cardImage {
+        border-radius: var(--border-radius-small);
+    }
+}

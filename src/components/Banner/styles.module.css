@@ -23,6 +23,18 @@
         }
     }
 
+    &.withoutBackground {
+        .contentSection {
+            background-color: transparent;
+
+            .content {
+                .heading {
+                    color: var(--color-heading);
+                }
+            }
+        }
+    }
+
     .bannerImage {
         margin: 0 auto;
         max-width: var(--width-page-max);

@@ -6,8 +6,8 @@ import Page from '#components/Page';
 import Section from '#components/Section';
 import AboutUsImage from '#public/aboutUsImage.jpg';
 
-import { events } from '../dummyData';
-import EventsSection from '../home/EventsSection';
+import { events } from '../../dummyData';
+import EventsSection from '../../home/EventsSection';
 
 import styles from './page.module.css';
 

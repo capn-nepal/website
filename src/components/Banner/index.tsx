@@ -1,4 +1,7 @@
-import { isDefined } from '@togglecorp/fujs';
+import {
+    _cs,
+    isDefined,
+} from '@togglecorp/fujs';
 import { type StaticImageData } from 'next/image';
 
 import ImageWrapper from '#components/ImageWrapper';
@@ -10,6 +13,7 @@ import styles from './styles.module.css';
 interface Props {
     eyebrowHeading?: string;
     heading?: React.ReactNode;
+    withoutBackground?: boolean;
     bannerImageSrc?: StaticImageData | string;
 }
 
@@ -18,10 +22,15 @@ export default function Banner(props: Props) {
         eyebrowHeading,
         heading,
         bannerImageSrc,
+        withoutBackground,
     } = props;
 
     return (
-        <div className={styles.banner}>
+        <div className={_cs(
+            styles.banner,
+            withoutBackground && styles.withoutBackground,
+        )}
+        >
             <div className={styles.contentSection}>
                 <div className={styles.content}>
                     {isDefined(eyebrowHeading) && (

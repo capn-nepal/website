@@ -1,4 +1,17 @@
+import { type StaticImageData } from 'next/image';
+
+import AboutUsImage from '#public/aboutUsImage.jpg';
+
 import { type EventType } from './home/EventsSection';
+
+export type Members = {
+    id: string;
+    name: string;
+    designation: string;
+    image: StaticImageData | string;
+    type: 'board' | 'team';
+    profileDescription: string;
+}
 
 interface UpdateType {
     title: string;
@@ -179,5 +192,72 @@ export const events: EventType[] = [
             Keynotes will cover AI ethics, LLM integration, and automation trends.
 
             With demos from leading AI startups and academic presentations, this is a must-attend for anyone curious about where tech is headed.`,
+    },
+];
+
+export const teamMembers: Members[] = [
+    {
+        id: '1',
+        name: 'Diwakar Chhetri',
+        type: 'board',
+        designation: 'Chairperson',
+        image: AboutUsImage,
+        profileDescription: 'Diwakar Chhetri is the current Chairperson of the Citizenship Affected People’s Network (CAPN). With a strong background in grassroots organizing and public policy, he has been a vocal advocate for gender-equal citizenship laws in Nepal. Under his leadership, CAPN has expanded its outreach, strengthened community support systems, and actively engaged with national and international stakeholders. His commitment to social justice, inclusivity, and meaningful change continues to guide CAPN’s vision and impact.',
+    },
+    {
+        id: '2',
+        name: 'Shashank Shrestha',
+        type: 'board',
+        designation: 'Vice Chairperson',
+        image: AboutUsImage,
+        profileDescription: 'Diwakar Chhetri is the current Chairperson of the Citizenship Affected People’s Network (CAPN). With a strong background in grassroots organizing and public policy, he has been a vocal advocate for gender-equal citizenship laws in Nepal. Under his leadership, CAPN has expanded its outreach, strengthened community support systems, and actively engaged with national and international stakeholders. His commitment to social justice, inclusivity, and meaningful change continues to guide CAPN’s vision and impact.',
+    },
+    {
+        id: '3',
+        name: 'Subin Mulmi',
+        type: 'board',
+        designation: 'Treasurer',
+        image: AboutUsImage,
+        profileDescription: 'Diwakar Chhetri is the current Chairperson of the Citizenship Affected People’s Network (CAPN). With a strong background in grassroots organizing and public policy, he has been a vocal advocate for gender-equal citizenship laws in Nepal. Under his leadership, CAPN has expanded its outreach, strengthened community support systems, and actively engaged with national and international stakeholders. His commitment to social justice, inclusivity, and meaningful change continues to guide CAPN’s vision and impact.',
+    },
+    {
+        id: '4',
+        name: 'Shweta Lama',
+        type: 'board',
+        designation: 'Secretary',
+        image: AboutUsImage,
+        profileDescription: 'Diwakar Chhetri is the current Chairperson of the Citizenship Affected People’s Network (CAPN). With a strong background in grassroots organizing and public policy, he has been a vocal advocate for gender-equal citizenship laws in Nepal. Under his leadership, CAPN has expanded its outreach, strengthened community support systems, and actively engaged with national and international stakeholders. His commitment to social justice, inclusivity, and meaningful change continues to guide CAPN’s vision and impact.',
+    },
+    {
+        id: '5',
+        name: 'Upashana Shakya',
+        type: 'board',
+        designation: 'Program & Advocacy Officer',
+        image: AboutUsImage,
+        profileDescription: 'Diwakar Chhetri is the current Chairperson of the Citizenship Affected People’s Network (CAPN). With a strong background in grassroots organizing and public policy, he has been a vocal advocate for gender-equal citizenship laws in Nepal. Under his leadership, CAPN has expanded its outreach, strengthened community support systems, and actively engaged with national and international stakeholders. His commitment to social justice, inclusivity, and meaningful change continues to guide CAPN’s vision and impact.',
+    },
+    {
+        id: '6',
+        name: 'Subin Mulmi',
+        type: 'team',
+        designation: 'Treasurer',
+        image: AboutUsImage,
+        profileDescription: 'Diwakar Chhetri is the current Chairperson of the Citizenship Affected People’s Network (CAPN). With a strong background in grassroots organizing and public policy, he has been a vocal advocate for gender-equal citizenship laws in Nepal. Under his leadership, CAPN has expanded its outreach, strengthened community support systems, and actively engaged with national and international stakeholders. His commitment to social justice, inclusivity, and meaningful change continues to guide CAPN’s vision and impact.',
+    },
+    {
+        id: '7',
+        name: 'Shweta Lama',
+        type: 'team',
+        designation: 'Secretary',
+        image: AboutUsImage,
+        profileDescription: 'Diwakar Chhetri is the current Chairperson of the Citizenship Affected People’s Network (CAPN). With a strong background in grassroots organizing and public policy, he has been a vocal advocate for gender-equal citizenship laws in Nepal. Under his leadership, CAPN has expanded its outreach, strengthened community support systems, and actively engaged with national and international stakeholders. His commitment to social justice, inclusivity, and meaningful change continues to guide CAPN’s vision and impact.',
+    },
+    {
+        id: '8',
+        name: 'Upashana Shakya',
+        type: 'team',
+        designation: 'Program & Advocacy Officer',
+        image: AboutUsImage,
+        profileDescription: 'Diwakar Chhetri is the current Chairperson of the Citizenship Affected People’s Network (CAPN). With a strong background in grassroots organizing and public policy, he has been a vocal advocate for gender-equal citizenship laws in Nepal. Under his leadership, CAPN has expanded its outreach, strengthened community support systems, and actively engaged with national and international stakeholders. His commitment to social justice, inclusivity, and meaningful change continues to guide CAPN’s vision and impact.',
     },
 ];
