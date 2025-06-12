@@ -44,9 +44,9 @@ export default async function EventDetailPage({ params }: PageProps) {
                 heading={eventDetails?.title}
             />
             <Section>
-                <ArticleBody>
-                    {eventDetails?.eventDescription}
-                </ArticleBody>
+                <ArticleBody
+                    content={eventDetails?.eventDescription}
+                />
             </Section>
             <Section
                 heading="Explore Other Events"

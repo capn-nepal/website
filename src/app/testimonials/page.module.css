@@ -1,0 +1,9 @@
+.testimonials {
+    gap: 0;
+
+    .testimonialsContent {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+}
