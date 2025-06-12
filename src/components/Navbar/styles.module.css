@@ -58,6 +58,7 @@
             .imageContainer {
                 flex-grow: 1;
             }
+
             .links {
                 display: none;
 
@@ -78,4 +79,9 @@
             }
         }
     }
+}
+
+.popupLink {
+    padding: var(--spacing-small) var(--spacing-large);
+    text-align: right;
 }

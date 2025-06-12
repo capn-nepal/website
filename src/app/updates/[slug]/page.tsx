@@ -36,9 +36,9 @@ export default async function UpdateDetailPage({ params }: { params: Promise<{ s
                 heading={updateDetails?.title}
             />
             <Section>
-                <ArticleBody>
-                    {updateDetails?.content}
-                </ArticleBody>
+                <ArticleBody
+                    content={updateDetails?.content}
+                />
             </Section>
             <Section
                 heading="Explore Other Updates"

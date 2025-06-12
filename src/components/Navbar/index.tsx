@@ -38,11 +38,15 @@ export default function Navbar(props: Props) {
         <div className={_cs(className, styles.navbar)}>
             <div className={styles.content}>
                 <div className={styles.imageContainer}>
-                    <Image
-                        className={styles.image}
-                        src={logo}
-                        alt="logo"
-                    />
+                    <Link
+                        href="/"
+                    >
+                        <Image
+                            className={styles.image}
+                            src={logo}
+                            alt="logo"
+                        />
+                    </Link>
                 </div>
                 <div className={_cs(isNavShown && styles.navShown, styles.links)}>
                     <PopupButton
@@ -50,25 +54,28 @@ export default function Navbar(props: Props) {
                         label="About"
                     >
                         <Link
+                            className={styles.popupLink}
                             href="/about/approach"
                             variant="navigation"
                             active={pathname === '/about/approach/'}
                         >
-                            Our Approach
+                            Approach
                         </Link>
                         <Link
+                            className={styles.popupLink}
                             href="/about/journey"
                             variant="navigation"
                             active={pathname === '/about/journey/'}
                         >
-                            Our Journey
+                            Journey
                         </Link>
                         <Link
+                            className={styles.popupLink}
                             href="/about"
                             variant="navigation"
                             active={pathname === '/about/'}
                         >
-                            Our Members
+                            Members
                         </Link>
                     </PopupButton>
                     <PopupButton
@@ -76,6 +83,7 @@ export default function Navbar(props: Props) {
                         label="Work"
                     >
                         <Link
+                            className={styles.popupLink}
                             href="/work/pillar"
                             variant="navigation"
                             active={pathname === '/work/pillar/'}
