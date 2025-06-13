@@ -65,4 +65,8 @@
             font-style: italic;
         }
     }
+
+    code {
+        text-wrap: wrap;
+    }
 }
