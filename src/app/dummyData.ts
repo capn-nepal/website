@@ -23,16 +23,17 @@ export const updates: UpdateType[] = [
             image: 'https://i.pravatar.cc/150?img=32',
         },
         content: `
-            ## Meet Your New Assistant
+## Meet Your New Assistant
 
-            We’re thrilled to introduce our new AI Assistant, designed to help streamline your workflow and provide faster access to critical information.
+We’re thrilled to introduce our new AI Assistant, designed to help streamline your workflow and provide faster access to critical information.
 
-            ### Features:
-            - Natural language understanding
-            - Seamless integration with internal tools
-            - 24/7 availability
+### Features:
+- Natural language understanding
+- Seamless integration with internal tools
+- 24/7 availability
 
-            Try it out and let us know what you think!`,
+Try it out and let us know what you think!
+        `,
         coverImage: 'https://doodleipsum.com/700x525/flat?i=ab35c7076496f3a1b9895105769c3fc4',
         featured: true,
     },
@@ -45,16 +46,17 @@ export const updates: UpdateType[] = [
             image: 'https://i.pravatar.cc/150?img=14',
         },
         content: `
-        ## What's New in May?
+## What's New in May?
 
-        We focused on stability, speed, and smoother UI transitions.
+We focused on stability, speed, and smoother UI transitions.
 
-        ### Highlights:
-        - Improved performance on low bandwidth
-        - New grid layout for dashboard
-        - Fixed 12 bugs based on user reports
+### Highlights:
+- Improved performance on low bandwidth
+- New grid layout for dashboard
+- Fixed 12 bugs based on user reports
 
-        Stay tuned for more enhancements in June.`,
+Stay tuned for more enhancements in June.
+        `,
         coverImage: 'https://doodleipsum.com/700x525/flat?i=ab35c7076496f3a1b9895105769c3fc4',
         featured: false,
     },
@@ -67,16 +69,17 @@ export const updates: UpdateType[] = [
             image: 'https://i.pravatar.cc/150?img=47',
         },
         content: `
-            ## Why It Matters
+## Why It Matters
 
-            Our tools are used by agencies like IFRC, UNHCR, and IDMC to make real-time decisions during crises.
+Our tools are used by agencies like IFRC, UNHCR, and IDMC to make real-time decisions during crises.
 
-            ### What We Focus On:
-            - Accessibility in low-connectivity areas
-            - Rapid data visualization
-            - Human-centered design
+### What We Focus On:
+- Accessibility in low-connectivity areas
+- Rapid data visualization
+- Human-centered design
 
-            We’re proud to build for impact.`,
+We’re proud to build for impact.
+        `,
         coverImage: 'https://doodleipsum.com/700x525/flat?i=ab35c7076496f3a1b9895105769c3fc4',
         featured: true,
     },
@@ -89,15 +92,15 @@ export const updates: UpdateType[] = [
             image: 'https://i.pravatar.cc/150?img=20',
         },
         content: `
-            ## Managing Remotely, Effectively
+## Managing Remotely, Effectively
 
-            Working with a remote tech team of 25+ comes with its challenges. Here are some of our top tips:
+Working with a remote tech team of 25+ comes with its challenges. Here are some of our top tips:
 
-            - Use async tools wisely
-            - Encourage over-communication
-            - Track progress transparently
+- Use async tools wisely
+- Encourage over-communication
+- Track progress transparently
 
-            These tips have helped us grow while staying lean.`,
+These tips have helped us grow while staying lean.`,
         coverImage: 'https://doodleipsum.com/700x525/flat?i=ab35c7076496f3a1b9895105769c3fc4',
         featured: false,
     },
@@ -110,16 +113,16 @@ export const updates: UpdateType[] = [
             image: 'https://i.pravatar.cc/150?img=53',
         },
         content: `
-            ## Cleaner, Faster, More Intuitive
+## Cleaner, Faster, More Intuitive
 
-            We’re overhauling our CMS dashboard based on user feedback.
+We’re overhauling our CMS dashboard based on user feedback. We’re overhauling our CMS dashboard based on user feedback. We’re overhauling our CMS dashboard based on user feedback. We’re overhauling our CMS dashboard based on user feedback.
 
-            ### Coming Soon:
-            - Light/dark mode toggle
-            - Drag-and-drop content blocks
-            - Real-time preview
+### Coming Soon:
+- Light/dark mode toggle
+- Drag-and-drop content blocks
+- Real-time preview
 
-            Launching later this month!`,
+Launching later this month!`,
         coverImage: 'https://doodleipsum.com/700x525/flat?i=ab35c7076496f3a1b9895105769c3fc4',
         featured: true,
     },

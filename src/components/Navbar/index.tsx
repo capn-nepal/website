@@ -99,14 +99,14 @@ export default function Navbar(props: Props) {
                         Resources
                     </Link>
                     <Link
-                        href="/"
+                        href="/updates/"
                         variant="navigation"
                         active={pathname === '/updates/'}
                     >
                         Updates
                     </Link>
                     <Link
-                        href="/"
+                        href="/contact/"
                         variant="navigation"
                         active={pathname === '/contact/'}
                     >
