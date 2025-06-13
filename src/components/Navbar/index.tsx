@@ -77,6 +77,14 @@ export default function Navbar(props: Props) {
                         >
                             Members
                         </Link>
+                        <Link
+                            className={styles.popupLink}
+                            href="/about/career"
+                            variant="navigation"
+                            active={pathname === '/about/career/'}
+                        >
+                            Career
+                        </Link>
                     </PopupButton>
                     <PopupButton
                         persistent={false}

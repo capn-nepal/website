@@ -1,0 +1,22 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-evenly;
+    padding: var(--spacing-large);
+    background-color: var(--color-card);
+    border-radius: var(--border-radius-large);
+    transition: all ease-in-out 200ms;
+
+    .actions {
+        display: flex;
+        gap: var(--spacing-mega-large);
+
+        .actionsContent {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-tiny);
+        }
+    }
+}
