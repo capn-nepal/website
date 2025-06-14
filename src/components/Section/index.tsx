@@ -27,11 +27,11 @@ export default function Section(props: Props) {
     return (
         <div className={_cs(className, styles.section)}>
             <div
-                className={_cs(styles.content, contentClassName)}
+                className={_cs(contentClassName, styles.content)}
             >
                 {heading && (
                     <Heading
-                        className={_cs(styles.heading, headingClassName)}
+                        className={_cs(headingClassName, styles.heading)}
                         size={headingSize}
                     >
                         {heading}

@@ -7,7 +7,7 @@ import Page from '#components/Page';
 import Section from '#components/Section';
 import AboutUsImage from '#public/aboutUsImage.jpg';
 
-import { events as staticEvents } from '../../dummyData';
+import { events as staticEvents } from '../../../dummyData';
 
 import styles from './page.module.css';
 

@@ -71,9 +71,9 @@ export default function Navbar(props: Props) {
                         </Link>
                         <Link
                             className={styles.popupLink}
-                            href="/about"
+                            href="/about/team"
                             variant="navigation"
-                            active={pathname === '/about/'}
+                            active={pathname === '/about/team'}
                         >
                             Members
                         </Link>
@@ -89,6 +89,14 @@ export default function Navbar(props: Props) {
                             active={pathname === '/work/pillar/'}
                         >
                             Pillar
+                        </Link>
+                        <Link
+                            className={styles.popupLink}
+                            href="/work/events"
+                            variant="navigation"
+                            active={pathname === '/work/events/'}
+                        >
+                            Events
                         </Link>
                     </PopupButton>
                     <Link
