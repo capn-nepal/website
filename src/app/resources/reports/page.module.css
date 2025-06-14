@@ -1,0 +1,14 @@
+.reports {
+    display: flex;
+    flex-direction: column;
+
+    .section {
+        gap: var(--spacing-medium);
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        display: grid;
+
+        .card {
+            height: 24rem;
+        }
+    }
+}
