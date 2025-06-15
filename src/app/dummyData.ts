@@ -261,3 +261,287 @@ export const teamMembers: Members[] = [
         profileDescription: 'Diwakar Chhetri is the current Chairperson of the Citizenship Affected People’s Network (CAPN). With a strong background in grassroots organizing and public policy, he has been a vocal advocate for gender-equal citizenship laws in Nepal. Under his leadership, CAPN has expanded its outreach, strengthened community support systems, and actively engaged with national and international stakeholders. His commitment to social justice, inclusivity, and meaningful change continues to guide CAPN’s vision and impact.',
     },
 ];
+export const vacancies = [
+    {
+        id: '1',
+        title: 'Finance & Admin Coordinator',
+        summary: 'Open call for a dedicated Finance & Admin Coordinator to lead core financial and administrative operations.',
+        deadline: 'July 25, 2025',
+        employmentType: 'Full-Time',
+        postedDate: '2025-06-13',
+        applicantsCount: 0,
+        description: `
+## Position Summary:
+
+The Finance & Admin Coordinator is responsible for managing financial operations and ensuring smooth administrative functioning of the organization. The role includes budgeting, accounting, financial reporting, compliance, procurement, and office administration. The ideal candidate is detail-oriented, organized, and capable of handling multiple responsibilities in a dynamic environment.
+
+## Key Responsibilities:
+- Maintain accurate and up-to-date financial records.
+- Prepare monthly, quarterly, and annual financial reports.
+- Develop and monitor budgets and cash flow projections.
+- Manage accounts payable and receivable.
+- Ensure proper tax returns and compliance with tax regulations.
+- Ensure compliance with donor and internal financial guidelines.
+- Support audit processes and coordinate with external auditors.
+- Oversee day-to-day administrative operations of the office.
+- Manage procurement of goods and services following internal procedures.
+- Maintain inventory and asset records.
+- Ensure timely renewal of office contracts (rent, utilities, etc.).
+- Organize and support internal and external meetings/events.
+- Maintain HR records including attendance, leave, and personnel files.
+
+## Qualifications and Experience
+- Bachelor’s degree in Finance, Accounting, or related field (Master’s preferred).
+- Minimum 3 years of experience in finance/admin roles, preferably in the NGO sector.
+- Strong knowledge of accounting principles and financial regulations.
+- Proficiency in financial software (e.g., QuickBooks, Tally) and MS Office.
+- Familiarity with procurement and HR procedures.
+- Excellent organizational and interpersonal skills.
+- High level of integrity and attention to detail.
+
+## Preferred Skills
+- Experience with donor-funded projects (e.g., UN, EU, USAID).
+- Knowledge of local labor laws and tax rules.
+- Fluency in at least 2 languages (e.g., Nepali and English).
+
+## How To Apply:
+Please send your CV and cover letter to hr@capnnepal.com with the subject line
+“Application - Finance & Admin Coordinator” by July 25, 2025.',
+`,
+    },
+    {
+        id: '2',
+        title: 'Finance & Admin Coordinator',
+        summary: 'Open call for a dedicated Finance & Admin Coordinator to lead core financial and administrative operations.',
+        deadline: 'July 25, 2025',
+        employmentType: 'Full-Time',
+        postedDate: '2025-06-13',
+        applicantsCount: 0,
+        description: `
+## Position Summary:
+
+The Finance & Admin Coordinator is responsible for managing financial operations and ensuring smooth administrative functioning of the organization. The role includes budgeting, accounting, financial reporting, compliance, procurement, and office administration. The ideal candidate is detail-oriented, organized, and capable of handling multiple responsibilities in a dynamic environment.
+
+## Key Responsibilities:
+- Maintain accurate and up-to-date financial records.
+- Prepare monthly, quarterly, and annual financial reports.
+- Develop and monitor budgets and cash flow projections.
+- Manage accounts payable and receivable.
+- Ensure proper tax returns and compliance with tax regulations.
+- Ensure compliance with donor and internal financial guidelines.
+- Support audit processes and coordinate with external auditors.
+- Oversee day-to-day administrative operations of the office.
+- Manage procurement of goods and services following internal procedures.
+- Maintain inventory and asset records.
+- Ensure timely renewal of office contracts (rent, utilities, etc.).
+- Organize and support internal and external meetings/events.
+- Maintain HR records including attendance, leave, and personnel files.
+
+## Qualifications and Experience
+- Bachelor’s degree in Finance, Accounting, or related field (Master’s preferred).
+- Minimum 3 years of experience in finance/admin roles, preferably in the NGO sector.
+- Strong knowledge of accounting principles and financial regulations.
+- Proficiency in financial software (e.g., QuickBooks, Tally) and MS Office.
+- Familiarity with procurement and HR procedures.
+- Excellent organizational and interpersonal skills.
+- High level of integrity and attention to detail.
+
+## Preferred Skills
+- Experience with donor-funded projects (e.g., UN, EU, USAID).
+- Knowledge of local labor laws and tax rules.
+- Fluency in at least 2 languages (e.g., Nepali and English).
+
+## How To Apply:
+Please send your CV and cover letter to hr@capnnepal.com with the subject line
+“Application - Finance & Admin Coordinator” by July 25, 2025.',
+        `,
+    },
+    {
+        id: '3',
+        title: 'Finance & Admin Coordinator',
+        summary: 'Open call for a dedicated Finance & Admin Coordinator to lead core financial and administrative operations.',
+        deadline: 'July 25, 2025',
+        employmentType: 'Full-Time',
+        postedDate: '2025-06-13',
+        applicantsCount: 0,
+        description: `
+## Position Summary:
+
+The Finance & Admin Coordinator is responsible for managing financial operations and ensuring smooth administrative functioning of the organization. The role includes budgeting, accounting, financial reporting, compliance, procurement, and office administration. The ideal candidate is detail-oriented, organized, and capable of handling multiple responsibilities in a dynamic environment.
+
+## Key Responsibilities:
+- Maintain accurate and up-to-date financial records.
+- Prepare monthly, quarterly, and annual financial reports.
+- Develop and monitor budgets and cash flow projections.
+- Manage accounts payable and receivable.
+- Ensure proper tax returns and compliance with tax regulations.
+- Ensure compliance with donor and internal financial guidelines.
+- Support audit processes and coordinate with external auditors.
+- Oversee day-to-day administrative operations of the office.
+- Manage procurement of goods and services following internal procedures.
+- Maintain inventory and asset records.
+- Ensure timely renewal of office contracts (rent, utilities, etc.).
+- Organize and support internal and external meetings/events.
+- Maintain HR records including attendance, leave, and personnel files.
+
+## Qualifications and Experience
+- Bachelor’s degree in Finance, Accounting, or related field (Master’s preferred).
+- Minimum 3 years of experience in finance/admin roles, preferably in the NGO sector.
+- Strong knowledge of accounting principles and financial regulations.
+- Proficiency in financial software (e.g., QuickBooks, Tally) and MS Office.
+- Familiarity with procurement and HR procedures.
+- Excellent organizational and interpersonal skills.
+- High level of integrity and attention to detail.
+
+## Preferred Skills
+- Experience with donor-funded projects (e.g., UN, EU, USAID).
+- Knowledge of local labor laws and tax rules.
+- Fluency in at least 2 languages (e.g., Nepali and English).
+
+## How To Apply:
+Please send your CV and cover letter to hr@capnnepal.com with the subject line
+“Application - Finance & Admin Coordinator” by July 25, 2025.',
+        `,
+    },
+    {
+        id: '4',
+        title: 'Finance & Admin Coordinator',
+        summary: 'Open call for a dedicated Finance & Admin Coordinator to lead core financial and administrative operations.',
+        deadline: 'July 25, 2025',
+        employmentType: 'Full-Time',
+        postedDate: '2025-06-13',
+        applicantsCount: 0,
+        description: `
+## Position Summary:
+
+The Finance & Admin Coordinator is responsible for managing financial operations and ensuring smooth administrative functioning of the organization. The role includes budgeting, accounting, financial reporting, compliance, procurement, and office administration. The ideal candidate is detail-oriented, organized, and capable of handling multiple responsibilities in a dynamic environment.
+
+## Key Responsibilities:
+- Maintain accurate and up-to-date financial records.
+- Prepare monthly, quarterly, and annual financial reports.
+- Develop and monitor budgets and cash flow projections.
+- Manage accounts payable and receivable.
+- Ensure proper tax returns and compliance with tax regulations.
+- Ensure compliance with donor and internal financial guidelines.
+- Support audit processes and coordinate with external auditors.
+- Oversee day-to-day administrative operations of the office.
+- Manage procurement of goods and services following internal procedures.
+- Maintain inventory and asset records.
+- Ensure timely renewal of office contracts (rent, utilities, etc.).
+- Organize and support internal and external meetings/events.
+- Maintain HR records including attendance, leave, and personnel files.
+
+## Qualifications and Experience
+- Bachelor’s degree in Finance, Accounting, or related field (Master’s preferred).
+- Minimum 3 years of experience in finance/admin roles, preferably in the NGO sector.
+- Strong knowledge of accounting principles and financial regulations.
+- Proficiency in financial software (e.g., QuickBooks, Tally) and MS Office.
+- Familiarity with procurement and HR procedures.
+- Excellent organizational and interpersonal skills.
+- High level of integrity and attention to detail.
+
+## Preferred Skills
+- Experience with donor-funded projects (e.g., UN, EU, USAID).
+- Knowledge of local labor laws and tax rules.
+- Fluency in at least 2 languages (e.g., Nepali and English).
+
+## How To Apply:
+Please send your CV and cover letter to hr@capnnepal.com with the subject line
+“Application - Finance & Admin Coordinator” by July 25, 2025.',
+        `,
+    },
+    {
+        id: '5',
+        title: 'Finance & Admin Coordinator',
+        summary: 'Open call for a dedicated Finance & Admin Coordinator to lead core financial and administrative operations.',
+        deadline: 'July 25, 2025',
+        employmentType: 'Full-Time',
+        postedDate: '2025-06-13',
+        applicantsCount: 0,
+        description: `
+## Position Summary:
+
+The Finance & Admin Coordinator is responsible for managing financial operations and ensuring smooth administrative functioning of the organization. The role includes budgeting, accounting, financial reporting, compliance, procurement, and office administration. The ideal candidate is detail-oriented, organized, and capable of handling multiple responsibilities in a dynamic environment.
+
+## Key Responsibilities:
+- Maintain accurate and up-to-date financial records.
+- Prepare monthly, quarterly, and annual financial reports.
+- Develop and monitor budgets and cash flow projections.
+- Manage accounts payable and receivable.
+- Ensure proper tax returns and compliance with tax regulations.
+- Ensure compliance with donor and internal financial guidelines.
+- Support audit processes and coordinate with external auditors.
+- Oversee day-to-day administrative operations of the office.
+- Manage procurement of goods and services following internal procedures.
+- Maintain inventory and asset records.
+- Ensure timely renewal of office contracts (rent, utilities, etc.).
+- Organize and support internal and external meetings/events.
+- Maintain HR records including attendance, leave, and personnel files.
+
+## Qualifications and Experience
+- Bachelor’s degree in Finance, Accounting, or related field (Master’s preferred).
+- Minimum 3 years of experience in finance/admin roles, preferably in the NGO sector.
+- Strong knowledge of accounting principles and financial regulations.
+- Proficiency in financial software (e.g., QuickBooks, Tally) and MS Office.
+- Familiarity with procurement and HR procedures.
+- Excellent organizational and interpersonal skills.
+- High level of integrity and attention to detail.
+
+## Preferred Skills
+- Experience with donor-funded projects (e.g., UN, EU, USAID).
+- Knowledge of local labor laws and tax rules.
+- Fluency in at least 2 languages (e.g., Nepali and English).
+
+## How To Apply:
+Please send your CV and cover letter to hr@capnnepal.com with the subject line
+“Application - Finance & Admin Coordinator” by July 25, 2025.',
+        `,
+    },
+    {
+        id: '6',
+        title: 'Finance & Admin Coordinator',
+        summary: 'Open call for a dedicated Finance & Admin Coordinator to lead core financial and administrative operations.',
+        deadline: 'July 25, 2025',
+        employmentType: 'Full-Time',
+        postedDate: '2025-06-13',
+        applicantsCount: 0,
+        description: `
+## Position Summary:
+
+The Finance & Admin Coordinator is responsible for managing financial operations and ensuring smooth administrative functioning of the organization. The role includes budgeting, accounting, financial reporting, compliance, procurement, and office administration. The ideal candidate is detail-oriented, organized, and capable of handling multiple responsibilities in a dynamic environment.
+
+## Key Responsibilities:
+- Maintain accurate and up-to-date financial records.
+- Prepare monthly, quarterly, and annual financial reports.
+- Develop and monitor budgets and cash flow projections.
+- Manage accounts payable and receivable.
+- Ensure proper tax returns and compliance with tax regulations.
+- Ensure compliance with donor and internal financial guidelines.
+- Support audit processes and coordinate with external auditors.
+- Oversee day-to-day administrative operations of the office.
+- Manage procurement of goods and services following internal procedures.
+- Maintain inventory and asset records.
+- Ensure timely renewal of office contracts (rent, utilities, etc.).
+- Organize and support internal and external meetings/events.
+- Maintain HR records including attendance, leave, and personnel files.
+
+## Qualifications and Experience
+- Bachelor’s degree in Finance, Accounting, or related field (Master’s preferred).
+- Minimum 3 years of experience in finance/admin roles, preferably in the NGO sector.
+- Strong knowledge of accounting principles and financial regulations.
+- Proficiency in financial software (e.g., QuickBooks, Tally) and MS Office.
+- Familiarity with procurement and HR procedures.
+- Excellent organizational and interpersonal skills.
+- High level of integrity and attention to detail.
+
+## Preferred Skills
+- Experience with donor-funded projects (e.g., UN, EU, USAID).
+- Knowledge of local labor laws and tax rules.
+- Fluency in at least 2 languages (e.g., Nepali and English).
+
+## How To Apply:
+Please send your CV and cover letter to hr@capnnepal.com with the subject line
+“Application - Finance & Admin Coordinator” by July 25, 2025.',
+        `,
+    },
+];
