@@ -20,6 +20,28 @@ const query = gql`
                 endDate
             }
         }
+
+        blogs {
+            results {
+                id
+                title
+                publishedDate
+                featured
+                content
+                author {
+                    id
+                    name
+                    image {
+                        url
+                        name
+                    }
+                }
+                coverImage {
+                    url
+                    name
+                }
+            }
+        }
     }
 `;
 

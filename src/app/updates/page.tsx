@@ -4,11 +4,15 @@ import Banner from '#components/Banner';
 import Card from '#components/Card';
 import Page from '#components/Page';
 import Section from '#components/Section';
+import { blogs } from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 import AboutUsImage from '#public/aboutUsImage.jpg';
 
-import { updates } from '../dummyData';
-
 import styles from './page.module.css';
+
+type Blogs = NonNullable<NonNullable<AllDataQuery['blogs']>['results']>;
+
+const allBlogsData = blogs.results as unknown as Blogs;
 
 export default function Updates() {
     return (
@@ -21,13 +25,13 @@ export default function Updates() {
             />
             <Section>
                 <div className={styles.otherUpdates}>
-                    {updates?.map((item) => (
+                    {allBlogsData?.map((item) => (
                         <Card
-                            key={item.slug}
+                            key={item.id}
                             className={styles.card}
                             title={item.title}
                             date={item.publishedDate}
-                            link={`/updates/${item.slug}`}
+                            link={`/updates/${item.id}`}
                         />
                     ))}
                 </div>
