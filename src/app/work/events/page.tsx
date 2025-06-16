@@ -4,14 +4,18 @@ import Banner from '#components/Banner';
 import Card from '#components/Card';
 import Page from '#components/Page';
 import Section from '#components/Section';
+import { events } from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 import AboutUsImage from '#public/aboutUsImage.jpg';
 
-import { events } from '../../dummyData';
 import EventsSection from '../../home/EventsSection';
 
 import styles from './page.module.css';
 
+type Events = NonNullable<NonNullable<AllDataQuery['events']>['results']>;
+
 export default function Events() {
+    const allEventsData = events as unknown as Events;
     return (
         <Page contentClassName={styles.events}>
             <Banner
@@ -27,20 +31,20 @@ export default function Events() {
                 )}
             />
             <EventsSection
-                events={events}
+                events={allEventsData}
             />
             <Section
                 heading="CAPN's Recent Works & Events"
                 headingSize="extraLarge"
             >
                 <div className={styles.pastEvents}>
-                    {events?.map((item) => (
+                    {allEventsData?.map((item) => (
                         <Card
                             key={item.id}
                             className={styles.card}
                             image={AboutUsImage}
-                            title={item.title}
-                            date={item.date}
+                            title={item.name}
+                            date={item.startDate}
                             description={item.description}
                             link={`/events/${item.id}`}
                         />

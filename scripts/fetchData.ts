@@ -9,19 +9,18 @@ const GRAPHQL_ENDPOINT = process.env.APP_GRAPHQL_ENDPOINT || 'http://localhost:8
 const client = new GraphQLClient(GRAPHQL_ENDPOINT);
 
 const query = gql`
-query Events {
-    events {
-        results {
-            startDate
-            name
-            location
-            id
-            endDate
-            description
+    query AllData {
+        events {
+            results {
+                id
+                name
+                description
+                location
+                startDate
+                endDate
+            }
         }
-        totalCount
     }
-}
 `;
 
 

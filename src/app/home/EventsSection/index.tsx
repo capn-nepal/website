@@ -3,20 +3,15 @@ import { compareDate } from '@togglecorp/fujs';
 
 import Card from '#components/Card';
 import Heading from '#components/Heading';
+import { type AllDataQuery } from '#generated/types/graphql';
 import presentationImage from '#public/presentation.jpg';
 
 import styles from './styles.module.css';
 
-export type EventType = {
-    id: string;
-    title: string;
-    date: string;
-    description: string;
-    eventDescription: string;
-};
+type Events = NonNullable<NonNullable<AllDataQuery['events']>['results']>
 
 interface Props {
-    events: EventType[];
+    events: Events;
     max?: number;
 }
 
@@ -26,7 +21,7 @@ export default function EventsSection(props: Props) {
         max,
     } = props;
 
-    const sortedEvents = events.sort((a, b) => compareDate(a.date, b.date));
+    const sortedEvents = events.sort((a, b) => compareDate(a.startDate, b.startDate));
     const limitedItems = max ? sortedEvents.slice(0, max) : sortedEvents;
     const firstElement = limitedItems[0];
     const remainingElements = limitedItems.slice(1);
@@ -52,8 +47,8 @@ export default function EventsSection(props: Props) {
                     </Heading>
                     <Card
                         className={styles.card}
-                        date={firstElement.date}
-                        title={firstElement.title}
+                        date={firstElement.startDate}
+                        title={firstElement.name}
                         description={firstElement.description}
                         image={presentationImage}
                     />
@@ -62,8 +57,8 @@ export default function EventsSection(props: Props) {
                     <Card
                         key={item.id}
                         className={styles.card}
-                        date={item.date}
-                        title={item.title}
+                        date={item.startDate}
+                        title={item.name}
                         description={item.description}
                     />
                 ))}
