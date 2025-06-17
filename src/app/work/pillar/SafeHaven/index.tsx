@@ -1,7 +1,6 @@
+import PillarSection from '#components/PillarSection';
 import Advocacy from '#public/advocacy.jpg';
 import Pillar2 from '#public/pillar2.png';
-
-import PillarSection from '../PillarSection';
 
 export default function SafeHaven() {
     return (
