@@ -1,6 +1,7 @@
 .pillarsSection {
     display: flex;
     flex-direction: column;
+    background-color: var(--color-background-dark);
 
     .content {
         display: flex;
@@ -15,105 +16,19 @@
 
         .heading {
             text-align: center;
+            color: var(--color-text-on-dark);
         }
 
         .pillarsContainer {
             display: flex;
             flex-direction: column;
             gap: var(--spacing-super-large);
-        }
 
-        .pillarContainer {
-            display: flex;
-            justify-content: space-between;
-            gap: var(--spacing-large);
-            width: 100%;
+            .pillarContent {
+                color: var(--color-text-on-dark);
 
-            .leftContainer {
-                display: flex;
-                flex-direction: column;
-                flex-grow: 1;
-                gap: var(--spacing-medium);
-
-                .headingContainer {
-                    position: relative;
-
-                    .number {
-                        position: absolute;
-                        left: -1rem;
-                        bottom: -0.3rem;
-                        color: var(--color-primary);
-                        opacity: 50%;
-                        font-size: var(--font-size-galactic);
-                        font-weight: var(--font-weight-boldest);
-                        font-family: var(--font-heading);
-                        z-index: 1;
-                    }
-
-                    .title {
-                        position: relative;
-                        color: var(--color-text);
-                        z-index: 2;
-                    }
-                }
-
-                .description {
-                    max-width: 60rem;
-                }
-            }
-
-            .rightContainer {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
-                width: 32rem;
-
-                .pillarsImage {
-                    width: 8rem;
-                    height: 8rem;
-                    object-fit: cover;
-                }
-
-                .image {
-                    width: 12rem;
-                    height: 12rem;
-                    object-fit: cover;
-                    transform: translate(-25%, -36%);
-                    border-radius: var(--border-radius-medium);
-                    filter: saturate(15%);
-                }
-            }
-        }
-
-        .second {
-            flex-direction: row-reverse;
-
-            .rightContainer {
-                align-items: flex-start;
-
-                .image {
-                    transform: translate(25%, -36%);
-                }
-            }
-        }
-
-        @media (max-width: 768px) {
-            gap: var(--spacing-enormous);
-
-            .pillarContainer {
-                flex-direction: column;
-
-                .rightContainer {
-                    width: 100%;
-
-                    .pillarsImage {
-                        display: none;
-                    }
-
-                    .image {
-                        width: 100%;
-                        transform: unset;
-                    }
+                .pillarHeading {
+                    color: var(--color-text-on-dark);
                 }
             }
         }

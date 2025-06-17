@@ -1,7 +1,6 @@
+import PillarSection from '#components/PillarSection';
 import Advocacy from '#public/advocacy.jpg';
 import Pillar1 from '#public/pillar1.png';
-
-import PillarSection from '../PillarSection';
 
 export default function LegalAdvocacy() {
     return (

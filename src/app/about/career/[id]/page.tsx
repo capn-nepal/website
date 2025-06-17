@@ -2,12 +2,17 @@ import ArticleBody from '#components/ArticleBody';
 import Banner from '#components/Banner';
 import Page from '#components/Page';
 import Section from '#components/Section';
+import {
+    jobVacancies as staticVacancies,
+    positions,
+} from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 import AboutUsImage from '#public/aboutUsImage.jpg';
 
-import { vacancies as staticVacancies } from '../../../dummyData';
+type Vacancies = NonNullable<NonNullable<AllDataQuery['jobVacancies']>['results']>;
 
 async function getVacancies() {
-    return staticVacancies;
+    return staticVacancies.results as unknown as Vacancies;
 }
 
 export async function generateStaticParams() {
@@ -21,6 +26,10 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ i
 
     const vacancyDetails = vacancies?.find((item) => item.id === id);
 
+    const positionData = positions.results.find(
+        (item) => item.id === vacancyDetails?.position.pk,
+    );
+
     return (
         <Page>
             <Banner
@@ -29,7 +38,7 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ i
                 bannerImageSrc={AboutUsImage}
             />
             <Section
-                heading={vacancyDetails?.title}
+                heading={positionData?.name}
             >
                 <ArticleBody
                     content={vacancyDetails?.description}

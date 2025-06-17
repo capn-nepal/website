@@ -1,7 +1,6 @@
+import AdvocacySection from '#components/PillarSection';
 import Advocacy from '#public/advocacy.jpg';
 import Pillar3 from '#public/pillar3.png';
-
-import AdvocacySection from '../PillarSection';
 
 export default function SocialAwareness() {
     return (

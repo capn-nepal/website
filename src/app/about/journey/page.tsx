@@ -2,9 +2,8 @@ import { unique } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import Page from '#components/Page';
+import TimelineEventCard, { type Props as TimelineProps } from '#components/TimelineEventCard';
 import AboutUsImage from '#public/aboutUsImage.jpg';
-
-import TimelineEventCard, { type Props as TimelineProps } from './TimelineEventCard';
 
 import styles from './page.module.css';
 
