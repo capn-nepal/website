@@ -46,7 +46,7 @@ export default function Events() {
                             title={item.name}
                             date={item.startDate}
                             description={item.description}
-                            link={`/events/${item.id}`}
+                            link={`/work/events/${item.id}`}
                         />
                     ))}
                 </div>

@@ -6,26 +6,29 @@ import { _cs } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import Link from '#components/Link';
+import { positions } from '#data/staticData.json';
 
 import styles from './styles.module.css';
 
 interface Props {
     className?: string;
     deadline: string;
-    summary?: string;
     applicantsCount?: number;
     link: string;
-    title: string;
+    position: string;
 }
 export default function VacancyCard(props: Props) {
     const {
         className,
         deadline,
         applicantsCount,
-        summary,
         link,
-        title,
+        position,
     } = props;
+
+    const positionData = positions.results.find(
+        (item) => item.id === position,
+    );
 
     return (
         <Link
@@ -36,11 +39,11 @@ export default function VacancyCard(props: Props) {
             <Heading
                 size="medium"
             >
-                {title}
+                {positionData?.name}
             </Heading>
-            {summary && (
+            {positionData?.summary && (
                 <p>
-                    {summary}
+                    {positionData?.summary}
                 </p>
             )}
             <div className={styles.actions}>

@@ -9,11 +9,19 @@ import Button from '#components/Button';
 import Link from '#components/Link';
 import Page from '#components/Page';
 import Section from '#components/Section';
+import {
+    podcastEpisodes,
+    voxpopEpisodes,
+    youtubeVideos,
+} from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 import PodcastImage from '#public/sosPodcast1.png';
-import PodcastSecondaryImage from '#public/sosPodcast2.png';
-import VoxpopImage from '#public/voxpopImage.png';
 
 import styles from './page.module.css';
+
+type YoutubeVideos = NonNullable<NonNullable<AllDataQuery['youtubeVideos']>['results']>;
+type VoxpopVideos = NonNullable<NonNullable<AllDataQuery['voxpopEpisodes']>['results']>;
+type PodcastVideos = NonNullable<NonNullable<AllDataQuery['podcastEpisodes']>['results']>;
 
 export interface TabItem {
     key: string;
@@ -62,41 +70,9 @@ const podcasts = [
     },
 ];
 
-const voxpops = [
-    {
-        id: '1',
-        thumbnail: VoxpopImage,
-        url: 'https://www.youtube.com/watch?v=MXvvEuxE-S8',
-    },
-    {
-        id: '2',
-        thumbnail: VoxpopImage,
-        url: 'https://www.youtube.com/watch?v=MXvvEuxE-S8',
-    },
-    {
-        id: '3',
-        thumbnail: VoxpopImage,
-        url: 'https://www.youtube.com/watch?v=MXvvEuxE-S8',
-    },
-];
-
-const youtubeVideos = [
-    {
-        id: '1',
-        thumbnail: PodcastSecondaryImage,
-        url: 'https://www.youtube.com/watch?v=MXvvEuxE-S8',
-    },
-    {
-        id: '2',
-        thumbnail: PodcastSecondaryImage,
-        url: 'https://www.youtube.com/watch?v=MXvvEuxE-S8',
-    },
-    {
-        id: '3',
-        thumbnail: PodcastSecondaryImage,
-        url: 'https://www.youtube.com/watch?v=MXvvEuxE-S8',
-    },
-];
+const allYoutubeVideos = youtubeVideos.results as unknown as YoutubeVideos;
+const allVoxpopVideos = voxpopEpisodes.results as unknown as VoxpopVideos;
+const allPodcastVideos = podcastEpisodes.results as unknown as VoxpopVideos;
 
 export default function Videos() {
     const [activeTab, setActiveTab] = useState<string>('youtube-videos');
@@ -124,52 +100,64 @@ export default function Videos() {
                 </div>
                 {activeTab === 'podcast' && (
                     <div className={styles.videoSection}>
-                        {podcasts.map((item) => (
-                            <Link
-                                key={item.id}
-                                href={item.url}
-                                target="_blank"
-                            >
-                                <Image
-                                    className={styles.image}
-                                    src={item.thumbnail}
-                                    alt="video thumbnail"
-                                />
-                            </Link>
+                        {allPodcastVideos.map((item) => (
+                            (item.thumbnail?.url && item.thumbnail.name)
+                                ? (
+                                    <Link
+                                        key={item.id}
+                                        href={item.videoUrl}
+                                        target="_blank"
+                                    >
+                                        <Image
+                                            className={styles.image}
+                                            src={item.thumbnail?.url}
+                                            alt={item.thumbnail?.name}
+                                        />
+                                    </Link>
+                                )
+                                : null
                         ))}
                     </div>
                 )}
                 {activeTab === 'voxpop' && (
                     <div className={styles.videoSection}>
-                        {voxpops.map((item) => (
-                            <Link
-                                key={item.id}
-                                href={item.url}
-                                target="_blank"
-                            >
-                                <Image
-                                    className={styles.image}
-                                    src={item.thumbnail}
-                                    alt="video thumbnail"
-                                />
-                            </Link>
+                        {allVoxpopVideos.map((item) => (
+                            (item.thumbnail?.url && item.thumbnail.name)
+                                ? (
+                                    <Link
+                                        key={item.id}
+                                        href={item.videoUrl}
+                                        target="_blank"
+                                    >
+                                        <Image
+                                            className={styles.image}
+                                            src={item.thumbnail?.url}
+                                            alt={item.thumbnail?.name}
+                                        />
+                                    </Link>
+                                )
+                                : null
                         ))}
                     </div>
                 )}
                 {activeTab === 'youtube-videos' && (
                     <div className={styles.videoSection}>
-                        {youtubeVideos.map((item) => (
-                            <Link
-                                key={item.id}
-                                href={item.url}
-                                target="_blank"
-                            >
-                                <Image
-                                    className={styles.image}
-                                    src={item.thumbnail}
-                                    alt="video thumbnail"
-                                />
-                            </Link>
+                        {allYoutubeVideos.map((item) => (
+                            (item.thumbnail?.url && item.thumbnail.name)
+                                ? (
+                                    <Link
+                                        key={item.id}
+                                        href={item.videoUrl}
+                                        target="_blank"
+                                    >
+                                        <Image
+                                            className={styles.image}
+                                            src={item.thumbnail?.url}
+                                            alt={item.thumbnail?.name}
+                                        />
+                                    </Link>
+                                )
+                                : null
                         ))}
                     </div>
                 )}

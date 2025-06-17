@@ -1,15 +1,19 @@
 import Banner from '#components/Banner';
 import Page from '#components/Page';
 import Section from '#components/Section';
+import { jobVacancies } from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 import AboutUsImage from '#public/aboutUsImage.jpg';
 
-import { vacancies } from '../../dummyData';
 import LifeCapn from './LifeCapn';
 import VacancyCard from './VacancyCard';
 
 import styles from './page.module.css';
 
+type Vacancies = NonNullable<NonNullable<AllDataQuery['jobVacancies']>['results']>;
+
 export default function Career() {
+    const allVacanciesData = jobVacancies.results as unknown as Vacancies;
     return (
         <Page className={styles.career}>
             <Banner
@@ -19,14 +23,13 @@ export default function Career() {
             />
             <Section>
                 <div className={styles.openVacancy}>
-                    {vacancies.map((item) => (
+                    {allVacanciesData.map((item) => (
                         <VacancyCard
                             className={styles.card}
                             key={item.id}
-                            title={item.title}
-                            summary={item.summary}
+                            position={item.position.pk}
                             deadline={item.deadline}
-                            applicantsCount={item.applicantsCount}
+                            applicantsCount={item.numberOfVacancies}
                             link={`/about/career/${item.id}`}
                         />
                     ))}

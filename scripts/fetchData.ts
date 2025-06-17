@@ -42,6 +42,79 @@ const query = gql`
                 }
             }
         }
+
+        teamMembers {
+            results {
+                id
+                firstName
+                middleName
+                lastName
+                designation
+                memberType
+                memberPhoto {
+                    url
+                    name
+                }
+            }
+        }
+
+        jobVacancies {
+            results {
+                id
+                numberOfVacancies
+                deadline
+                description
+                position {
+                    pk
+                }
+            }
+        }
+
+        positions {
+            results {
+                id
+                name
+                summary
+            }
+        }
+
+        youtubeVideos {
+            results {
+                id
+                videoUrl
+                releaseDate
+                title
+                thumbnail {
+                    url
+                    name
+                }
+            }
+        }
+
+        voxpopEpisodes {
+            results {
+                id
+                episodeNumber
+                title
+                videoUrl
+                thumbnail {
+                    url
+                    name
+                }
+            }
+        }
+        podcastEpisodes {
+            results {
+                id
+                episodeNumber
+                title
+                videoUrl
+                thumbnail {
+                    url
+                    name
+                }
+            }
+        }
     }
 `;
 

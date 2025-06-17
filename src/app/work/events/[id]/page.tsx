@@ -5,14 +5,16 @@ import Banner from '#components/Banner';
 import Card from '#components/Card';
 import Page from '#components/Page';
 import Section from '#components/Section';
+import { events as staticEvents } from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 import AboutUsImage from '#public/aboutUsImage.jpg';
-
-import { events as staticEvents } from '../../../dummyData';
 
 import styles from './page.module.css';
 
+type Events = NonNullable<NonNullable<AllDataQuery['events']>['results']>;
+
 async function getEvents() {
-    return staticEvents;
+    return staticEvents.results as unknown as Events;
 }
 
 export async function generateStaticParams() {
@@ -41,11 +43,11 @@ export default async function EventDetailPage({ params }: PageProps) {
                 // NOTE: We need to replace with the real image as mentioned in figma
                 bannerImageSrc={AboutUsImage}
                 eyebrowHeading="Our Events"
-                heading={eventDetails?.title}
+                heading={eventDetails?.name}
             />
             <Section>
                 <ArticleBody
-                    content={eventDetails?.eventDescription}
+                    content={eventDetails?.description}
                 />
             </Section>
             <Section
@@ -57,10 +59,10 @@ export default async function EventDetailPage({ params }: PageProps) {
                             key={item.id}
                             className={styles.card}
                             image={AboutUsImage}
-                            title={item.title}
-                            date={item.date}
+                            title={item.name}
+                            date={item.startDate}
                             description={item.description}
-                            link={`/events/${item.id}`}
+                            link={`/work/events/${item.id}`}
                         />
                     ))}
                 </div>

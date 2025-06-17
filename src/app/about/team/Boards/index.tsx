@@ -8,25 +8,33 @@ import { _cs } from '@togglecorp/fujs';
 
 import Button from '#components/Button';
 import Section from '#components/Section';
+import { teamMembers } from '#data/staticData.json';
+import {
+    type AllDataQuery,
+    type TeamMemberTypeEnum,
+} from '#generated/types/graphql';
 
-import { teamMembers } from '../../../dummyData';
+// import { teamMembers } from '../../../dummyData';
 import TeamMemberCard from './TeamMemberCard';
 
 import styles from './styles.module.css';
 
+type Members = NonNullable<NonNullable<AllDataQuery['teamMembers']>['results']>;
+
 export default function Boards() {
-    const [showMembersSection, setShowMembersSection] = useState<'board' | 'team'>('board');
+    const [showMembersSection, setShowMembersSection] = useState<TeamMemberTypeEnum>('BOARD_MEMBER');
+    const allTeamMembersData = teamMembers.results as unknown as Members;
 
     const handleBoardMembers = useCallback(() => {
-        setShowMembersSection('board');
+        setShowMembersSection('BOARD_MEMBER');
     }, []);
 
     const handleTeamMembers = useCallback(() => {
-        setShowMembersSection('team');
+        setShowMembersSection('TEAM_MEMBER');
     }, []);
 
-    const filteredMembers = teamMembers.filter(
-        (member) => member.type === showMembersSection,
+    const filteredMembers = allTeamMembersData.filter(
+        (member) => member.memberType === showMembersSection,
     );
 
     return (
@@ -34,14 +42,14 @@ export default function Boards() {
             <div className={styles.boards}>
                 <div className={styles.buttonGroup}>
                     <Button
-                        className={_cs(styles.button, showMembersSection === 'board' && styles.active)}
+                        className={_cs(styles.button, showMembersSection === 'BOARD_MEMBER' && styles.active)}
                         variant="transparent"
                         onClick={handleBoardMembers}
                     >
                         Board Members
                     </Button>
                     <Button
-                        className={_cs(styles.button, showMembersSection === 'team' && styles.active)}
+                        className={_cs(styles.button, showMembersSection === 'TEAM_MEMBER' && styles.active)}
                         variant="transparent"
                         onClick={handleTeamMembers}
                     >
@@ -50,15 +58,17 @@ export default function Boards() {
                 </div>
                 <div className={styles.membersGrid}>
                     {filteredMembers.map((member) => (
-                        <TeamMemberCard
-                            key={member.id}
-                            showDescription
-                            link={`/about/team/${member.id}/`}
-                            image={member.image}
-                            alt={member.name}
-                            name={member.name}
-                            designation={member.designation}
-                        />
+                        member.memberPhoto ? (
+                            <TeamMemberCard
+                                key={member.id}
+                                showDescription
+                                link={`/about/team/${member.id}/`}
+                                image={member.memberPhoto?.url}
+                                alt={member.memberPhoto?.name}
+                                name={member.firstName}
+                                designation={member.designation}
+                            />
+                        ) : null
                     ))}
                 </div>
             </div>
