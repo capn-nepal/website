@@ -34,11 +34,17 @@ export default function Banner(props: Props) {
             <div className={styles.contentSection}>
                 <div className={styles.content}>
                     {isDefined(eyebrowHeading) && (
-                        <Heading className={styles.eyebrowHeading} size="small">
+                        <Heading
+                            className={styles.eyebrowHeading}
+                            size="small"
+                        >
                             {eyebrowHeading}
                         </Heading>
                     )}
-                    <Heading className={styles.heading} size="superLarge">
+                    <Heading
+                        className={styles.heading}
+                        size="superLarge"
+                    >
                         {heading}
                     </Heading>
                 </div>
