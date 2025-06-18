@@ -54,9 +54,23 @@
                 padding: var(--spacing-small) var(--spacing-extra-large);
             }
         }
+    }
 
-        @media (max-width: 768px) {
+    .drawer {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        height: 5rem;
+        padding: 0;
+
+        .content {
+            height: 100%;
+            border-radius: unset;
+
             .imageContainer {
+                padding: var(--spacing-tiny) var(--spacing-super-large);
                 flex-grow: 1;
             }
 
@@ -77,6 +91,28 @@
                 .menu {
                     display: block;
                 }
+            }
+        }
+
+        .drawer {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            flex-direction: column;
+            transform: translateY(-100%);
+            transition: 200ms all ease-in-out;
+            z-index: -1;
+            background-color: var(--color-background);
+            padding: var(--spacing-large);
+            width: 100%;
+            gap: var(--spacing-large);
+
+            &.navShown {
+                transform: translateY(0);
+            }
+
+            .link {
+                text-align: left;
             }
         }
     }

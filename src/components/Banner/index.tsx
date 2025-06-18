@@ -39,7 +39,10 @@ export default function Banner(props: Props) {
                             {eyebrowHeading}
                         </Heading>
                     )}
-                    <Heading className={styles.heading} size="superLarge">
+                    <Heading
+                        className={styles.heading}
+                        size="superLarge"
+                    >
                         {heading}
                     </Heading>
                 </div>
