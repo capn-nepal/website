@@ -123,7 +123,6 @@ const query = gql`
     }
 `;
 
-
 async function fetchAndWriteData() {
     const data = await client.request(query);
 
@@ -134,4 +133,43 @@ async function fetchAndWriteData() {
     fs.writeFileSync(path.join(__dirname, '../data/staticData.json'), JSON.stringify(data, null, 2));
 }
 
-fetchAndWriteData();
+function writeDummyData() {
+    const dummy =
+    {
+        events: {
+            results: []
+        },
+        blogs: {
+            results: []
+        },
+        teamMembers: {
+            results: []
+        },
+        jobVacancies: {
+            results: []
+        },
+        positions: {
+            results: []
+        },
+        youtubeVideos: {
+            results: []
+        },
+        voxpopEpisodes: {
+            results: []
+        },
+        podcastEpisodes: {
+            results: []
+        }
+    };
+
+    if (!fs.existsSync(datadir)) {
+        fs.mkdirSync(datadir, { recursive: true });
+    }
+    fs.writeFileSync(path.join(__dirname, '../data/staticData.json'), JSON.stringify(dummy, null, 2));
+}
+
+if (process.env.GITHUB_WORKFLOW) {
+    writeDummyData();
+} else {
+    fetchAndWriteData();
+}
