@@ -1,4 +1,5 @@
 import Banner from '#components/Banner';
+import Heading from '#components/Heading';
 import Page from '#components/Page';
 import Section from '#components/Section';
 import { jobVacancies } from '#data/staticData.json';
@@ -22,12 +23,15 @@ export default function Career() {
                 bannerImageSrc={AboutUsImage}
             />
             <Section>
+                <Heading size="extraLarge">
+                    Open Vacancies
+                </Heading>
                 <div className={styles.openVacancy}>
                     {allVacanciesData.map((item) => (
                         <VacancyCard
                             className={styles.card}
                             key={item.id}
-                            position={item.position.pk}
+                            position={item.position.id}
                             deadline={item.deadline}
                             applicantsCount={item.numberOfVacancies}
                             link={`/about/career/${item.id}`}

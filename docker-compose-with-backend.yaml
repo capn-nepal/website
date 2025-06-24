@@ -11,7 +11,7 @@ services:
     environment:
       - PORT=${PORT:-3000}
       - APP_TITLE=${APP_TITLE:-CAPN}
-      - APP_GRAPHQL_ENDPOINT=${APP_GRAPHQL_ENDPOINT:-http://localhost:8000/graphql/}
+      - APP_GRAPHQL_ENDPOINT=${APP_GRAPHQL_ENDPOINT:-http://web:8000/graphiql/}
       - APP_GRAPHQL_CODEGEN_ENDPOINT=${APP_GRAPHQL_CODEGEN_ENDPOINT:-./backend/schema.graphql}
     env_file:
       - .env

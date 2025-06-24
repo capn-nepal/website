@@ -15,6 +15,7 @@ async function getUpdates() {
     return staticUpdates;
 }
 
+/* eslint-disable react-refresh/only-export-components */
 export async function generateStaticParams() {
     const updates = await getUpdates();
     return updates.map((item) => ({ slug: item.slug }));

@@ -14,6 +14,7 @@ async function getMembers() {
     return staticMembers;
 }
 
+/* eslint-disable react-refresh/only-export-components */
 export async function generateStaticParams() {
     const members = await getMembers();
     return members.map((item) => ({ id: item.id }));

@@ -6,9 +6,9 @@ import styles from './styles.module.css';
 
 export default function LifeCapn() {
     return (
-        <>
+        <div className={styles.lifeWrapper}>
             <div className={styles.lifeDescription}>
-                <Heading size="large">
+                <Heading size="extraLarge">
                     Life at CAPN
                 </Heading>
                 <p>
@@ -17,33 +17,35 @@ export default function LifeCapn() {
                     your growth, and values your well-being.
                 </p>
             </div>
-            <div className={styles.lifeImagesWrapper}>
-                <ImageWrapper
-                    imageClassName={styles.lifeImages}
-                    src={AboutUsImage}
-                    alt="join images"
-                />
-                <ImageWrapper
-                    imageClassName={styles.lifeImages}
-                    src={AboutUsImage}
-                    alt="join images"
-                />
-                <ImageWrapper
-                    imageClassName={styles.lifeImages}
-                    src={AboutUsImage}
-                    alt="join images"
-                />
-                <ImageWrapper
-                    imageClassName={styles.lifeImages}
-                    src={AboutUsImage}
-                    alt="join images"
-                />
-                <ImageWrapper
-                    imageClassName={styles.lifeImages}
-                    src={AboutUsImage}
-                    alt="join images"
-                />
+            <div className={styles.croppedGallery}>
+                <div className={styles.lifeImagesWrapper}>
+                    <ImageWrapper
+                        imageClassName={styles.lifeImages}
+                        src={AboutUsImage}
+                        alt="join images"
+                    />
+                    <ImageWrapper
+                        imageClassName={styles.lifeImages}
+                        src={AboutUsImage}
+                        alt="join images"
+                    />
+                    <ImageWrapper
+                        imageClassName={styles.lifeImages}
+                        src={AboutUsImage}
+                        alt="join images"
+                    />
+                    <ImageWrapper
+                        imageClassName={styles.lifeImages}
+                        src={AboutUsImage}
+                        alt="join images"
+                    />
+                    <ImageWrapper
+                        imageClassName={styles.lifeImages}
+                        src={AboutUsImage}
+                        alt="join images"
+                    />
+                </div>
             </div>
-        </>
+        </div>
     );
 }

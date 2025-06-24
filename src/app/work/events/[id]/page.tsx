@@ -17,6 +17,7 @@ async function getEvents() {
     return staticEvents.results as unknown as Events;
 }
 
+/* eslint-disable react-refresh/only-export-components */
 export async function generateStaticParams() {
     const events = await getEvents();
     return events.map((item) => ({ id: item.id }));

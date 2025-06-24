@@ -41,9 +41,9 @@ export default function VacancyCard(props: Props) {
             >
                 {positionData?.name}
             </Heading>
-            {positionData?.summary && (
+            {positionData?.description && (
                 <p>
-                    {positionData?.summary}
+                    {positionData?.description}
                 </p>
             )}
             <div className={styles.actions}>

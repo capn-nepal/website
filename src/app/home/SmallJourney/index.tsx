@@ -1,12 +1,12 @@
 import React from 'react';
-import { _cs, unique } from '@togglecorp/fujs';
-import Image from 'next/image';
+import {
+    _cs,
+    unique,
+} from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
-import Link from '#components/Link';
 import TimelineEventCard, { type Props as TimelineProps } from '#components/TimelineEventCard';
 import AboutUsImage from '#public/aboutUsImage.jpg';
-import roadmapSmall from '#public/roadmapSmall.png';
 
 import styles from './styles.module.css';
 

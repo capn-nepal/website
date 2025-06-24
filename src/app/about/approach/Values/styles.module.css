@@ -31,7 +31,8 @@
                 display: grid;
                 grid-template-columns: 1fr 0.5fr 0.5fr 1.5fr;
                 grid-gap: var(--spacing-large);
-                height: 12rem;
+                min-height: 12rem;
+                height: auto;
 
                 .separator {
                     display: flex;
@@ -70,6 +71,7 @@
 
     @media (max-width: 768px) {
         .valuesContent {
+            padding: var(--spacing-super-large) var(--spacing-mega-large);
             .description {
                 text-wrap: pretty;
             }

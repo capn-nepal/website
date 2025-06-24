@@ -65,7 +65,11 @@ const query = gql`
                 deadline
                 description
                 position {
-                    pk
+                    id
+                    name
+                    employmentType
+                    description
+                    summary
                 }
             }
         }
@@ -74,6 +78,7 @@ const query = gql`
             results {
                 id
                 name
+                description
                 summary
             }
         }

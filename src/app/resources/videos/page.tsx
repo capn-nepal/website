@@ -15,13 +15,11 @@ import {
     youtubeVideos,
 } from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
-import PodcastImage from '#public/sosPodcast1.png';
 
 import styles from './page.module.css';
 
 type YoutubeVideos = NonNullable<NonNullable<AllDataQuery['youtubeVideos']>['results']>;
 type VoxpopVideos = NonNullable<NonNullable<AllDataQuery['voxpopEpisodes']>['results']>;
-type PodcastVideos = NonNullable<NonNullable<AllDataQuery['podcastEpisodes']>['results']>;
 
 export interface TabItem {
     key: string;
@@ -39,34 +37,6 @@ const tabs: TabItem[] = [
     {
         key: 'youtube-videos',
         label: 'Youtube Videos',
-    },
-];
-
-const podcasts = [
-    {
-        id: '1',
-        thumbnail: PodcastImage,
-        url: 'https://www.youtube.com/watch?v=MXvvEuxE-S8',
-    },
-    {
-        id: '2',
-        thumbnail: PodcastImage,
-        url: 'https://www.youtube.com/watch?v=MXvvEuxE-S8',
-    },
-    {
-        id: '3',
-        thumbnail: PodcastImage,
-        url: 'https://www.youtube.com/watch?v=MXvvEuxE-S8',
-    },
-    {
-        id: '4',
-        thumbnail: PodcastImage,
-        url: 'https://www.youtube.com/watch?v=MXvvEuxE-S8',
-    },
-    {
-        id: '5',
-        thumbnail: PodcastImage,
-        url: 'https://www.youtube.com/watch?v=MXvvEuxE-S8',
     },
 ];
 

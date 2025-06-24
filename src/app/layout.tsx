@@ -17,6 +17,7 @@ const publicSans = Public_Sans({
     subsets: ['latin'],
 });
 
+/* eslint-disable react-refresh/only-export-components */
 export const metadata: Metadata = {
     title: 'CAPN',
     description: 'CAPN',
