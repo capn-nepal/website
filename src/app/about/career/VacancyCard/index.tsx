@@ -6,10 +6,12 @@ import { _cs } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import Link from '#components/Link';
-import { positions } from '#data/staticData.json';
+import data from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 
 import styles from './styles.module.css';
 
+type Positions = NonNullable<NonNullable<AllDataQuery['positions']>['results']>;
 interface Props {
     className?: string;
     deadline: string;
@@ -26,7 +28,9 @@ export default function VacancyCard(props: Props) {
         position,
     } = props;
 
-    const positionData = positions.results.find(
+    const allPositionData = data.positions.results as unknown as Positions;
+
+    const positionData = allPositionData.find(
         (item) => item.id === position,
     );
 

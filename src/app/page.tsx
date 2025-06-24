@@ -14,7 +14,6 @@ import Reports from './home/Reports';
 import SmallJourney from './home/SmallJourney';
 import Studio from './home/Studio';
 import Voices from './home/Voices';
-import { events } from './dummyData';
 
 import styles from './page.module.css';
 
@@ -40,7 +39,6 @@ export default function Home() {
                 </Link>
             </section>
             <EventsSection
-                events={events}
                 max={3}
             />
             <Divider />

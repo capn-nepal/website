@@ -3,6 +3,7 @@ import { compareDate } from '@togglecorp/fujs';
 
 import Card from '#components/Card';
 import Heading from '#components/Heading';
+import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
 import presentationImage from '#public/presentation.jpg';
 
@@ -11,16 +12,15 @@ import styles from './styles.module.css';
 type Events = NonNullable<NonNullable<AllDataQuery['events']>['results']>
 
 interface Props {
-    events: Events;
     max?: number;
 }
 
 export default function EventsSection(props: Props) {
     const {
-        events,
         max,
     } = props;
 
+    const events = data.events.results as unknown as Events;
     const sortedEvents = events.sort((a, b) => compareDate(a.startDate, b.startDate));
     const limitedItems = max ? sortedEvents.slice(0, max) : sortedEvents;
     const firstElement = limitedItems[0];
@@ -47,9 +47,9 @@ export default function EventsSection(props: Props) {
                     </Heading>
                     <Card
                         className={styles.card}
-                        date={firstElement.startDate}
-                        title={firstElement.name}
-                        description={firstElement.description}
+                        date={firstElement?.startDate}
+                        title={firstElement?.name}
+                        description={firstElement?.description}
                         image={presentationImage}
                     />
                 </div>

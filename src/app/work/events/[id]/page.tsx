@@ -5,7 +5,7 @@ import Banner from '#components/Banner';
 import Card from '#components/Card';
 import Page from '#components/Page';
 import Section from '#components/Section';
-import { events as staticEvents } from '#data/staticData.json';
+import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
 import AboutUsImage from '#public/aboutUsImage.jpg';
 
@@ -14,7 +14,7 @@ import styles from './page.module.css';
 type Events = NonNullable<NonNullable<AllDataQuery['events']>['results']>;
 
 async function getEvents() {
-    return staticEvents.results as unknown as Events;
+    return data.events.results as unknown as Events;
 }
 
 /* eslint-disable react-refresh/only-export-components */

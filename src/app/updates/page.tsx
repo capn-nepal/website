@@ -4,7 +4,7 @@ import Banner from '#components/Banner';
 import Card from '#components/Card';
 import Page from '#components/Page';
 import Section from '#components/Section';
-import { blogs } from '#data/staticData.json';
+import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
 import AboutUsImage from '#public/aboutUsImage.jpg';
 
@@ -12,7 +12,7 @@ import styles from './page.module.css';
 
 type Blogs = NonNullable<NonNullable<AllDataQuery['blogs']>['results']>;
 
-const allBlogsData = blogs.results as unknown as Blogs;
+const allBlogsData = data.blogs.results as unknown as Blogs;
 
 export default function Updates() {
     return (

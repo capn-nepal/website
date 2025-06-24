@@ -9,11 +9,7 @@ import Button from '#components/Button';
 import Link from '#components/Link';
 import Page from '#components/Page';
 import Section from '#components/Section';
-import {
-    podcastEpisodes,
-    voxpopEpisodes,
-    youtubeVideos,
-} from '#data/staticData.json';
+import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
 
 import styles from './page.module.css';
@@ -40,9 +36,9 @@ const tabs: TabItem[] = [
     },
 ];
 
-const allYoutubeVideos = youtubeVideos.results as unknown as YoutubeVideos;
-const allVoxpopVideos = voxpopEpisodes.results as unknown as VoxpopVideos;
-const allPodcastVideos = podcastEpisodes.results as unknown as VoxpopVideos;
+const allYoutubeVideos = data.youtubeVideos.results as unknown as YoutubeVideos;
+const allVoxpopVideos = data.voxpopEpisodes.results as unknown as VoxpopVideos;
+const allPodcastVideos = data.podcastEpisodes.results as unknown as VoxpopVideos;
 
 export default function Videos() {
     const [activeTab, setActiveTab] = useState<string>('youtube-videos');

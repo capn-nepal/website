@@ -8,13 +8,12 @@ import { _cs } from '@togglecorp/fujs';
 
 import Button from '#components/Button';
 import Section from '#components/Section';
-import { teamMembers } from '#data/staticData.json';
+import data from '#data/staticData.json';
 import {
     type AllDataQuery,
     type TeamMemberTypeEnum,
 } from '#generated/types/graphql';
 
-// import { teamMembers } from '../../../dummyData';
 import TeamMemberCard from './TeamMemberCard';
 
 import styles from './styles.module.css';
@@ -23,7 +22,7 @@ type Members = NonNullable<NonNullable<AllDataQuery['teamMembers']>['results']>;
 
 export default function Boards() {
     const [showMembersSection, setShowMembersSection] = useState<TeamMemberTypeEnum>('BOARD_MEMBER');
-    const allTeamMembersData = teamMembers.results as unknown as Members;
+    const allTeamMembersData = data.teamMembers.results as unknown as Members;
 
     const handleBoardMembers = useCallback(() => {
         setShowMembersSection('BOARD_MEMBER');

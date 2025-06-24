@@ -4,7 +4,7 @@ import Banner from '#components/Banner';
 import Card from '#components/Card';
 import Page from '#components/Page';
 import Section from '#components/Section';
-import { events } from '#data/staticData.json';
+import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
 import AboutUsImage from '#public/aboutUsImage.jpg';
 
@@ -15,7 +15,7 @@ import styles from './page.module.css';
 type Events = NonNullable<NonNullable<AllDataQuery['events']>['results']>;
 
 export default function Events() {
-    const allEventsData = events.results as unknown as Events;
+    const allEventsData = data.events.results as unknown as Events;
     return (
         <Page contentClassName={styles.events}>
             <Banner
@@ -30,9 +30,7 @@ export default function Events() {
                     </>
                 )}
             />
-            <EventsSection
-                events={allEventsData}
-            />
+            <EventsSection />
             <Section
                 heading="CAPN's Recent Works & Events"
                 headingSize="extraLarge"
