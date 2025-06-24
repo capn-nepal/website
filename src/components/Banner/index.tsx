@@ -28,6 +28,7 @@ export default function Banner(props: Props) {
     return (
         <div className={_cs(
             styles.banner,
+            bannerImageSrc && styles.imageBanner,
             withoutBackground && styles.withoutBackground,
         )}
         >

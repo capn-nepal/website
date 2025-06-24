@@ -108,6 +108,7 @@ const query = gql`
                 }
             }
         }
+
         podcastEpisodes {
             results {
                 id
@@ -115,6 +116,19 @@ const query = gql`
                 title
                 videoUrl
                 thumbnail {
+                    url
+                    name
+                }
+            }
+        }
+
+        reports {
+            results {
+                id
+                title
+                status
+                publishedDate
+                reportFile {
                     url
                     name
                 }

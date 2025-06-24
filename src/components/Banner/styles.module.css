@@ -23,9 +23,16 @@
         }
     }
 
+    &.imageBanner {
+        .contentSection {
+            height: 50vh;
+        }
+    }
+
     &.withoutBackground {
         .contentSection {
             background-color: transparent;
+            min-height: 25vh;
 
             .content {
                 .heading {

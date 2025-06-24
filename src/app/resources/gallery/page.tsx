@@ -155,6 +155,7 @@ export default function Gallery() {
     return (
         <Page contentClassName={styles.gallery}>
             <Banner
+                withoutBackground
                 heading="Stories Through Images"
             />
             <Section>

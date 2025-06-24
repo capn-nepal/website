@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import { _cs } from '@togglecorp/fujs';
-import Image from 'next/image';
 
 import Banner from '#components/Banner';
 import Button from '#components/Button';
+import ImageWrapper from '#components/ImageWrapper';
 import Link from '#components/Link';
 import Page from '#components/Page';
 import Section from '#components/Section';
@@ -46,6 +46,7 @@ export default function Videos() {
     return (
         <Page contentClassName={styles.videos}>
             <Banner
+                withoutBackground
                 heading="Voices That Matter"
             />
             <Section
@@ -74,7 +75,7 @@ export default function Videos() {
                                         href={item.videoUrl}
                                         target="_blank"
                                     >
-                                        <Image
+                                        <ImageWrapper
                                             className={styles.image}
                                             src={item.thumbnail?.url}
                                             alt={item.thumbnail?.name}
@@ -95,8 +96,8 @@ export default function Videos() {
                                         href={item.videoUrl}
                                         target="_blank"
                                     >
-                                        <Image
-                                            className={styles.image}
+                                        <ImageWrapper
+                                            imageClassName={styles.image}
                                             src={item.thumbnail?.url}
                                             alt={item.thumbnail?.name}
                                         />
@@ -116,7 +117,7 @@ export default function Videos() {
                                         href={item.videoUrl}
                                         target="_blank"
                                     >
-                                        <Image
+                                        <ImageWrapper
                                             className={styles.image}
                                             src={item.thumbnail?.url}
                                             alt={item.thumbnail?.name}

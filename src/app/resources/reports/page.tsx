@@ -47,13 +47,15 @@ const reports = [
 
 export default function Reports() {
     return (
-        <Page contentClassName={styles.reports}>
+        <Page className={styles.reports}>
             <Banner
+                withoutBackground
                 heading="Research, Reports and Findings"
             />
             <Section
                 // FIXME: Fix the spacing between banner and section content
-                contentClassName={styles.section}
+                className={styles.section}
+                contentClassName={styles.reportsSection}
             >
                 {reports?.map((item) => (
                     <Card
