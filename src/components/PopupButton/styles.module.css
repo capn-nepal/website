@@ -3,6 +3,10 @@
     gap: var(--spacing-tiny);
     align-items: center;
     color: var(--color-text);
+
+    &.active {
+        color: var(--color-text-link);
+    }
 }
 
 .popup {

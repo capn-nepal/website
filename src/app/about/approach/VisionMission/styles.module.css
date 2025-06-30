@@ -1,48 +1,37 @@
-.textAccent {
-    color: var(--color-text-accent);
-    font-weight: var(--font-weight-extra-bold);
-}
-
-.visionAndMission {
-    display: flex;
-    padding: 0 var(--spacing-super-large);
-    min-height: 50vh;
+.visionAndMissionWrapper {
+    padding-top: 0;
+    min-height: 35vh;
 
     .visionAndMissionContent {
         display: grid;
         margin: 0 auto;
         width: 100%;
         max-width: var(--width-page-min);
-        grid-gap: var(--spacing-extra-large);
+        grid-gap: var(--spacing-gigantic);
         grid-template-rows: 1fr 0.5fr;
 
-        .vision {
+        .missionVision {
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-extra-large);
+            gap: var(--spacing-small);
 
-            .visionDescription {
+            .description {
                 display: flex;
                 flex-direction: column;
-            }
-        }
+                gap: var(--spacing-base);
+                font-size: var(--font-size-large);
 
-        .mission {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-extra-large);
+                .textAccent {
+                    color: var(--color-text-accent);
+                    font-weight: var(--font-weight-extra-bold);
+                }
 
-            .missionDescription {
-                display: flex;
-                flex-direction: column;
-                gap: var(--spacing-small);
             }
         }
     }
-}
 
-@media (max-width: 1014px) {
-    .visionAndMission {
+    @media (max-width: 1014px) {
         padding: var(--spacing-super-large);
     }
 }
+

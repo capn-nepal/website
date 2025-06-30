@@ -9,10 +9,13 @@
     .pillarSection {
         display: grid;
         grid-template-columns: 3fr 1fr;
-        grid-gap: var(--spacing-gigantic);
+        grid-gap: var(--spacing-universal);
+
 
         &.imageLeft {
             grid-template-columns: 1fr 3fr;
+            width: 95%;
+            align-self: end;
 
             .pillarImage {
                 align-self: center;
@@ -31,22 +34,23 @@
                 position: relative;
 
                 .pillarIcon {
-                    position: relative;
+                    position: absolute;
                     width: auto;
-                    height: 5rem;
+                    height:4.25rem;
+                    bottom: -9px;
+                    left: -20px;
                 }
 
                 .pillarHeading {
-                    position: absolute;
-                    bottom: 18px;
-                    left: 18px;
+                    position: relative;
                 }
             }
 
             .pillarDescription {
                 display: flex;
                 flex-direction: column;
-                gap: var(--spacing-large);
+                gap: var(--spacing-medium);
+                width: 90%;
 
                 .quoteIcon {
                     width: 2rem;
@@ -70,28 +74,32 @@
                     display: flex;
                     flex-direction: column;
                     gap: var(--spacing-small);
-                    font-style: italic;
 
                     .attribution {
-                        font-size: var(--font-size-small);
+                        font-size: var(--font-size-medium);
                         color: var(--color-text-accent);
                     }
                 }
             }
         }
 
-        .pillarImage {
-            width: 15rem;
-            height: 15rem;
-            object-fit: cover;
-            justify-self: flex-end;
-            align-self: center;
-            border-radius: var(--border-radius-small);
+            .pillarImage {
+                width: 20rem;
+                height: 16rem;
+                object-fit: cover;
+                justify-self: flex-end;
+                align-self: center;
+                filter: saturate(25%);
+                border-radius: var(--border-radius-small);
 
-            @media (max-width: 768px) {
-                display: none;
+                @media (max-width: 768px) {
+                    display: none;
+                }
+
+                &:hover {
+                    filter: saturate(80%);
+                }
             }
-        }
 
         @media (max-width: 768px) {
             display: flex;

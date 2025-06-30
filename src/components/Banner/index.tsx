@@ -35,7 +35,7 @@ export default function Banner(props: Props) {
             <div className={styles.contentSection}>
                 <div className={styles.content}>
                     {isDefined(eyebrowHeading) && (
-                        <Heading className={styles.eyebrowHeading} size="small">
+                        <Heading className={styles.eyebrowHeading} size="extraSmall">
                             {eyebrowHeading}
                         </Heading>
                     )}
@@ -47,7 +47,8 @@ export default function Banner(props: Props) {
             {isDefined(bannerImageSrc) && (
                 <div className={styles.bannerImage}>
                     <ImageWrapper
-                        className={styles.image}
+                        className={styles.imageWrapper}
+                        imageClassName={styles.image}
                         src={bannerImageSrc}
                         alt="Banner Image"
                     />

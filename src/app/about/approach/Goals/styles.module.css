@@ -1,7 +1,5 @@
 .goals {
     display: flex;
-    padding: var(--spacing-super-large);
-
     .goalsContent {
         display: flex;
         flex-direction: column;
@@ -10,15 +8,28 @@
         max-width: var(--width-page-max);
     }
 
+    .goalsHeading {
+        text-wrap: balance;
+    }
+
+    .goalDescription {
+        font-size: var(--font-size-large);
+        width: 50%;
+    }
+
     .goalLists {
         display: grid;
-        grid-gap: var(--spacing-large);
-        grid-template-columns: 1.5fr 1fr;
+        grid-gap: var(--spacing-mega-large);
+        grid-template-columns: 1fr 1fr;
 
-        .goalImage {
+        .goalImageWrapper {
             width: 100%;
             height: 24rem;
             object-fit: cover;
+
+            .goalImage {
+                border-radius: var(--border-radius-large);
+            }
         }
 
         .listCard {
@@ -27,9 +38,9 @@
             gap: var(--spacing-extra-large);
 
             .card {
-                padding: var(--spacing-large);
+                padding: var(--spacing-large) var(--spacing-galactic) var(--spacing-large) var(--spacing-large);
                 background-color: var(--color-card);
-                height: 17rem;
+                height: 13rem;
                 border-radius: var(--border-radius-large);
 
                 .cardTitle {
@@ -38,7 +49,7 @@
                     .number {
                         position: relative;
                         color: var(--color-primary);
-                        opacity: 50%;
+                        opacity: 35%;
                         font-size: var(--font-size-galactic);
                         font-weight: var(--font-weight-boldest);
                         font-family: var(--font-heading);
@@ -51,6 +62,8 @@
                         top: 1.7rem;
                         padding-top: var(--spacing-large);
                         z-index: 2;
+                        font-weight: var(--font-weight-semi-bold);
+                        text-wrap: balance;
                     }
                 }
             }

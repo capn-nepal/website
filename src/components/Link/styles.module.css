@@ -1,11 +1,14 @@
 .link {
-    display: block;
-    color: var(--color-text-link);
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: var(--color-primary);
     padding: var(--spacing-super-small) 0;
 
     .icon {
         flex-shrink: 0;
-        margin: 0 var(--spacing-small);
+        margin: 0 var(--spacing-tiny);
+        transform: rotate(-31.93deg);
     }
 
     &:hover {

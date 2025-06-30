@@ -7,7 +7,9 @@
     --color-background: #ffffff;
     --color-background-dark: #3f3f3f;
     --color-foreground: #171717;
+    --color-banner: #024344;
 
+    --color-text-black: #000000;
     --color-heading: #05445e;
     --color-text-on-dark: #ffffff;
     --color-text-link: #da8733;
@@ -93,6 +95,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
     font-family: var(--font-heading), sans-serif;
 }
 
@@ -100,6 +103,10 @@ h1, h2, h3, h4, h5, h6 {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+}
+
+p {
+    line-height: 1.5
 }
 
 a {

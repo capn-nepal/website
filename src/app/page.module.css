@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     padding-bottom: var(--spacing-universal);
-    gap: var(--spacing-universal);
 
     .definition {
         display: flex;

@@ -74,7 +74,7 @@ export default function PillarSection(props: Props) {
                         </Heading>
                     </div>
                     <div className={styles.pillarDescription}>
-                        {headingDescription}
+                        <p>{headingDescription}</p>
                         <Image
                             className={styles.middleImage}
                             alt={imageAlt}

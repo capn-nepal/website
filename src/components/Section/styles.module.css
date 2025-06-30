@@ -1,5 +1,6 @@
 .section {
     display: flex;
+    padding-top: var(--spacing-galactic);
     flex-direction: column;
 
     .content {
@@ -16,5 +17,9 @@
         .heading {
             text-align: center;
         }
+    }
+
+    @media (max-width: 768px) {
+        padding-top: var(--spacing-enormous);
     }
 }

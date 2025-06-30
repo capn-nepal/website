@@ -7,7 +7,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: var(--spacing-large) var(--spacing-super-large);
+        padding: var(--spacing-universal) var(--spacing-super-large);
         gap: var(--spacing-galactic);
         flex-grow: 1;
         margin: 0 auto;
@@ -22,7 +22,7 @@
         .pillarsContainer {
             display: flex;
             flex-direction: column;
-            gap: var(--spacing-super-large);
+            gap: var(--spacing-gigantic);
 
             .pillarContent {
                 color: var(--color-text-on-dark);

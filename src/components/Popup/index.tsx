@@ -61,7 +61,7 @@ function getFloatPlacement(parentRef: React.RefObject<HTMLElement | null>): Floa
         if (verticalPosition === 'top') {
             placement.bottom = `${window.innerHeight - y + 10}px`;
         } else if (verticalPosition === 'bottom') {
-            placement.top = `${y + height + 10}px`;
+            placement.top = `${y + height + 20}px`;
         }
 
         contentWidth = `${width}px`;
@@ -152,7 +152,6 @@ function Popup(props: PopupProps) {
                     verticalPosition === 'top' ? styles.top : styles.bottom,
                 )}
             >
-                <div className={styles.tip} />
                 <div
                     className={_cs(styles.content, contentClassName)}
                     style={{

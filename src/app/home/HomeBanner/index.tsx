@@ -13,7 +13,7 @@ export default function HomeBanner() {
             <div className={styles.content}>
                 <div className={styles.leftContent}>
                     <div className={styles.headings}>
-                        <Heading className={styles.heading} size="superLarge">
+                        <Heading className={styles.heading} size="extraLarge">
                             <span className={styles.yellow}>Citizenship Is</span>
                             <br />
                             <span className={styles.yellow}>A Right, </span>

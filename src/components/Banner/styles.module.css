@@ -1,31 +1,42 @@
 .banner {
+    --banner-navbar-offset: calc(2 * var(--spacing-super-large) + 2.2rem + 2 * var(--spacing-super-small) + var(--spacing-mega-large));
+    --banner-navbar-offset-768: calc(2 * var(--spacing-super-large) + 2.2rem + 2 * var(--spacing-super-small) + var(--spacing-large));
+    --banner-image-offset: 6rem;
     display: flex;
     flex-direction: column;
 
     .contentSection {
-        background-color: var(--color-tertiary);
+        background-color: var(--color-banner);
         min-height: 50vh;
-        padding: calc(2 * var(--spacing-large) + 2.2rem + 2 * var(--spacing-super-small) + var(--spacing-mega-large)) var(--spacing-super-large) 0 var(--spacing-super-large);
+        padding: var(--banner-navbar-offset) var(--spacing-super-large)  var(--spacing-super-large) var(--spacing-super-large);
         width: 100%;
 
         .content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-tiny);
             max-width: var(--width-page-max);
             margin: 0 auto;
 
             .eyebrowHeading {
                 color: var(--color-primary);
                 font-weight: var(--font-weight-medium);
+                text-transform: uppercase;
             }
 
             .heading {
                 color: var(--color-text-on-secondary);
+
+                @media (max-width: 768px) {
+                    font-size: var(--font-size-mega-large);
+                }
             }
         }
     }
 
     &.imageBanner {
         .contentSection {
-            height: 50vh;
+            padding: var(--banner-navbar-offset) var(--spacing-super-large) calc(var(--banner-image-offset) + var(--spacing-super-large)) var(--spacing-super-large);
         }
     }
 
@@ -47,20 +58,31 @@
         max-width: var(--width-page-max);
         width: 100%;
 
-        .image {
+        .imageWrapper {
             max-width: var(--width-page-max);
             width: 100%;
-            height: 30rem;
+            height: 34rem;
             object-fit: cover;
-            transform: translate(0%, -20%);
-            filter: saturate(15%);
+            transform: translateY(calc(-1 * var(--banner-image-offset)));
+            filter: saturate(10%);
+
+            .image {
+                border-radius: var(--border-radius-extra-small);
+            }
         }
     }
 
-    @media (max-width: 1014px) {
+    @media (max-width: 768px) {
+        &.imageBanner {
+            .contentSection {
+                padding: var(--banner-navbar-offset-768) var(--spacing-super-large) calc(var(--banner-image-offset) + var(--spacing-super-large)) var(--spacing-super-large);
+            }
+        }
+
         .bannerImage {
-            .image {
-                transform: translate(0);
+            .imageWrapper {
+                height: 25rem;
+                padding: 0 var(--spacing-large);
             }
         }
     }

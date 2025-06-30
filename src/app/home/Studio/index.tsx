@@ -23,12 +23,11 @@ export default function Studio(props: Props) {
         <div className={_cs(className, styles.studio)}>
             <div className={styles.content}>
                 <div className={styles.leftContainer}>
-                    <Heading
-                        className={styles.heading}
-                        size="large"
+                    <p
+                        className={styles.description}
                     >
                         {description}
-                    </Heading>
+                    </p>
                     <Link
                         // TODO: Add Episode link
                         href="/"

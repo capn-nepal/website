@@ -16,7 +16,7 @@
 
         .leftContainer {
             display: grid;
-            grid-template-columns: 12rem 0.9fr;
+            grid-template-columns: 12rem 12rem;
             grid-template-rows: auto auto;
             gap: var(--spacing-small);
 
@@ -63,9 +63,10 @@
         }
 
         .rightContainer {
-            .heading {
+            .description {
                 text-align: left;
                 color: var(--color-text-accent);
+                font-size: var(--font-size-super-large);
                 font-weight: var(--font-weight-medium);
             }
         }
@@ -77,6 +78,7 @@
             .leftContainer {
                 display: flex;
                 flex-direction: column;
+                flex-grow: 1;
                 order: 2;
 
                 .img1, .img2, .img3 {
@@ -85,7 +87,7 @@
                     align-self: unset;
 
                     .image {
-                        height: 10rem;
+                        height: 12rem;
                     }
                 }
             }

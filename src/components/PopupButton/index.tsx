@@ -84,7 +84,7 @@ function PopupButton(props: PopupButtonProps) {
                 elementRef={buttonRef}
                 onClick={handleShowPopup}
                 variant="transparent"
-                className={styles.popupButton}
+                className={_cs(popupShown && styles.active, styles.popupButton)}
             >
                 {label}
                 {!arrowHidden && (

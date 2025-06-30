@@ -1,7 +1,7 @@
 import Banner from '#components/Banner';
 import Divider from '#components/Divider';
 import Page from '#components/Page';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import ApproachImage from '#public/approachBanner.png';
 
 import Goals from './Goals';
 import Values from './Values';
@@ -11,8 +11,7 @@ export default function About() {
     return (
         <Page>
             <Banner
-                // NOTE: We need to replace with the real image as mentioned in figma
-                bannerImageSrc={AboutUsImage}
+                bannerImageSrc={ApproachImage}
                 eyebrowHeading="Our Approach"
                 heading={(
                     <>

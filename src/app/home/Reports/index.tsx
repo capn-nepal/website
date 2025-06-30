@@ -53,12 +53,11 @@ export default function Reports(props: Props) {
                     </div>
                 </div>
                 <div className={styles.rightContainer}>
-                    <Heading
-                        className={styles.heading}
-                        size="large"
+                    <p
+                        className={styles.description}
                     >
                         {description}
-                    </Heading>
+                    </p>
                 </div>
             </div>
         </div>
