@@ -1,7 +1,6 @@
 import React from 'react';
 import { _cs } from '@togglecorp/fujs';
 
-import Heading from '#components/Heading';
 import ImageScrollCard from '#components/ImageScrollCard';
 import annualReport from '#public/annualReport.png';
 import boyImage from '#public/boy.png';
