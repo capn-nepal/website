@@ -135,8 +135,6 @@ function Popup(props: PopupProps) {
     const {
         placement,
         width,
-        horizontalPosition,
-        verticalPosition,
         maxHeight,
     } = useAttachedFloatingPlacement(parentRef);
 
@@ -148,8 +146,8 @@ function Popup(props: PopupProps) {
                 className={_cs(
                     styles.popup,
                     className,
-                    horizontalPosition === 'left' ? styles.left : styles.right,
-                    verticalPosition === 'top' ? styles.top : styles.bottom,
+                    // horizontalPosition === 'left' ? styles.left : styles.right,
+                    // verticalPosition === 'top' ? styles.top : styles.bottom,
                 )}
             >
                 <div

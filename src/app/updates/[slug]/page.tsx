@@ -19,6 +19,9 @@ async function getUpdates() {
 /* eslint-disable react-refresh/only-export-components */
 export async function generateStaticParams() {
     const updates = await getUpdates();
+    if (!updates.length) {
+        return [{ slug: 'empty' }];
+    }
     return updates.map((item) => ({ slug: item.id }));
 }
 

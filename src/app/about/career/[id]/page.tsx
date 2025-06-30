@@ -15,6 +15,9 @@ async function getVacancies() {
 /* eslint-disable react-refresh/only-export-components */
 export async function generateStaticParams() {
     const vacancies = await getVacancies();
+    if (!vacancies.length) {
+        return [{ id: 'empty' }];
+    }
     return vacancies.map((item) => ({ id: item.id }));
 }
 

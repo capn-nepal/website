@@ -1,7 +1,6 @@
 import React from 'react';
 import { _cs } from '@togglecorp/fujs';
 
-import Heading from '#components/Heading';
 import ImageScrollCard from '#components/ImageScrollCard';
 import Link from '#components/Link';
 import sosPodcast1 from '#public/sosPodcast1.png';

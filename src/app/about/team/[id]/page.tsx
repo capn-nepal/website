@@ -22,6 +22,9 @@ async function getMembers() {
 /* eslint-disable react-refresh/only-export-components */
 export async function generateStaticParams() {
     const members = await getMembers();
+    if (!members.length) {
+        return [{ id: 'empty' }];
+    }
     return members.map((item) => ({ id: item.id }));
 }
 
