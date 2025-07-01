@@ -7,9 +7,11 @@ import Goals from './Goals';
 import Values from './Values';
 import VisionMission from './VisionMission';
 
+import styles from './page.module.css';
+
 export default function About() {
     return (
-        <Page>
+        <Page contentClassName={styles.about}>
             <Banner
                 bannerImageSrc={ApproachImage}
                 eyebrowHeading="Our Approach"

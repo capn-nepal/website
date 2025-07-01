@@ -9,7 +9,10 @@ import styles from './page.module.css';
 
 export default function Team() {
     return (
-        <Page className={styles.teamPage}>
+        <Page
+            className={styles.teamPage}
+            contentClassName={styles.teamContent}
+        >
             <Banner
                 // NOTE: We need to replace with the real image as mentioned in figma
                 bannerImageSrc={TeamImage}

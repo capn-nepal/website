@@ -32,8 +32,8 @@ const links = [
                 link: '/journey/',
             },
             {
-                label: 'Members',
-                link: '/members/',
+                label: 'Team',
+                link: '/team/',
             },
             {
                 label: 'Career',

@@ -12,7 +12,6 @@ import HomeBanner from './home/HomeBanner';
 import PillarsSection from './home/PillarsSection';
 import RecentWorksSection from './home/RecentWorksSection';
 import Reports from './home/Reports';
-import SmallJourney from './home/SmallJourney';
 import Studio from './home/Studio';
 import Voices from './home/Voices';
 
@@ -48,8 +47,6 @@ export default function Home() {
             <Divider />
             <RecentWorksSection />
             <PillarsSection />
-            <Divider />
-            <SmallJourney />
             <Community />
             <Divider />
             <Voices />

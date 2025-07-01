@@ -92,7 +92,7 @@ export default function PillarSection(props: Props) {
                         <div className={styles.quote}>
                             {quote ? (
                                 <>
-                                    & quot;
+                                    &quot;
                                     {quote}
                                     &quot;
                                 </>

@@ -4,7 +4,7 @@ import Page from '#components/Page';
 import Section from '#components/Section';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import careerImage from '#public/career.jpg';
 
 import LifeCapn from './LifeCapn';
 import VacancyCard from './VacancyCard';
@@ -16,28 +16,39 @@ type Vacancies = NonNullable<NonNullable<AllDataQuery['jobVacancies']>['results'
 export default function Career() {
     const allVacanciesData = data.jobVacancies.results as unknown as Vacancies;
     return (
-        <Page className={styles.career}>
+        <Page
+            className={styles.career}
+            contentClassName={styles.careerContent}
+        >
             <Banner
                 eyebrowHeading="CAREER"
                 heading="Work with us"
-                bannerImageSrc={AboutUsImage}
+                bannerImageSrc={careerImage}
             />
             <Section>
                 <Heading size="extraLarge">
                     Open Vacancies
                 </Heading>
-                <div className={styles.openVacancy}>
-                    {allVacanciesData.map((item) => (
-                        <VacancyCard
-                            className={styles.card}
-                            key={item.id}
-                            position={item.position.id}
-                            deadline={item.deadline}
-                            applicantsCount={item.numberOfVacancies}
-                            link={`/about/career/${item.id}`}
-                        />
-                    ))}
-                </div>
+                {allVacanciesData.length > 0 ? (
+                    <div className={styles.openVacancy}>
+                        {allVacanciesData.map((item) => (
+                            <VacancyCard
+                                className={styles.card}
+                                key={item.id}
+                                position={item.position.id}
+                                deadline={item.deadline}
+                                applicantsCount={item.numberOfVacancies}
+                                link={`/about/career/${item.id}`}
+                            />
+                        ))}
+                    </div>
+                ) : (
+                    <div className={styles.noVacancy}>
+                        <Heading size="large">
+                            There are no active vacancies at the moment.
+                        </Heading>
+                    </div>
+                )}
             </Section>
             <LifeCapn />
         </Page>

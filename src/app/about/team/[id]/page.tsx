@@ -4,13 +4,12 @@ import {
 } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
+import ImageWrapper from '#components/ImageWrapper';
 import Link from '#components/Link';
 import Page from '#components/Page';
 import Section from '#components/Section';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
-
-import TeamMemberCard from '../Boards/TeamMemberCard';
 
 import styles from './page.module.css';
 
@@ -47,22 +46,24 @@ export default async function TeamDetailPage({ params }: PageProps) {
     }
 
     return (
-        <Page>
+        <Page className={styles.page}>
             <Section
                 className={styles.memberWrapper}
                 contentClassName={styles.memberContent}
             >
                 {isDefined(memberDetails.memberPhoto)
                     && (
-                        <TeamMemberCard
-                            image={memberDetails?.memberPhoto.url}
+                        <ImageWrapper
+                            className={styles.cardImage}
+                            imageClassName={styles.image}
+                            src={memberDetails.memberPhoto?.url}
                             alt={memberDetails?.memberPhoto.name}
                         />
                     )}
                 <div className={styles.memberDescription}>
                     <div>
                         <Heading>
-                            {`${memberDetails.firstName} ${memberDetails.middleName} ${memberDetails.lastName}`}
+                            {`${memberDetails.firstName} ${memberDetails.middleName ? memberDetails.middleName : ''} ${memberDetails.lastName}`}
                         </Heading>
                         <Heading font="normal" size="extraSmall">
                             {memberDetails.designation}

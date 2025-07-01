@@ -18,20 +18,17 @@ export default function LegalAdvocacy() {
                     title: 'Policy & Legislative Advocacy',
                     // TODO: Add links
                     href: '#',
-                    description:
-                        'Engaging lawmakers, CSOs, and experts to reform discriminatory citizenship laws.',
+                    description: 'Engaging lawmakers, CSOs, and experts to reform discriminatory citizenship laws.',
                 },
                 {
                     title: 'Evidence-Based Research',
                     href: '#',
-                    description:
-                        'Using data and lived experiences to support legal reform and awareness efforts.',
+                    description: 'Using data and lived experiences to support legal reform and awareness efforts.',
                 },
                 {
                     title: 'Individual Case Support',
                     href: '#',
-                    description:
-                        'Providing legal aid and documentation support to those denied citizenship.',
+                    description: 'Providing legal aid and documentation support to those denied citizenship.',
                 },
             ]}
         />

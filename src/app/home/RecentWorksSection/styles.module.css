@@ -37,6 +37,7 @@
 
             .card {
                 height: 24rem;
+                max-width: 40rem;
             }
         }
     }

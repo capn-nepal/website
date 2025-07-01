@@ -35,6 +35,29 @@ export default function HomeBanner() {
                     alt="Banner Image"
                 />
             </div>
+            <div className={styles.rotatingTextContainer}>
+                <svg
+                    viewBox="0 0 160 160"
+                    width="160"
+                    height="160"
+                    className={styles.rotatingText}
+                >
+                    <defs>
+                        <path
+                            id="circlePath"
+                            d="M 80, 80
+                            m -60, 0
+                            a 60,60 0 1,1 120,0
+                            a 60,60 0 1,1 -120,0"
+                        />
+                    </defs>
+                    <text fontSize="17" fill="#a3a3a3">
+                        <textPath href="#circlePath" startOffset="0%">
+                            Transforming the fight for citizenship equality.
+                        </textPath>
+                    </text>
+                </svg>
+            </div>
         </div>
     );
 }

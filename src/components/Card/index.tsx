@@ -50,7 +50,8 @@ export default function Card(props: Props) {
         <>
             {image && (
                 <ImageWrapper
-                    className={styles.image}
+                    className={styles.imageWrapper}
+                    imageClassName={styles.image}
                     src={image}
                     alt={title ?? 'card-image'}
                 />

@@ -10,16 +10,19 @@
     border-radius: var(--border-radius-large);
     transition: all ease-in-out 200ms;
 
-    .image {
+    .imageWrapper {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
         z-index: 0;
-        border-radius: var(--border-radius-large);
         filter: brightness(40%);
+
+        .image {
+            object-fit: cover;
+            border-radius: var(--border-radius-large);
+        }
     }
 
     .dateContainer {
@@ -61,7 +64,7 @@
 
     &.link {
         &:hover {
-            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
         }
     }
 }

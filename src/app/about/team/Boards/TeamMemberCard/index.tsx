@@ -12,7 +12,7 @@ export interface Props {
     name?: string;
     designation?: string;
     showDescription?: boolean;
-    link?: string;
+    link: string;
 }
 
 export default function TeamMemberCard(props: Props) {
@@ -25,35 +25,12 @@ export default function TeamMemberCard(props: Props) {
         link,
     } = props;
 
-    if (link) {
-        return (
-            <Link
-                href={link}
-                variant="div"
-                className={styles.cardWrapper}
-            >
-                {showDescription && (
-                    <div className={styles.memberDetails}>
-                        <Heading
-                            className={styles.memberHeading}
-                            size="small"
-                            font="normal"
-                        >
-                            {name}
-                        </Heading>
-                        {designation}
-                    </div>
-                )}
-                <ImageWrapper
-                    imageClassName={styles.cardImage}
-                    src={image}
-                    alt={alt}
-                />
-            </Link>
-        );
-    }
     return (
-        <div className={styles.cardWrapper}>
+        <Link
+            href={link}
+            variant="div"
+            className={styles.cardWrapper}
+        >
             {showDescription && (
                 <div className={styles.memberDetails}>
                     <Heading
@@ -71,6 +48,6 @@ export default function TeamMemberCard(props: Props) {
                 src={image}
                 alt={alt}
             />
-        </div>
+        </Link>
     );
 }

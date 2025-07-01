@@ -45,11 +45,6 @@ export default function VacancyCard(props: Props) {
             >
                 {positionData?.name}
             </Heading>
-            {positionData?.description && (
-                <p>
-                    {positionData?.description}
-                </p>
-            )}
             <div className={styles.actions}>
                 <div className={styles.actionsContent}>
                     <IoCalendarOutline />

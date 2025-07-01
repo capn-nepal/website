@@ -6,7 +6,7 @@ import Page from '#components/Page';
 import Section from '#components/Section';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import presentationImage from '#public/presentation.jpg';
 
 import styles from './page.module.css';
 
@@ -18,8 +18,7 @@ export default function Updates() {
     return (
         <Page contentClassName={styles.updates}>
             <Banner
-                // NOTE: We need to replace with the real image as mentioned in figma
-                bannerImageSrc={AboutUsImage}
+                bannerImageSrc={presentationImage}
                 eyebrowHeading="Notices"
                 heading="News & Updates"
             />

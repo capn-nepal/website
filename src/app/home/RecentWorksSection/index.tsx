@@ -52,7 +52,7 @@ export default function RecentWorksSection() {
                             className={styles.card}
                             date={item.startDate}
                             title={item.name}
-                            link={`/work/events/${item.id}`}
+                            link={`/work/events/${item.id}/`}
                             // FIXME: Update image after its coming from backend
                             // image={vocies1Image}
                         />

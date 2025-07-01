@@ -1,92 +1,134 @@
-import { unique } from '@togglecorp/fujs';
+'use client';
+
+import { useEffect } from 'react';
+import {
+    _cs,
+    listToGroupList,
+} from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
+import ImageWrapper from '#components/ImageWrapper';
 import Page from '#components/Page';
-import TimelineEventCard, { type Props as TimelineProps } from '#components/TimelineEventCard';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import journey1 from '#public/journey/journey1.jpg';
+import journey2 from '#public/journey/journey2.jpg';
+import journey3 from '#public/journey/journey3.jpg';
+import journey4 from '#public/journey/journey4.jpg';
+import journey5 from '#public/journey/journey5.jpg';
+import journey6 from '#public/journey/journey6.jpg';
+import journey7 from '#public/journey/journey7.jpg';
+import journey8 from '#public/journey/journey8.jpg';
+import journey9 from '#public/journey/journey9.jpg';
+import journey10 from '#public/journey/journey10.jpg';
+import journey11 from '#public/journey/journey11.png';
 
 import styles from './page.module.css';
 
-type TimelineData = TimelineProps & { id: number }
-type TimelineYear = { year: number };
-
-const timelineData: TimelineData[] = [
+const timelineData = [
     {
         id: 1,
-        year: 2013,
-        description: 'Deepti Gurung started the Facebook page &quot; Citizenship in the Name of Mother &quot; to gather support and public opinion oncitizenship issues, sparking her activism journey.',
-        image: AboutUsImage,
+        date: '2013-03-01',
+        description: 'Deepti Gurung\'s fight for her daughters\' citizenship led her to FWLD, where lawyers helped her file a Supreme Court case, forming close bonds in the process.',
+        image: journey1,
     },
     {
         id: 2,
-        year: 2013,
-        description: 'Deepti Gurung started the Facebook page &quot; Citizenship in the Name of Mother &quot; to gather support and public opinion oncitizenship issues, sparking her activism journey.',
-        image: AboutUsImage,
+        date: '2013-06-01',
+        description: 'Deepti Gurung started the Facebook page \'Citizenship in the Name of Mother\' to gather support and public opinion on citizenship issues, sparking her activism journey.',
+        image: journey2,
     },
     {
         id: 3,
-        year: 2014,
-        description: 'Deepti Gurung co-organized and participated in Kathmandu’s 2000 Rising for Citizenship campaign organized by the Youth Network on Civil Society Organization(YNCSO) and the signature campaign in 13 districts of Nepal.',
-        image: AboutUsImage,
+        date: '2014-11-01',
+        description: 'Deepti Gurung co-organized and participated in Kathmandu’s 2000 Rising for Citizenship campaign organized by the Youth Network on Civil Society Organization (YNCSO) and the signature campaign in 13 districts of Nepal.',
+        image: journey3,
     },
     {
         id: 4,
-        year: 2014,
+        date: '2014-12-01',
         description: 'Deepti Gurung participated in the Human Chain protest against the discriminatory citizenship provisions agreed by the drafting committee of the Constituent Assembly.',
-        image: AboutUsImage,
+        image: journey4,
     },
     {
         id: 5,
-        year: 2015,
+        date: '2015-09-01',
         description: 'Deepti Gurung was part of the delegation of FWLD that submitted a memorandum to former President Dr. Ram Baran Yadav, demanding citizenship through mothers.',
-        image: AboutUsImage,
+        image: journey5,
     },
     {
         id: 6,
-        year: 2015,
+        date: '2015-12-01',
         description: 'Citizenship Affected People’s Network was formed as a loose network of affected people with the support of FWLD.',
-        image: AboutUsImage,
+        image: journey6,
     },
     {
         id: 7,
-        year: 2017,
-        description: 'After a long and tremendous struggle, the Supreme Court ordered in  favor of citizenship in the name of mother for Neha Gurung, Deepti Gurung’s elder daughter.',
-        image: AboutUsImage,
+        date: '2017-05-01',
+        description: 'After a long and tremendous struggle, the Supreme Court ordered in favor of citizenship in the name of mother for Neha Gurung, Deepti Gurung’s elder daughter.',
+        image: journey7,
     },
     {
         id: 8,
-        year: 2019,
+        date: '2019-11-01',
         description: 'Attended the World Conference on Statelessness, where Deepti Gurung and Neha Gurung co-created the “Free Neha” artwork, raising awareness about the challenges faced by stateless children like her daughter.',
-        image: AboutUsImage,
+        image: journey8,
     },
     {
         id: 9,
-        year: 2021,
+        date: '2021-07-01',
         description: 'CAPN was officially registered as an NGO, Deepti Gurung took the position of Executive Director to continue to advocate for gender equal citizenship laws in Nepal.',
-        image: AboutUsImage,
+        image: journey9,
     },
     {
         id: 10,
-        year: 2024,
+        date: '2024-09-01',
         description: 'Deepti Gurung, CAPN’s Executive Director and Founder was honored with the Women’s Refugee Commission’s prestigious Voices of Courage Award.',
-        image: AboutUsImage,
+        image: journey10,
     },
     {
         id: 11,
-        year: 2024,
+        date: '2024-10-01',
         description: 'Deepti Gurung, CAPN’s Executive Director and Founder was honored with the prestigious UNHCR Nansen Refugee Award.',
-        image: AboutUsImage,
+        image: journey11,
     },
 ];
 
-const timelineYear: TimelineYear[] = unique(
+const groupedByYear = listToGroupList(
     timelineData,
-    (item) => item.year,
+    (item) => new Date(item.date).getFullYear().toString(),
 );
 
+const finalData = Object.keys(groupedByYear).map((year) => ({
+    year,
+    events: groupedByYear[year],
+}));
+
 export default function Journey() {
+    useEffect(() => {
+        const journeyElement = document.getElementById('journey');
+        const handleScroll = () => {
+            const elements = Array.from(document.getElementsByClassName(styles.text));
+
+            elements.forEach((el) => {
+                const element = el as HTMLElement;
+                const rect = element.getBoundingClientRect();
+
+                if (rect.top <= 300) {
+                    element.style.opacity = '0';
+                } else {
+                    element.style.opacity = '100';
+                }
+            });
+        };
+
+        journeyElement?.addEventListener('scroll', handleScroll);
+        return () => journeyElement?.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <Page>
+        <Page
+            className={styles.journey}
+            elementId="journey"
+        >
             <div className={styles.banner}>
                 <Heading className={styles.heading} size="superLarge">
                     Years of Action, Voices of Change:
@@ -95,22 +137,46 @@ export default function Journey() {
                 </Heading>
             </div>
             <div className={styles.content}>
+                {/*
                 <div className={styles.timelineNavPanel}>
                     {timelineYear.map((line) => (
-                        <div className={styles.timePanel} key={line.year}>
+                        <div className={styles.timePanel} key={line.date}>
                             <div className={styles.indicator} />
-                            {line.year}
+                            {line.date}
                         </div>
                     ))}
                 </div>
+                */}
                 <div className={styles.timelineContent}>
-                    {timelineData.map((datum) => (
-                        <TimelineEventCard
-                            key={datum.id}
-                            year={datum.year}
-                            description={datum.description}
-                            image={datum.image}
-                        />
+                    {finalData.map((datum) => (
+                        <div key={datum.year}>
+                            <div className={styles.yearContainer}>
+                                <Heading
+                                    className={styles.year}
+                                    size="extraLarge"
+                                >
+                                    {datum.year}
+                                </Heading>
+                            </div>
+                            <div className={styles.yearContent}>
+                                {datum.events.map((eventItem) => (
+                                    <div
+                                        key={eventItem.date}
+                                        className={styles.eventItem}
+                                    >
+                                        <div className={_cs(styles.text, 'here')}>
+                                            {eventItem.description}
+                                        </div>
+                                        <ImageWrapper
+                                            className={styles.imageWrapper}
+                                            imageClassName={styles.image}
+                                            src={eventItem.image}
+                                            alt="timeline"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     ))}
                 </div>
             </div>

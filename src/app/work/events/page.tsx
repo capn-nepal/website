@@ -6,7 +6,7 @@ import Page from '#components/Page';
 import Section from '#components/Section';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import careerImage from '#public/aboutUsImage.jpg';
 
 import EventsSection from '../../home/EventsSection';
 
@@ -20,8 +20,7 @@ export default function Events() {
     return (
         <Page contentClassName={styles.events}>
             <Banner
-                // NOTE: We need to replace with the real image as mentioned in figma
-                bannerImageSrc={AboutUsImage}
+                bannerImageSrc={careerImage}
                 eyebrowHeading="Our Events"
                 heading={(
                     <>
@@ -41,11 +40,10 @@ export default function Events() {
                         <Card
                             key={item.id}
                             className={styles.card}
-                            image={AboutUsImage}
                             title={item.name}
                             date={item.startDate}
                             description={item.description}
-                            link={`/work/events/${item.id}`}
+                            link={`/work/events/${item.id}/`}
                         />
                     ))}
                 </div>

@@ -57,27 +57,6 @@
                 }
             }
         }
-
-        @media (max-width: 768px) {
-            .gridContainer {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: var(--spacing-medium);
-
-                .item {
-                    order: 1;
-                }
-                .item2 {
-                    order: -1;
-                    width: 100%;
-
-                    .communityImage {
-                        width: 100%;
-                    }
-                }
-            }
-        }
     }
 }
 

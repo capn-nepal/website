@@ -9,10 +9,7 @@ import { _cs } from '@togglecorp/fujs';
 import Button from '#components/Button';
 import Section from '#components/Section';
 import data from '#data/staticData.json';
-import {
-    type AllDataQuery,
-    type TeamMemberTypeEnum,
-} from '#generated/types/graphql';
+import { type AllDataQuery } from '#generated/types/graphql';
 
 import TeamMemberCard from './TeamMemberCard';
 
@@ -21,15 +18,15 @@ import styles from './styles.module.css';
 type Members = NonNullable<NonNullable<AllDataQuery['teamMembers']>['results']>;
 
 export default function Boards() {
-    const [showMembersSection, setShowMembersSection] = useState<TeamMemberTypeEnum>('BOARD_MEMBER');
+    const [showMembersSection, setShowMembersSection] = useState<'Board Member' | 'Team Member'>('Board Member');
     const allTeamMembersData = data.teamMembers.results as unknown as Members;
 
     const handleBoardMembers = useCallback(() => {
-        setShowMembersSection('BOARD_MEMBER');
+        setShowMembersSection('Board Member');
     }, []);
 
     const handleTeamMembers = useCallback(() => {
-        setShowMembersSection('TEAM_MEMBER');
+        setShowMembersSection('Team Member');
     }, []);
 
     const filteredMembers = allTeamMembersData.filter(
@@ -41,14 +38,14 @@ export default function Boards() {
             <div className={styles.boards}>
                 <div className={styles.buttonGroup}>
                     <Button
-                        className={_cs(styles.button, showMembersSection === 'BOARD_MEMBER' && styles.active)}
+                        className={_cs(styles.button, showMembersSection === 'Board Member' && styles.active)}
                         variant="transparent"
                         onClick={handleBoardMembers}
                     >
                         Board Members
                     </Button>
                     <Button
-                        className={_cs(styles.button, showMembersSection === 'TEAM_MEMBER' && styles.active)}
+                        className={_cs(styles.button, showMembersSection === 'Team Member' && styles.active)}
                         variant="transparent"
                         onClick={handleTeamMembers}
                     >

@@ -1,6 +1,7 @@
 .banner {
     display: flex;
     flex-direction: column;
+    position: relative;
     background-color: var(--color-secondary);
     color: var(--color-text-on-secondary);
     padding: 0 var(--spacing-super-large);
@@ -80,5 +81,24 @@
                 place-self: center;
             }
         }
+    }
+}
+.rotatingTextContainer {
+    position: absolute;
+    left: calc(50% - 80px);
+    bottom: -80px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    .rotatingText {
+        animation: rotateText 20s linear infinite;
+        transform-origin: center;
+    }
+}
+
+@keyframes rotateText {
+    100% {
+        transform: rotate(360deg);
     }
 }

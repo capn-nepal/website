@@ -12,7 +12,9 @@ import styles from './page.module.css';
 
 export default function Work() {
     return (
-        <Page className={styles.work}>
+        <Page
+            contentClassName={styles.work}
+        >
             <Banner
                 bannerImageSrc={PillarImage}
                 eyebrowHeading="Our Approach"
@@ -29,7 +31,6 @@ export default function Work() {
             <SafeHaven />
             <Divider />
             <SocialAwareness />
-            <Divider />
             <Cause />
         </Page>
     );

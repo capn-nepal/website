@@ -1,4 +1,6 @@
 .contact {
+    padding-bottom: var(--spacing-universal);
+
     .wrapper {
         display: grid;
         grid-gap: var(--spacing-medium);
