@@ -16,6 +16,7 @@ type Events = NonNullable<NonNullable<AllDataQuery['events']>['results']>;
 
 export default function Events() {
     const allEventsData = data.events.results as unknown as Events;
+
     return (
         <Page contentClassName={styles.events}>
             <Banner

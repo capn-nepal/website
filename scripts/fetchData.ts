@@ -100,6 +100,7 @@ const query = gql`
             results {
                 id
                 episodeNumber
+                releaseDate
                 title
                 videoUrl
                 thumbnail {
@@ -113,6 +114,7 @@ const query = gql`
             results {
                 id
                 episodeNumber
+                releaseDate
                 title
                 videoUrl
                 thumbnail {

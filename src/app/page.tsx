@@ -36,7 +36,7 @@ export default function Home() {
                     in Nepal.
                 </Heading>
                 <Link
-                    href="/explore"
+                    href="/about/approach/"
                     showIcon
                 >
                     Get to know us better
@@ -47,7 +47,6 @@ export default function Home() {
             />
             <Divider />
             <RecentWorksSection />
-            <Divider />
             <PillarsSection />
             <Divider />
             <SmallJourney />

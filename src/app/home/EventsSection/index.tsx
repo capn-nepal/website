@@ -5,7 +5,6 @@ import Card from '#components/Card';
 import Heading from '#components/Heading';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
-import presentationImage from '#public/presentation.jpg';
 
 import styles from './styles.module.css';
 
@@ -20,11 +19,22 @@ export default function EventsSection(props: Props) {
         max,
     } = props;
 
-    const events = data.events.results as unknown as Events;
-    const sortedEvents = events.sort((a, b) => compareDate(a.startDate, b.startDate));
+    const events = (data.events.results ?? []) as unknown as Events;
+    const sortedEvents = events
+        .filter((item) => {
+            const today = new Date();
+            const formatted = today.toISOString().split('T')[0];
+            return compareDate(item.endDate, formatted) >= 0;
+        })
+        .sort((a, b) => compareDate(a.startDate, b.startDate));
+
     const limitedItems = max ? sortedEvents.slice(0, max) : sortedEvents;
     const firstElement = limitedItems[0];
     const remainingElements = limitedItems.slice(1);
+
+    if (limitedItems.length <= 0) {
+        return null;
+    }
 
     return (
         <div className={styles.eventsSection}>
@@ -50,7 +60,9 @@ export default function EventsSection(props: Props) {
                         date={firstElement?.startDate}
                         title={firstElement?.name}
                         description={firstElement?.description}
-                        image={presentationImage}
+                        link={`/work/events/${firstElement.id}`}
+                        // FIXME: Send image from backend
+                        // image={firstElement?.image}
                     />
                 </div>
                 {remainingElements?.map((item) => (
@@ -60,6 +72,7 @@ export default function EventsSection(props: Props) {
                         date={item.startDate}
                         title={item.name}
                         description={item.description}
+                        link={`/work/events/${item.id}`}
                     />
                 ))}
             </div>

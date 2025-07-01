@@ -17,8 +17,4 @@
             text-align: center;
         }
     }
-
-    @media (max-width: 768px) {
-        padding-top: var(--spacing-enormous);
-    }
 }

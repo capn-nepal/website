@@ -14,7 +14,7 @@ interface Props {
     description?: string;
     link: string;
     size?: 'small' | 'normal';
-    variant?: 'gallery' | 'article';
+    linkText?: string;
 }
 
 export default function Card(props: Props) {
@@ -25,8 +25,9 @@ export default function Card(props: Props) {
         description,
         link,
         size = 'normal',
-        variant = 'article',
+        linkText = 'View More',
     } = props;
+    console.log('here', link);
 
     return (
         <div
@@ -59,7 +60,7 @@ export default function Card(props: Props) {
                     href={link}
                     showIcon
                 >
-                    {variant === 'gallery' ? 'View Gallery' : 'Learn More'}
+                    {linkText}
                 </Link>
             )}
         </div>

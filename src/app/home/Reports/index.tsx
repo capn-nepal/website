@@ -1,14 +1,19 @@
 import React from 'react';
-import { _cs } from '@togglecorp/fujs';
+import {
+    _cs,
+    compareDate,
+} from '@togglecorp/fujs';
 
-import ImageScrollCard from '#components/ImageScrollCard';
-import annualReport from '#public/annualReport.png';
-import boyImage from '#public/boy.png';
-import girlImage from '#public/girl.jpg';
+import Card from '#components/Card';
+import Link from '#components/Link';
+import data from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 
 import styles from './styles.module.css';
 
 const description = 'Explore our in-depth reports and publications, highlighting key initiatives, research, and stories that shape the fight for equal citizenship rights.';
+
+type Reports = NonNullable<NonNullable<AllDataQuery['reports']>['results']>;
 
 interface Props {
     className?: string;
@@ -16,47 +21,44 @@ interface Props {
 
 export default function Reports(props: Props) {
     const { className } = props;
+    const allReportsData = data.reports.results as unknown as Reports;
+    const sortedReports = allReportsData
+        .sort((a, b) => compareDate(a.publishedDate, b.publishedDate));
+    const limitedItems = sortedReports.slice(0, 3);
 
     return (
         <div className={_cs(className, styles.reports)}>
             <div className={styles.content}>
                 <div className={styles.wrapper}>
                     <div className={styles.leftContainer}>
-                        <div className={styles.img1}>
-                            <ImageScrollCard
-                                className={styles.image}
-                                title="Girl who lost her country"
-                                images={[girlImage]}
-                                link="/"
-                                size="small"
-                            />
-                        </div>
-                        <div className={styles.img3}>
-                            <ImageScrollCard
-                                className={styles.image}
-                                title="Annual Report Fiscal Year 2021 to 2023"
-                                images={[annualReport]}
-                                link="/"
-                                size="small"
-                            />
-                        </div>
-                        <div className={styles.img2}>
-                            <ImageScrollCard
-                                className={styles.image}
-                                title="School Outreach Program comprehensive Report"
-                                images={[boyImage]}
-                                link="/"
-                                size="small"
-                            />
-                        </div>
+                        {limitedItems?.map((item) => (
+                            <div
+                                key={item.id}
+                                className={styles.img}
+                            >
+                                <Card
+                                    className={styles.image}
+                                    title={item.title}
+                                    // FIXME: Add image later
+                                    // image={}
+                                    link={item.reportFile?.url}
+                                    headingSize="extraSmall"
+                                    isExternalLink
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
                 <div className={styles.rightContainer}>
-                    <p
-                        className={styles.description}
-                    >
+                    <p className={styles.description}>
                         {description}
                     </p>
+                    <Link
+                        href="/resources/reports/"
+                        showIcon
+                    >
+                        See All Reports
+                    </Link>
                 </div>
             </div>
         </div>

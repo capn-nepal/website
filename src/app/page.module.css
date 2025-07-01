@@ -1,6 +1,7 @@
 .page {
     display: flex;
-    gap: var(--spacing-enormous);
+    gap: var(--spacing-universal);
+    padding-bottom: var(--spacing-universal);
     flex-direction: column;
 
     .definition {

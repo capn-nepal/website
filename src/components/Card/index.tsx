@@ -4,21 +4,23 @@ import {
     decodeDate,
     isNotDefined,
 } from '@togglecorp/fujs';
-import Image, { type StaticImageData } from 'next/image';
+import { type StaticImageData } from 'next/image';
 
-import Heading from '#components/Heading';
+import Heading, { type SizeTypes } from '#components/Heading';
+import ImageWrapper from '#components/ImageWrapper';
 import Link from '#components/Link';
 
 import styles from './styles.module.css';
 
 interface Props {
     className?: string;
-    image?: StaticImageData;
+    image?: StaticImageData | string;
     title: string;
     date?: string;
     description?: string;
     link?: string;
     isExternalLink?: boolean;
+    headingSize?: SizeTypes;
 }
 
 export default function Card(props: Props) {
@@ -29,6 +31,7 @@ export default function Card(props: Props) {
         date: fullDate,
         description,
         link,
+        headingSize = 'medium',
         isExternalLink = false,
     } = props;
 
@@ -46,7 +49,7 @@ export default function Card(props: Props) {
     const children = (
         <>
             {image && (
-                <Image
+                <ImageWrapper
                     className={styles.image}
                     src={image}
                     alt={title ?? 'card-image'}
@@ -61,7 +64,7 @@ export default function Card(props: Props) {
             <div className={styles.emptyDiv} />
             <Heading
                 className={styles.title}
-                size="medium"
+                size={headingSize}
             >
                 {title}
             </Heading>

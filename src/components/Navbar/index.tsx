@@ -56,6 +56,24 @@ const links = [
         ],
     },
     {
+        label: 'Resources',
+        link: '/resources',
+        children: [
+            {
+                label: 'Reports',
+                link: '/reports/',
+            },
+            {
+                label: 'Gallery',
+                link: '/gallery/',
+            },
+            {
+                label: 'Videos',
+                link: '/videos/',
+            },
+        ],
+    },
+    {
         label: 'Updates',
         link: '/updates/',
     },
@@ -76,7 +94,7 @@ export default function Navbar(props: Props) {
 
     const pathname = usePathname();
 
-    const [isNavShown, setNavShown] = useState(true);
+    const [isNavShown, setNavShown] = useState(false);
 
     const handleNavToggle = useCallback(() => {
         setNavShown((oldVal) => !oldVal);
@@ -117,6 +135,7 @@ export default function Navbar(props: Props) {
                         </PopupButton>
                     ) : (
                         <Link
+                            className={styles.link}
                             key={item.link}
                             href={item.link}
                             variant="navigation"

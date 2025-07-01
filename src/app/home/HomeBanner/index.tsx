@@ -1,8 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 
-import Button from '#components/Button';
 import Heading from '#components/Heading';
+import Link from '#components/Link';
 import banner from '#public/banner.svg';
 
 import styles from './styles.module.css';
@@ -22,9 +22,12 @@ export default function HomeBanner() {
                             Have Rights
                         </Heading>
                     </div>
-                    <Button>
+                    <Link
+                        href="/about/approach/"
+                        variant="button"
+                    >
                         Explore our mission
-                    </Button>
+                    </Link>
                 </div>
                 <Image
                     className={styles.image}

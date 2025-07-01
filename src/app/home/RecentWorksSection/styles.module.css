@@ -1,11 +1,10 @@
 .recentWorksSection {
     display: flex;
     flex-direction: column;
-    padding: var(--spacing-galactic);
 
     .content {
         display: flex;
-        padding: var(--spacing-large) var(--spacing-super-large);
+        padding: 0 var(--spacing-super-large);
         flex-direction: column;
         gap: var(--spacing-extra-large);
         flex-grow: 1;
@@ -15,6 +14,7 @@
 
         .topContent {
             display: flex;
+            flex-wrap: wrap;
             align-items: flex-end;
             justify-content: space-between;
             gap: var(--spacing-super-large);
