@@ -1,6 +1,5 @@
-import Image from 'next/image';
-
 import Heading from '#components/Heading';
+import ImageWrapper from '#components/ImageWrapper';
 import Section from '#components/Section';
 import Accountability from '#public/valueIcons/Accountability.svg';
 import Dignified from '#public/valueIcons/Dignified Citizenship.svg';
@@ -31,7 +30,7 @@ export default function Values() {
                         <div className={styles.heading}>
                             Gender Equality
                         </div>
-                        <Image
+                        <ImageWrapper
                             className={styles.valueIcon}
                             src={Gender}
                             alt="gender"
@@ -42,18 +41,18 @@ export default function Values() {
                             </div>
                             <div className={styles.line} />
                         </div>
-                        <div>
+                        <p>
                             We advocate for gender-equal citizenship laws to
                             dismantle inequality and ensure everyone can thrive
                             without discrimination.
-                        </div>
+                        </p>
                     </ValueBox>
                     <ValueBox>
                         <div className={styles.heading}>
                             Dignified citizenship
                             & Livelihood
                         </div>
-                        <Image
+                        <ImageWrapper
                             className={styles.valueIcon}
                             src={Dignified}
                             alt="dignified"
@@ -64,17 +63,17 @@ export default function Values() {
                             </div>
                             <div className={styles.line} />
                         </div>
-                        <div>
+                        <p>
                             We support dignified livelihoods to empower
                             impacted individuals with self-sufficiency and
                             strengthen their citizenship rights.
-                        </div>
+                        </p>
                     </ValueBox>
                     <ValueBox>
                         <div className={styles.heading}>
                             Intersectional Justice
                         </div>
-                        <Image
+                        <ImageWrapper
                             className={styles.valueIcon}
                             src={Justice}
                             alt="justice"
@@ -85,17 +84,17 @@ export default function Values() {
                             </div>
                             <div className={styles.line} />
                         </div>
-                        <div>
+                        <p>
                             CAPN addresses intersecting forms of
                             discrimination and centers impacted voices
                             with dignity, rejecting tokenism for real empowerment.
-                        </div>
+                        </p>
                     </ValueBox>
                     <ValueBox>
                         <div className={styles.heading}>
                             Accountability & Sensitivity
                         </div>
-                        <Image
+                        <ImageWrapper
                             className={styles.valueIcon}
                             src={Accountability}
                             alt="accountability"
@@ -106,18 +105,18 @@ export default function Values() {
                             </div>
                             <div className={styles.line} />
                         </div>
-                        <div>
+                        <p>
                             We uphold accountability and sensitivity,
                             ensuring transparent, respectful work
                             grounded in integrity and empathy toward
                             the communities we serve.
-                        </div>
+                        </p>
                     </ValueBox>
                     <ValueBox>
                         <div className={styles.heading}>
                             Empathy & Efficiency
                         </div>
-                        <Image
+                        <ImageWrapper
                             className={styles.valueIcon}
                             src={Empathy}
                             alt="empathy"
@@ -128,11 +127,11 @@ export default function Values() {
                             </div>
                             <div className={styles.line} />
                         </div>
-                        <div>
+                        <p>
                             We prioritize sustainability and empathy,
                             managing resources responsibly while
                             building trust through compassionate engagement.
-                        </div>
+                        </p>
                     </ValueBox>
                 </div>
             </div>

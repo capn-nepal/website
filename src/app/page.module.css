@@ -1,29 +1,24 @@
 .page {
     display: flex;
+    gap: var(--spacing-enormous);
     flex-direction: column;
-    padding-bottom: var(--spacing-universal);
 
     .definition {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
         text-align: center;
-        gap: var(--spacing-large);
-        padding: var(--spacing-large) var(--spacing-enormous);
-        margin: 0 auto;
-        max-width: 70rem;
 
-        .definitionHeading {
-            color: var(--color-text-accent);
-            font-weight: var(--font-weight-medium);
+        .definitionSection{
+            max-width: var(--width-page-min);
+            align-items: center;
+            gap: var(--spacing-large);
 
-            span {
-                font-weight: var(--font-weight-extra-bold);
+            .definitionHeading {
+                color: var(--color-text-accent);
+                font-weight: var(--font-weight-medium);
+
+                span {
+                    font-weight: var(--font-weight-extra-bold);
+                }
             }
         }
-    }
-
-    @media (max-width: 768px) {
-        gap: var(--spacing-enormous);
     }
 }

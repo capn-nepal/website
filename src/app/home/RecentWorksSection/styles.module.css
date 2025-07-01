@@ -1,6 +1,7 @@
 .recentWorksSection {
     display: flex;
     flex-direction: column;
+    padding: var(--spacing-galactic);
 
     .content {
         display: flex;

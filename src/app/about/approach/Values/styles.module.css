@@ -1,4 +1,5 @@
 .values {
+    --color-inner-circle: #b4e1e1;
     padding-bottom: var(--spacing-galactic);
 
     .valuesContent {
@@ -8,7 +9,7 @@
         align-items: center;
         width: 100%;
         max-width: var(--width-page-max);
-        padding: var(--spacing-gigantic) var(--spacing-universal);
+        padding: var(--spacing-galactic) var(--spacing-universal);
         gap: var(--spacing-super-large);
         color: var(--color-secondary-light);
         background-color: var(--color-text);
@@ -34,6 +35,12 @@
             display: flex;
             flex-direction: column;
 
+            .heading {
+                line-height: 1.5;
+                font-weight: var(--font-weight-bold);
+                text-wrap: balance;
+            }
+
             .separator {
                 display: flex;
                 flex-direction: column;
@@ -41,17 +48,16 @@
                 height: 100%;
 
                 .outerCircle {
-                    height: 2rem;
-                    width: 1.75rem;
                     border: 2px solid var(--color-secondary-light);
-                    border-radius: var(--border-radius-large);
+                    border-radius: 50%;
                 }
 
                 .innerCircle {
-                    height: 100%;
+                    height: 1.5rem;
+                    width: 1.5rem;
                     border: 2px solid var(--color-tertiary-dark);
-                    border-radius: var(--border-radius-large);
-                    background-color: var(--color-secondary-light);
+                    border-radius: 50%;
+                    background-color: var(--color-inner-circle);
                 }
 
                 .line {
@@ -62,6 +68,7 @@
             }
 
             .valueIcon {
+                justify-self: center;
                 width: 3rem;
                 height: 3rem;
             }

@@ -19,12 +19,10 @@ export default function ValueBox(props: Props) {
 
     useEffect(() => {
         const el = ref.current;
-        console.log('el', el);
         if (!el) return;
 
         const observer = new IntersectionObserver(
             ([entry]) => {
-                console.log('inn', entry);
                 if (entry.isIntersecting) {
                     el.classList.add(styles.visible);
                     observer.unobserve(el);
@@ -32,8 +30,6 @@ export default function ValueBox(props: Props) {
             },
             { rootMargin: '-20%' },
         );
-
-        console.log('ob', observer, 'fdfd');
 
         observer.observe(el);
 

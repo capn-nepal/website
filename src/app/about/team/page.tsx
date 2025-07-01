@@ -1,6 +1,6 @@
 import Banner from '#components/Banner';
 import Page from '#components/Page';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import TeamImage from '#public/team.png';
 
 import Boards from './Boards';
 import JoinTeam from './JoinTeam';
@@ -12,7 +12,7 @@ export default function Team() {
         <Page className={styles.teamPage}>
             <Banner
                 // NOTE: We need to replace with the real image as mentioned in figma
-                bannerImageSrc={AboutUsImage}
+                bannerImageSrc={TeamImage}
                 eyebrowHeading="Our Team"
                 withoutBackground
                 heading={(

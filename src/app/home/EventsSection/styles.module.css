@@ -1,6 +1,7 @@
 .eventsSection {
     display: flex;
     flex-direction: column;
+    padding-top: var(--spacing-galactic);
 
     .content {
         display: grid;

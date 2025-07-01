@@ -1,14 +1,19 @@
 import Heading from '#components/Heading';
 import ImageWrapper from '#components/ImageWrapper';
 import Link from '#components/Link';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import Section from '#components/Section';
+import lifeAtCapn1 from '#public/lifeAtCapn1.jpeg';
+import lifeAtCapn2 from '#public/lifeAtCapn2.jpeg';
+import lifeAtCapn3 from '#public/lifeAtCapn3.jpeg';
+import lifeAtCapn4 from '#public/lifeAtCapn4.jpeg';
+import lifeAtCapn5 from '#public/lifeAtCapn5.jpeg';
 
 import styles from './styles.module.css';
 
 export default function JoinTeam() {
     return (
         <div className={styles.joinWrapper}>
-            <div className={styles.joinDescription}>
+            <Section contentClassName={styles.joinDescription}>
                 <Heading size="extraLarge">
                     Join Our Team
                 </Heading>
@@ -23,32 +28,32 @@ export default function JoinTeam() {
                 >
                     View Open Roles
                 </Link>
-            </div>
+            </Section>
             <div className={styles.croppedGallery}>
                 <div className={styles.joinImagesWrapper}>
                     <ImageWrapper
                         imageClassName={styles.joinImages}
-                        src={AboutUsImage}
+                        src={lifeAtCapn2}
                         alt="join images"
                     />
                     <ImageWrapper
                         imageClassName={styles.joinImages}
-                        src={AboutUsImage}
+                        src={lifeAtCapn4}
                         alt="join images"
                     />
                     <ImageWrapper
                         imageClassName={styles.joinImages}
-                        src={AboutUsImage}
+                        src={lifeAtCapn5}
                         alt="join images"
                     />
                     <ImageWrapper
                         imageClassName={styles.joinImages}
-                        src={AboutUsImage}
+                        src={lifeAtCapn1}
                         alt="join images"
                     />
                     <ImageWrapper
                         imageClassName={styles.joinImages}
-                        src={AboutUsImage}
+                        src={lifeAtCapn3}
                         alt="join images"
                     />
                 </div>

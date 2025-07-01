@@ -4,6 +4,7 @@ import Divider from '#components/Divider';
 import Heading from '#components/Heading';
 import Link from '#components/Link';
 import Page from '#components/Page';
+import Section from '#components/Section';
 
 import Community from './home/Community';
 import EventsSection from './home/EventsSection';
@@ -21,7 +22,10 @@ export default function Home() {
     return (
         <Page contentClassName={styles.page}>
             <HomeBanner />
-            <section className={styles.definition}>
+            <Section
+                className={styles.definition}
+                contentClassName={styles.definitionSection}
+            >
                 <Heading
                     className={styles.definitionHeading}
                     size="large"
@@ -37,7 +41,7 @@ export default function Home() {
                 >
                     Get to know us better
                 </Link>
-            </section>
+            </Section>
             <EventsSection
                 max={3}
             />

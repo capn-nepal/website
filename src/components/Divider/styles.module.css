@@ -1,12 +1,6 @@
 .divider {
     width: 100vw;
-    padding-top: var(--spacing-galactic);
-
     .image {
         width: 100vw;
     }
-    @media (max-width: 768px) {
-        padding-top: var(--spacing-enormous);
-    }
 }
-

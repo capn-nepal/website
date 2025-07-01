@@ -1,12 +1,13 @@
 .valueSection {
     display: grid;
-    grid-template-columns: 1fr 0.5fr 0.5fr 1.5fr;
+    grid-template-columns: 0.75fr 0.5fr 0.5fr 1.5fr;
     grid-gap: var(--spacing-large);
     min-height: 12rem;
     height: auto;
+    /* NOTE: We need this in future */
     /* opacity: 0.5; */
-    transform: translateY(40px);
-    transition: all 0.6s ease-out;
+    /* transform: translateY(40px); */
+    /* transition: all 0.6s ease-out; */
 
     @media (max-width: 768px) {
         display: flex;

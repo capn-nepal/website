@@ -1,6 +1,5 @@
 .section {
     display: flex;
-    padding-top: var(--spacing-galactic);
     flex-direction: column;
 
     .content {
