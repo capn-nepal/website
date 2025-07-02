@@ -1,8 +1,8 @@
 import React from 'react';
 import { _cs } from '@togglecorp/fujs';
-import Image from 'next/image';
 
 import Heading from '#components/Heading';
+import Image from '#components/ImageWrapper';
 import comLogo from '#public/partnerLogos/com.png';
 import familyLogo from '#public/partnerLogos/family.png';
 import isiLogo from '#public/partnerLogos/isi.png';

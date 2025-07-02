@@ -4,15 +4,15 @@ import {
 } from '@togglecorp/fujs';
 import { type StaticImageData } from 'next/image';
 
+import Heading, { type SizeTypes } from '#components/Heading';
 import ImageWrapper from '#components/ImageWrapper';
-
-import Heading from '../Heading';
 
 import styles from './styles.module.css';
 
 interface Props {
     eyebrowHeading?: string;
     heading?: React.ReactNode;
+    headingSize?: SizeTypes;
     withoutBackground?: boolean;
     bannerImageSrc?: StaticImageData | string;
 }
@@ -22,6 +22,7 @@ export default function Banner(props: Props) {
         eyebrowHeading,
         heading,
         bannerImageSrc,
+        headingSize = 'superLarge',
         withoutBackground,
     } = props;
 
@@ -35,13 +36,13 @@ export default function Banner(props: Props) {
             <div className={styles.contentSection}>
                 <div className={styles.content}>
                     {isDefined(eyebrowHeading) && (
-                        <Heading className={styles.eyebrowHeading} size="extraSmall">
+                        <Heading className={styles.eyebrowHeading} size="small">
                             {eyebrowHeading}
                         </Heading>
                     )}
                     <Heading
                         className={styles.heading}
-                        size="superLarge"
+                        size={headingSize}
                     >
                         {heading}
                     </Heading>

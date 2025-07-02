@@ -2,9 +2,10 @@ import {
     _cs,
     isDefined,
 } from '@togglecorp/fujs';
-import Image, { type StaticImageData } from 'next/image';
+import { type StaticImageData } from 'next/image';
 
 import Heading from '#components/Heading';
+import ImageWrapper from '#components/ImageWrapper';
 import Link from '#components/Link';
 import Quote from '#public/quote.png';
 
@@ -53,15 +54,16 @@ export default function PillarSection(props: Props) {
                 className={_cs(styles.pillarSection, imagePosition === 'left' && styles.imageLeft)}
             >
                 {imagePosition === 'left' && (
-                    <Image
+                    <ImageWrapper
                         className={styles.pillarImage}
+                        imageClassName={styles.image}
                         src={imageSrc}
                         alt={imageAlt}
                     />
                 )}
                 <div className={styles.pillarContent}>
                     <div className={styles.pillarHeading}>
-                        <Image
+                        <ImageWrapper
                             className={styles.pillarIcon}
                             src={pillarSrc}
                             alt={imageAlt}
@@ -75,14 +77,15 @@ export default function PillarSection(props: Props) {
                     </div>
                     <div className={styles.pillarDescription}>
                         <p>{headingDescription}</p>
-                        <Image
+                        <ImageWrapper
                             className={styles.middleImage}
+                            imageClassName={styles.image}
                             alt={imageAlt}
                             src={imageSrc}
                         />
                         {quote
                             ? (
-                                <Image
+                                <ImageWrapper
                                     className={styles.quoteIcon}
                                     alt="quote icon"
                                     src={Quote}
@@ -104,8 +107,9 @@ export default function PillarSection(props: Props) {
                     </div>
                 </div>
                 {imagePosition === 'right' && (
-                    <Image
+                    <ImageWrapper
                         className={styles.pillarImage}
+                        imageClassName={styles.image}
                         src={imageSrc}
                         alt={imageAlt}
                     />

@@ -6,11 +6,11 @@ import React, {
 } from 'react';
 import { MdMenu } from 'react-icons/md';
 import { _cs } from '@togglecorp/fujs';
-import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 import Button from '#components/Button';
 import Heading from '#components/Heading';
+import ImageWrapper from '#components/ImageWrapper';
 import Link from '#components/Link';
 import logo from '#public/logo.png';
 
@@ -107,7 +107,7 @@ export default function Navbar(props: Props) {
                     <Link
                         href="/"
                     >
-                        <Image
+                        <ImageWrapper
                             className={styles.image}
                             src={logo}
                             alt="logo"
@@ -123,7 +123,7 @@ export default function Navbar(props: Props) {
                         >
                             {item.children.map((child) => (
                                 <Link
-                                    key={item.link}
+                                    key={child.link}
                                     className={styles.popupLink}
                                     href={`${item.link}${child.link}`}
                                     variant="navigation"
@@ -147,7 +147,7 @@ export default function Navbar(props: Props) {
                 </div>
                 <Link
                     className={styles.supportLink}
-                    href="/"
+                    href="/support/"
                     variant="reverse"
                 >
                     Support Us
@@ -165,13 +165,11 @@ export default function Navbar(props: Props) {
             </div>
             <div className={_cs(isNavShown && styles.navShown, styles.drawer)}>
                 {links?.map((item) => (item.children ? (
-                    <div
-                        key={item.link}
-                    >
+                    <div key={item.link}>
                         <Heading size="small">{item.label}</Heading>
                         {item.children.map((child) => (
                             <Link
-                                key={item.link}
+                                key={child.link}
                                 className={styles.link}
                                 href={`${item.link}${child.link}`}
                                 variant="navigation"
@@ -194,7 +192,7 @@ export default function Navbar(props: Props) {
                 )))}
                 <Link
                     className={styles.link}
-                    href="/"
+                    href="/support/"
                     variant="reverse"
                 >
                     Support Us

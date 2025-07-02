@@ -64,10 +64,13 @@
                 @media (max-width: 768px) {
                     .middleImage {
                         display: block;
-                        object-fit: cover;
-                        border-radius: var(--border-radius-small);
                         width: 100%;
                         height: 25rem;
+
+                        .image {
+                            object-fit: cover;
+                            border-radius: var(--border-radius-small);
+                        }
                     }
                 }
                 .quote {
@@ -86,11 +89,14 @@
             .pillarImage {
                 width: 20rem;
                 height: 16rem;
-                object-fit: cover;
                 justify-self: flex-end;
                 align-self: center;
                 filter: saturate(25%);
-                border-radius: var(--border-radius-small);
+
+                .image {
+                    object-fit: cover;
+                    border-radius: var(--border-radius-small);
+                }
 
                 @media (max-width: 768px) {
                     display: none;

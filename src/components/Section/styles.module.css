@@ -1,12 +1,12 @@
 .section {
     display: flex;
     flex-direction: column;
+    padding: 0 var(--spacing-super-large);
 
     .content {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 var(--spacing-large);
         gap: var(--spacing-galactic);
         flex-grow: 1;
         margin: 0 auto;
