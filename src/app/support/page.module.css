@@ -1,0 +1,14 @@
+.page {
+    background: var(--color-background-gradient);
+    gap: var(--spacing-universal);
+
+    .supportWrapper {
+        .supportContent {
+            gap: var(--spacing-small);
+
+            p {
+                max-width: 40rem;
+            }
+        }
+    }
+}

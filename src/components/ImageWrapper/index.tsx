@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { _cs } from '@togglecorp/fujs';
 import Image, {
@@ -13,6 +15,12 @@ export interface Props extends ImageProps {
     imageClassName?: string;
     nonOptimizedImage?: boolean;
 }
+
+const staticLoader = ({ src }: {
+    src: string;
+    width: number | undefined;
+    quality?: number | undefined
+}) => src;
 
 function ImageWrapper(props: Props) {
     const {
@@ -34,6 +42,9 @@ function ImageWrapper(props: Props) {
                     fill={isExternal}
                     // eslint-disable-next-line react/jsx-props-no-spreading
                     {...otherProps}
+                    loader={staticLoader}
+                    placeholder={(typeof src !== 'string' && src.blurDataURL) ? 'blur' : 'empty'}
+                    blurDataURL={typeof src !== 'string' ? src.blurDataURL : undefined}
                 />
             ) : (
                 // eslint-disable-next-line @next/next/no-img-element
