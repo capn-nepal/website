@@ -16,13 +16,11 @@
 
         .leftContainer {
             display: grid;
-            grid-template-columns: 12rem 0.9fr;
+            grid-template-columns: 12rem 12rem;
             grid-template-rows: auto auto;
             gap: var(--spacing-small);
 
-            .img1,
-            .img2,
-            .img3 {
+            .img {
                 .image {
                     width: 100%;
                     height: auto;
@@ -30,7 +28,7 @@
                 }
             }
 
-            .img1 {
+            .img:nth-child(1) {
                 grid-column: 1;
                 grid-row: 1;
 
@@ -40,7 +38,7 @@
                 }
             }
 
-            .img2 {
+            .img:nth-child(3) {
                 grid-column: 1;
                 grid-row: 2;
 
@@ -50,7 +48,7 @@
                 }
             }
 
-            .img3 {
+            .img:nth-child(2) {
                 grid-column: 2;
                 grid-row: 1 / span 2;
                 align-self: start;
@@ -63,9 +61,14 @@
         }
 
         .rightContainer {
-            .heading {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-medium);
+
+            .description {
                 text-align: left;
                 color: var(--color-text-accent);
+                font-size: var(--font-size-super-large);
                 font-weight: var(--font-weight-medium);
             }
         }
@@ -77,15 +80,16 @@
             .leftContainer {
                 display: flex;
                 flex-direction: column;
+                flex-grow: 1;
                 order: 2;
 
-                .img1, .img2, .img3 {
+                .img {
                     grid-column: auto;
                     grid-row: auto;
                     align-self: unset;
 
                     .image {
-                        height: 10rem;
+                        height: 12rem;
                     }
                 }
             }

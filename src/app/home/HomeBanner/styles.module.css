@@ -1,10 +1,11 @@
 .banner {
     display: flex;
     flex-direction: column;
+    position: relative;
     background-color: var(--color-secondary);
     color: var(--color-text-on-secondary);
     padding: 0 var(--spacing-super-large);
-    min-height: 90vh;
+    min-height: 70vh;
 
     .content {
         display: grid;
@@ -20,8 +21,8 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            padding-bottom: var(--spacing-super-large);
-            gap: var(--spacing-super-large);
+            gap: var(--spacing-mega-large);
+            padding: var(--spacing-large) 0;
 
             .headings {
                 display: flex;
@@ -31,7 +32,8 @@
 
                 .heading {
                     color: var(--color-text-on-dark);
-                    font-size: calc(var(--font-size-galactic) * var(--multiplier) * var(--multiplier));
+                    font-size: calc(var(--font-size-galactic) * var(--multiplier));
+                    font-weight: var(--font-weight-extra-bold);
                 }
 
                 .yellow {
@@ -41,36 +43,20 @@
         }
 
         .image {
-            height: 72vh;
-            align-self: flex-end;
-            justify-self: flex-end;
+            height: 30rem;
+            align-self: end;
+            justify-self: end;
             width: auto;
             object-fit: contain;
-        }
-
-        @media (max-width: 1280px) {
-            .leftContent {
-                .headings {
-                    .heading {
-                        font-size: calc(var(--font-size-galactic) * var(--multiplier) * var(--multiplier));
-                    }
-                }
-            }
-            .image {
-                height: 50vh;
-            }
         }
 
         @media (max-width: 1080px) {
             .leftContent {
                 .headings {
                     .heading {
-                        font-size: calc(var(--font-size-galactic) * var(--multiplier));
+                        font-size: calc(var(--font-size-gigantic) * var(--multiplier));
                     }
                 }
-            }
-            .image {
-                height: 40vh;
             }
         }
 
@@ -86,7 +72,7 @@
                 .headings {
                     .heading {
                         text-align: center;
-                        font-size: var(--font-size-galactic);
+                        font-size: var(--font-size-mega-large);
                     }
                 }
             }
@@ -95,5 +81,24 @@
                 place-self: center;
             }
         }
+    }
+}
+.rotatingTextContainer {
+    position: absolute;
+    left: calc(50% - 80px);
+    bottom: -80px;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+    .rotatingText {
+        animation: rotateText 20s linear infinite;
+        transform-origin: center;
+    }
+}
+
+@keyframes rotateText {
+    100% {
+        transform: rotate(360deg);
     }
 }

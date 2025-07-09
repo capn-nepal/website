@@ -7,14 +7,19 @@ on:
       - 'main'
 
 env:
+  APP_GRAPHQL_CODEGEN_ENDPOINT: ${{ vars.APP_GRAPHQL_CODEGEN_ENDPOINT }}
+  APP_GRAPHQL_ENDPOINT: ${{ vars.APP_GRAPHQL_ENDPOINT }}
   GITHUB_WORKFLOW: true
 
 jobs:
   lint:
     name: Lint
+    environment: 'test'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: true
       - name: Install pnpm
         uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4

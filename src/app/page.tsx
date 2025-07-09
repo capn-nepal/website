@@ -4,6 +4,7 @@ import Divider from '#components/Divider';
 import Heading from '#components/Heading';
 import Link from '#components/Link';
 import Page from '#components/Page';
+import Section from '#components/Section';
 
 import Community from './home/Community';
 import EventsSection from './home/EventsSection';
@@ -11,10 +12,8 @@ import HomeBanner from './home/HomeBanner';
 import PillarsSection from './home/PillarsSection';
 import RecentWorksSection from './home/RecentWorksSection';
 import Reports from './home/Reports';
-import SmallJourney from './home/SmallJourney';
 import Studio from './home/Studio';
 import Voices from './home/Voices';
-import { events } from './dummyData';
 
 import styles from './page.module.css';
 
@@ -22,7 +21,10 @@ export default function Home() {
     return (
         <Page contentClassName={styles.page}>
             <HomeBanner />
-            <section className={styles.definition}>
+            <Section
+                className={styles.definition}
+                contentClassName={styles.definitionSection}
+            >
                 <Heading
                     className={styles.definitionHeading}
                     size="large"
@@ -33,22 +35,18 @@ export default function Home() {
                     in Nepal.
                 </Heading>
                 <Link
-                    href="/explore"
+                    href="/about/approach/"
                     showIcon
                 >
                     Get to know us better
                 </Link>
-            </section>
+            </Section>
             <EventsSection
-                events={events}
                 max={3}
             />
             <Divider />
             <RecentWorksSection />
-            <Divider />
             <PillarsSection />
-            <Divider />
-            <SmallJourney />
             <Community />
             <Divider />
             <Voices />

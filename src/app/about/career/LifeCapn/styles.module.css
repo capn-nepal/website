@@ -1,15 +1,11 @@
-.lifeDescription {
-    margin: 0 auto;
-    max-width: var(--width-page-max);
-    text-align: center;
-}
-
-.lifeImagesWrapper {
+.lifeWrapper {
     display: flex;
-    gap: var(--spacing-super-small);
+    flex-direction: column;
+    gap: var(--spacing-galactic);
 
-    .lifeImages {
-        height: 25rem;
-        border-radius: var(--border-radius-extra-small);
+    .lifeDescription {
+        margin: 0 auto;
+        max-width: var(--width-page-max);
+        text-align: center;
     }
 }

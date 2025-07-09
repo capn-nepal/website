@@ -1,16 +1,20 @@
 import React from 'react';
-import { _cs } from '@togglecorp/fujs';
+import {
+    _cs,
+    compareDate,
+} from '@togglecorp/fujs';
 
-import Heading from '#components/Heading';
-import ImageScrollCard from '#components/ImageScrollCard';
+import Card from '#components/Card';
 import Link from '#components/Link';
-import sosPodcast1 from '#public/sosPodcast1.png';
-import sosPodcast2 from '#public/sosPodcast2.png';
-import voxpopImage from '#public/voxpopImage.png';
+import data from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 
 import styles from './styles.module.css';
 
 const description = 'From the streets to the studio—hear the voices shaping the fight for equal citizenship through podcasts and voxpop features.';
+
+type PodcastEpisodes = NonNullable<NonNullable<AllDataQuery['podcastEpisodes']>['results']>;
+type VoxPopEpisodes = NonNullable<NonNullable<AllDataQuery['voxpopEpisodes']>['results']>;
 
 interface Props {
     className?: string;
@@ -18,20 +22,23 @@ interface Props {
 
 export default function Studio(props: Props) {
     const { className } = props;
+    const allPodcastEpisodesData = data.podcastEpisodes.results as unknown as PodcastEpisodes;
+    const allVoxpopEpisodesData = data.voxpopEpisodes.results as unknown as VoxPopEpisodes;
+    const sortedPodcastEpisodes = [...allPodcastEpisodesData, ...allVoxpopEpisodesData]
+        .sort((a, b) => compareDate(a.releaseDate, b.releaseDate));
+    const limitedItems = sortedPodcastEpisodes.slice(0, 3);
 
     return (
         <div className={_cs(className, styles.studio)}>
             <div className={styles.content}>
                 <div className={styles.leftContainer}>
-                    <Heading
-                        className={styles.heading}
-                        size="large"
+                    <p
+                        className={styles.description}
                     >
                         {description}
-                    </Heading>
+                    </p>
                     <Link
-                        // TODO: Add Episode link
-                        href="/"
+                        href="/resources/videos/"
                         showIcon
                     >
                         See All Episodes
@@ -39,30 +46,22 @@ export default function Studio(props: Props) {
                 </div>
                 <div className={styles.wrapper}>
                     <div className={styles.rightContainer}>
-                        <div className={styles.img1}>
-                            <ImageScrollCard
-                                className={styles.image}
-                                images={[sosPodcast1]}
-                                link="/"
-                                size="small"
-                            />
-                        </div>
-                        <div className={styles.img2}>
-                            <ImageScrollCard
-                                className={styles.image}
-                                images={[sosPodcast2]}
-                                link="/"
-                                size="small"
-                            />
-                        </div>
-                        <div className={styles.img3}>
-                            <ImageScrollCard
-                                className={styles.image}
-                                images={[voxpopImage]}
-                                link="/"
-                                size="small"
-                            />
-                        </div>
+                        {limitedItems?.map((item) => (
+                            <div
+                                key={item.id}
+                                className={styles.img}
+                            >
+                                <Card
+                                    className={styles.image}
+                                    title={item.title}
+                                    // FIXME: Add image later
+                                    image={item.thumbnail?.url}
+                                    link={item.videoUrl}
+                                    headingSize="extraSmall"
+                                    isExternalLink
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

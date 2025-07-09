@@ -1,14 +1,31 @@
 import React from 'react';
+import { compareDate } from '@togglecorp/fujs';
 
-import Button from '#components/Button';
 import Card from '#components/Card';
 import Heading from '#components/Heading';
-import vocies1Image from '#public/voices1.jpg';
-import vocies2Image from '#public/voices2.jpg';
+import Link from '#components/Link';
+import data from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 
 import styles from './styles.module.css';
 
+type Events = NonNullable<NonNullable<AllDataQuery['events']>['results']>;
+
 export default function RecentWorksSection() {
+    const allEventsData = (data.events.results ?? []) as unknown as Events;
+    const sortedEvents = allEventsData
+        .filter((item) => {
+            const today = new Date();
+            const formatted = today.toISOString().split('T')[0];
+            return compareDate(item.endDate, formatted) < 0;
+        })
+        .sort((a, b) => compareDate(a.startDate, b.startDate));
+    const limitedItems = sortedEvents.slice(0, 2);
+
+    if (limitedItems.length <= 0) {
+        return null;
+    }
+
     return (
         <div className={styles.recentWorksSection}>
             <div className={styles.content}>
@@ -21,23 +38,25 @@ export default function RecentWorksSection() {
                         <br />
                         <span>CAPN&apos;s Recent Works & Events</span>
                     </Heading>
-                    <Button>
+                    <Link
+                        href="/work/events/"
+                        variant="button"
+                    >
                         View all
-                    </Button>
+                    </Link>
                 </div>
                 <div className={styles.bottomContent}>
-                    <Card
-                        className={styles.card}
-                        date="2025-08-10"
-                        title="Study on Implementation of citizenship laws in Nepal"
-                        image={vocies1Image}
-                    />
-                    <Card
-                        className={styles.card}
-                        date="2025-08-10"
-                        title="Paralegal Program"
-                        image={vocies2Image}
-                    />
+                    {limitedItems?.map((item) => (
+                        <Card
+                            key={item.id}
+                            className={styles.card}
+                            date={item.startDate}
+                            title={item.name}
+                            link={`/work/events/${item.id}/`}
+                            // FIXME: Update image after its coming from backend
+                            // image={vocies1Image}
+                        />
+                    ))}
                 </div>
             </div>
         </div>

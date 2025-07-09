@@ -1,0 +1,9 @@
+.careerItem {
+    padding-bottom: var(--spacing-universal);
+
+    .section {
+        .sectionContent {
+            gap: var(--spacing-small);
+        }
+    }
+}

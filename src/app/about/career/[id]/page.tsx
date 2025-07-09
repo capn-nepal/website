@@ -2,16 +2,24 @@ import ArticleBody from '#components/ArticleBody';
 import Banner from '#components/Banner';
 import Page from '#components/Page';
 import Section from '#components/Section';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import data from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
+import careerImage from '#public/career.jpg';
 
-import { vacancies as staticVacancies } from '../../../dummyData';
+import styles from './page.module.css';
+
+type Vacancies = NonNullable<NonNullable<AllDataQuery['jobVacancies']>['results']>;
 
 async function getVacancies() {
-    return staticVacancies;
+    return data.jobVacancies.results as unknown as Vacancies;
 }
 
+/* eslint-disable react-refresh/only-export-components */
 export async function generateStaticParams() {
     const vacancies = await getVacancies();
+    if (!vacancies.length) {
+        return [{ id: 'empty' }];
+    }
     return vacancies.map((item) => ({ id: item.id }));
 }
 
@@ -22,17 +30,18 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ i
     const vacancyDetails = vacancies?.find((item) => item.id === id);
 
     return (
-        <Page>
+        <Page contentClassName={styles.careerItem}>
             <Banner
-                eyebrowHeading="CAREER"
-                heading="Work with us"
-                bannerImageSrc={AboutUsImage}
+                eyebrowHeading={`Deadline: ${vacancyDetails?.deadline}, ${vacancyDetails?.position.employmentType}`}
+                heading={vacancyDetails?.position.name}
+                bannerImageSrc={careerImage}
             />
             <Section
-                heading={vacancyDetails?.title}
+                className={styles.section}
+                contentClassName={styles.sectionContent}
             >
                 <ArticleBody
-                    content={vacancyDetails?.description}
+                    content={vacancyDetails?.position?.description}
                 />
             </Section>
         </Page>

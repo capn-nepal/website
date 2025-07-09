@@ -23,6 +23,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
         grid-gap: var(--spacing-extra-large);
+        min-height: 50vh;
     }
 
     @media (max-width: 768px) {

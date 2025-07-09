@@ -1,21 +1,29 @@
-import { isNotDefined } from '@togglecorp/fujs';
+import {
+    isDefined,
+    isNotDefined,
+} from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
+import ImageWrapper from '#components/ImageWrapper';
 import Link from '#components/Link';
 import Page from '#components/Page';
 import Section from '#components/Section';
-
-import { teamMembers as staticMembers } from '../../../dummyData';
-import TeamMemberCard from '../Boards/TeamMemberCard';
+import data from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 
 import styles from './page.module.css';
 
+type Members = NonNullable<NonNullable<AllDataQuery['teamMembers']>['results']>;
 async function getMembers() {
-    return staticMembers;
+    return data.teamMembers.results as unknown as Members;
 }
 
+/* eslint-disable react-refresh/only-export-components */
 export async function generateStaticParams() {
     const members = await getMembers();
+    if (!members.length) {
+        return [{ id: 'empty' }];
+    }
     return members.map((item) => ({ id: item.id }));
 }
 
@@ -38,25 +46,30 @@ export default async function TeamDetailPage({ params }: PageProps) {
     }
 
     return (
-        <Page>
+        <Page className={styles.page}>
             <Section
                 className={styles.memberWrapper}
                 contentClassName={styles.memberContent}
             >
-                <TeamMemberCard
-                    image={memberDetails?.image}
-                    alt={memberDetails.name}
-                />
+                {isDefined(memberDetails.memberPhoto)
+                    && (
+                        <ImageWrapper
+                            className={styles.cardImage}
+                            imageClassName={styles.image}
+                            src={memberDetails.memberPhoto?.url}
+                            alt={memberDetails?.memberPhoto.name}
+                        />
+                    )}
                 <div className={styles.memberDescription}>
                     <div>
                         <Heading>
-                            {memberDetails.name}
+                            {`${memberDetails.firstName} ${memberDetails.middleName ? memberDetails.middleName : ''} ${memberDetails.lastName}`}
                         </Heading>
                         <Heading font="normal" size="extraSmall">
                             {memberDetails.designation}
                         </Heading>
                     </div>
-                    {memberDetails.profileDescription}
+                    {/* {memberDetails.profileDescription} */}
                     <Link
                         href="/about/team"
                     >

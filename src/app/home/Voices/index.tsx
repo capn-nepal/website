@@ -29,15 +29,16 @@ export default function Voices(props: Props) {
                         className={styles.card}
                         title="&quot;Without citizenship, I felt invisible. Gaining it changed everything&quot;"
                         images={[peopleImage]}
-                        link="/"
+                        link="/testimonials/"
+                        linkText="View Story"
                     />
                     <ImageScrollCard
                         className={styles.card}
                         title="Creative Collaboration for Change"
                         description="This space highlights artwork, photography, and creative expressions from individuals affected showcasing their talent, resilience, and stories beyond the struggle."
                         images={[himalayaImage]}
-                        variant="gallery"
-                        link="/"
+                        link="/gallery/"
+                        linkText="View Gallery"
                     />
                 </div>
             </div>

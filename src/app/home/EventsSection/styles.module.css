@@ -4,6 +4,7 @@
 
     .content {
         display: grid;
+        padding: var(--spacing-large) var(--spacing-super-large);
         grid-gap: var(--spacing-medium);
         grid-template-columns: repeat(3, 1fr);
         flex-grow: 1;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HiArrowUpRight } from 'react-icons/hi2';
+import { IoArrowForward } from 'react-icons/io5';
 import { _cs } from '@togglecorp/fujs';
 import NextLink, { type LinkProps as NextLinkProps } from 'next/link';
 
@@ -59,7 +59,7 @@ function Link(props: Props) {
             href={href}
         >
             {children}
-            {showIcon && <HiArrowUpRight className={styles.icon} />}
+            {showIcon && <IoArrowForward className={styles.icon} />}
         </NextLink>
     );
 }

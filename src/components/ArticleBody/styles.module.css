@@ -5,6 +5,7 @@
         max-width: 60rem;
         color: var(--color-heading)!important;
         font-weight: var(--font-weight-bold);
+        margin: var(--spacing-small) 0;
     }
 
     h1 {

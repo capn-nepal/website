@@ -30,9 +30,14 @@
         .links {
             display: flex;
             justify-content: center;
+            color: var(--color-text-black);
             flex-grow: 1;
             padding: var(--spacing-small) var(--spacing-extra-large);
             gap: var(--spacing-large);
+        }
+
+        .link {
+            text-transform: capitalize;
         }
 
         .supportLink {
@@ -53,9 +58,23 @@
                 padding: var(--spacing-small) var(--spacing-extra-large);
             }
         }
+    }
 
-        @media (max-width: 768px) {
+    .drawer {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        height: 5rem;
+        padding: 0;
+
+        .content {
+            height: 100%;
+            border-radius: unset;
+
             .imageContainer {
+                padding: var(--spacing-tiny) var(--spacing-super-large);
                 flex-grow: 1;
             }
 
@@ -78,10 +97,34 @@
                 }
             }
         }
+
+        .drawer {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            flex-direction: column;
+            transform: translateY(-100%);
+            transition: 200ms all ease-in-out;
+            z-index: -1;
+            background-color: var(--color-background);
+            padding: var(--spacing-large);
+            width: 100%;
+            gap: var(--spacing-large);
+
+            &.navShown {
+                transform: translateY(0);
+            }
+
+            .link {
+                text-align: left;
+                text-transform: capitalize;
+            }
+        }
     }
 }
 
 .popupLink {
-    padding: var(--spacing-small) var(--spacing-large);
-    text-align: right;
+    padding: var(--spacing-super-small) var(--spacing-medium);
+    text-transform: capitalize;
 }

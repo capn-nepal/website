@@ -1,15 +1,10 @@
-.joinDescription {
-    margin: 0 auto;
-    max-width: var(--width-page-max);
-    text-align: center;
-}
-
-.joinImagesWrapper {
+.joinWrapper {
     display: flex;
-    gap: var(--spacing-super-small);
+    flex-direction: column;
+    gap: var(--spacing-extra-large);
 
-    .joinImages {
-        height: 25rem;
-        border-radius: var(--border-radius-extra-small);
+    .joinDescription {
+        gap: var(--spacing-extrasmall);
+        align-items: center;
     }
 }

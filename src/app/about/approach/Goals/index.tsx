@@ -1,26 +1,26 @@
-import Image from 'next/image';
-
 import Heading from '#components/Heading';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import ImageWrapper from '#components/ImageWrapper';
+import Section from '#components/Section';
+import GoalsImage from '#public/goals.png';
 
 import styles from './styles.module.css';
 
 export default function Goals() {
     return (
-        <div className={styles.goals}>
+        <Section className={styles.goals}>
             <div className={styles.goalsContent}>
-                <Heading size="large">
+                <Heading className={styles.goalsHeading} size="extraLarge">
                     Our Goals: Building Power, Reforming Laws, Transforming Lives with Dignity
                 </Heading>
-                <div>
+                <p className={styles.goalDescription}>
                     We strive for a just society where all individuals
                     can access citizenship with dignity and equality.
-                </div>
+                </p>
                 <div className={styles.goalLists}>
-                    <Image
-                        // NOTE: Use image as mentioned in figma
-                        className={styles.goalImage}
-                        src={AboutUsImage}
+                    <ImageWrapper
+                        className={styles.goalImageWrapper}
+                        imageClassName={styles.goalImage}
+                        src={GoalsImage}
                         alt="goals image"
                     />
                     <div className={styles.listCard}>
@@ -83,6 +83,6 @@ export default function Goals() {
                     </div>
                 </div>
             </div>
-        </div>
+        </Section>
     );
 }

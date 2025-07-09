@@ -137,6 +137,7 @@ const appConfigs = compat.config({
     ignores: [
         "node_modules/",
         "build/",
+        "codegen.ts",
         "coverage/",
         'src/generated/types.ts'
     ],

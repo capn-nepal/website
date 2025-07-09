@@ -1,5 +1,10 @@
 .career {
     gap: 0;
+
+    .careerContent {
+        gap: var(--spacing-universal);
+    }
+
     .openVacancy {
         display: grid;
         grid-gap: var(--spacing-medium);
@@ -11,6 +16,7 @@
 
         .card {
             min-height: 20rem;
+            max-width: 40rem;
         }
     }
 }

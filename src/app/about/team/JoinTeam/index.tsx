@@ -1,15 +1,15 @@
 import Heading from '#components/Heading';
-import ImageWrapper from '#components/ImageWrapper';
+import ImageSlider from '#components/ImageSlider';
 import Link from '#components/Link';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import Section from '#components/Section';
 
 import styles from './styles.module.css';
 
 export default function JoinTeam() {
     return (
-        <>
-            <div className={styles.joinDescription}>
-                <Heading size="large">
+        <div className={styles.joinWrapper}>
+            <Section contentClassName={styles.joinDescription}>
+                <Heading size="extraLarge">
                     Join Our Team
                 </Heading>
                 <p>
@@ -19,37 +19,12 @@ export default function JoinTeam() {
                 </p>
                 <Link
                     href="/about/team/"
+                    showIcon
                 >
                     View Open Roles
                 </Link>
-            </div>
-            <div className={styles.joinImagesWrapper}>
-                <ImageWrapper
-                    imageClassName={styles.joinImages}
-                    src={AboutUsImage}
-                    alt="join images"
-                />
-                <ImageWrapper
-                    imageClassName={styles.joinImages}
-                    src={AboutUsImage}
-                    alt="join images"
-                />
-                <ImageWrapper
-                    imageClassName={styles.joinImages}
-                    src={AboutUsImage}
-                    alt="join images"
-                />
-                <ImageWrapper
-                    imageClassName={styles.joinImages}
-                    src={AboutUsImage}
-                    alt="join images"
-                />
-                <ImageWrapper
-                    imageClassName={styles.joinImages}
-                    src={AboutUsImage}
-                    alt="join images"
-                />
-            </div>
-        </>
+            </Section>
+            <ImageSlider />
+        </div>
     );
 }

@@ -1,3 +1,7 @@
 .teamPage {
-    gap: 0;
+    background: var(--color-background-gradient);
+
+    .teamContent {
+        gap: var(--spacing-universal);
+    }
 }

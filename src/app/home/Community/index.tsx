@@ -3,7 +3,6 @@ import { _cs } from '@togglecorp/fujs';
 import Image from 'next/image';
 
 import Heading from '#components/Heading';
-import communityImage from '#public/community.jpg';
 import comLogo from '#public/partnerLogos/com.png';
 import familyLogo from '#public/partnerLogos/family.png';
 import isiLogo from '#public/partnerLogos/isi.png';
@@ -12,6 +11,15 @@ import scrLogo from '#public/partnerLogos/scr.jpg';
 import statelessLogo from '#public/partnerLogos/stateless.png';
 
 import styles from './styles.module.css';
+
+const logos = [
+    isiLogo,
+    scrLogo,
+    familyLogo,
+    nfaLogo,
+    comLogo,
+    statelessLogo,
+];
 
 interface Props {
     className?: string;
@@ -27,59 +35,24 @@ export default function Community(props: Props) {
                     className={styles.heading}
                     size="extraLarge"
                 >
-                    Meet our community of changemakers:
+                    Meet our community of changemakers
                     <br />
-                    <span>Advocacy Beyond Borders</span>
+                    <p>
+                        We’re proud to stand with partners whose stories reflect a shared vision.
+                        Learn more about their journeys and how we work together.
+                    </p>
                 </Heading>
-                <div className={styles.gridContainer}>
-                    <div className={_cs(styles.item, styles.left)}>
-                        <Image
-                            className={styles.logo}
-                            src={isiLogo}
-                            alt="partnerLogo"
-                        />
-                    </div>
-                    <div className={_cs(styles.item, styles.item2)}>
-                        <Image
-                            className={styles.communityImage}
-                            src={communityImage}
-                            alt="community-image"
-                        />
-                    </div>
-                    <div className={_cs(styles.item, styles.right)}>
-                        <Image
-                            className={styles.logo}
-                            src={scrLogo}
-                            alt="partnerLogo"
-                        />
-                    </div>
-                    <div className={_cs(styles.item, styles.left, styles.center)}>
-                        <Image
-                            className={styles.logo}
-                            src={familyLogo}
-                            alt="partnerLogo"
-                        />
-                    </div>
-                    <div className={_cs(styles.item, styles.right, styles.center)}>
-                        <Image
-                            className={styles.logo}
-                            src={nfaLogo}
-                            alt="partnerLogo"
-                        />
-                    </div>
-                    <div className={_cs(styles.item, styles.left)}>
-                        <Image
-                            className={styles.logo}
-                            src={comLogo}
-                            alt="partnerLogo"
-                        />
-                    </div>
-                    <div className={_cs(styles.item, styles.right)}>
-                        <Image
-                            className={styles.logo}
-                            src={statelessLogo}
-                            alt="partnerLogo"
-                        />
+                <div className={styles.marqueeWrapper}>
+                    <div className={styles.marqueeContent}>
+                        {[...logos, ...logos].map((logo, index) => (
+                            <div key={String(logo)} className={styles.item}>
+                                <Image
+                                    className={styles.logo}
+                                    src={logo}
+                                    alt={`partner-logo-${index}`}
+                                />
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

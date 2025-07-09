@@ -1,11 +1,14 @@
 .link {
-    display: block;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
     color: var(--color-text-link);
     padding: var(--spacing-super-small) 0;
 
     .icon {
         flex-shrink: 0;
-        margin: 0 var(--spacing-small);
+        margin: 0 var(--spacing-tiny);
+        transform: rotate(-31.93deg);
     }
 
     &:hover {
@@ -28,15 +31,16 @@
 
     &.button {
         transition: 0.2s all ease-in-out;
-        border-radius: var(--border-radius-medium);
+        border-radius: var(--border-radius-extra-small);
         background-color: var(--color-primary);
-        padding: var(--spacing-super-small) var(--spacing-medium);
-        color: var(--color-text-on-dark);
+        padding: var(--spacing-small) var(--spacing-extra-large);
+        color: var(--color-text);
+        text-transform: uppercase;
         font-size: var(--font-size-medium);
 
         &:hover {
-            background-color: var(--color-accent);
-            text-decoration: unset;
+            background-color: var(--color-primary-dark);
+            text-decoration: none;
         }
     }
 
