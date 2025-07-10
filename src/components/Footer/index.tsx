@@ -7,9 +7,9 @@ import {
     IoLogoYoutube,
 } from 'react-icons/io5';
 import { _cs } from '@togglecorp/fujs';
-import Image from 'next/image';
 
 import Heading from '#components/Heading';
+import Image from '#components/ImageWrapper';
 import logo from '#public/logo.png';
 
 import styles from './styles.module.css';
@@ -31,7 +31,7 @@ export default function Footer(props: Props) {
             <div className={styles.topContainer}>
                 <div className={styles.leftContainer}>
                     <Image
-                        className={styles.image}
+                        imageClassName={styles.image}
                         src={logo}
                         alt="logo"
                     />

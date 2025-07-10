@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 import { _cs } from '@togglecorp/fujs';
-import Image from 'next/image';
 
 import Banner from '#components/Banner';
 import Button from '#components/Button';
 import Heading from '#components/Heading';
+import Image from '#components/ImageWrapper';
 import Page from '#components/Page';
 import Section from '#components/Section';
 import AboutUsImage from '#public/aboutUsImage.jpg';
@@ -187,7 +187,7 @@ export default function Gallery() {
                                     {album.images.map((image) => (
                                         <Image
                                             key={image.id}
-                                            className={styles.image}
+                                            imageClassName={styles.image}
                                             src={image.thumbnail}
                                             alt={image.caption}
                                         />
@@ -202,7 +202,7 @@ export default function Gallery() {
                         {artworks.map((image) => (
                             <Image
                                 key={image.id}
-                                className={styles.image}
+                                imageClassName={styles.image}
                                 src={image.thumbnail}
                                 alt={image.caption}
                             />

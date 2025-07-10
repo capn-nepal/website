@@ -1,7 +1,7 @@
 import React from 'react';
-import Image from 'next/image';
 
 import Heading from '#components/Heading';
+import Image from '#components/ImageWrapper';
 import Link from '#components/Link';
 import banner from '#public/banner.svg';
 

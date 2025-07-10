@@ -7,15 +7,16 @@ on:
       - 'main'
 
 env:
-  APP_GRAPHQL_CODEGEN_ENDPOINT: ${{ vars.APP_GRAPHQL_CODEGEN_ENDPOINT }}
-  APP_GRAPHQL_ENDPOINT: ${{ vars.APP_GRAPHQL_ENDPOINT }}
+  APP_GRAPHQL_CODEGEN_ENDPOINT: './backend/schema.graphql'
+  APP_GRAPHQL_ENDPOINT: 'http://web:8000/graphiql/'
   GITHUB_WORKFLOW: true
 
 jobs:
   lint:
     name: Lint
-    environment: 'test'
     runs-on: ubuntu-latest
+    env:
+      PIPELINE_TYPE: ci
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,9 +35,10 @@ jobs:
         run: pnpm lint
   build:
     name: Build
-    environment: 'test'
     needs: [lint]
     runs-on: ubuntu-latest
+    env:
+      PIPELINE_TYPE: ci
     steps:
       - uses: actions/checkout@v4
         with:

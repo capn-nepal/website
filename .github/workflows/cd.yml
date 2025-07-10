@@ -4,20 +4,30 @@ name: CD
 on:
   push:
     branches:
-      - main
+      - feature/build
 
   schedule:
     # Runs "At 00:01. every day" (see https://crontab.guru)
     - cron: '1 0 * * *'
 
+env:
+  APP_GRAPHQL_CODEGEN_ENDPOINT: ${{ vars.APP_GRAPHQL_CODEGEN_ENDPOINT }}
+  APP_GRAPHQL_ENDPOINT: ${{ vars.APP_GRAPHQL_ENDPOINT }}
+  GITHUB_WORKFLOW: true
+
 jobs:
   test_build:
     name: Run Tests + Build
     runs-on: ubuntu-latest
+    environment: 'prod'
+    env:
+      PIPELINE_TYPE: cd
 
     steps:
       # NOTE: This uses default branch which is `main`
       - uses: actions/checkout@v4
+        with:
+          submodules: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
@@ -36,11 +46,19 @@ jobs:
       - name: Run pnpm install
         run: pnpm install
 
+      - name: Prebuild (generate types + fetch data)
+        run: pnpm prebuild
+        env:
+          APP_GRAPHQL_ENDPOINT: ${{ vars.APP_GRAPHQL_ENDPOINT }}
+          APP_GRAPHQL_CODEGEN_ENDPOINT: ${{ vars.APP_GRAPHQL_CODEGEN_ENDPOINT }}
+
       - name: Build + Test
         run: pnpm run build
         timeout-minutes: 30
         env:
           # Common
+          APP_GRAPHQL_ENDPOINT: ${{ vars.APP_GRAPHQL_ENDPOINT }}
+          APP_GRAPHQL_CODEGEN_ENDPOINT: ${{ vars.APP_GRAPHQL_CODEGEN_ENDPOINT }}
           NODE_OPTIONS: --max_old_space_size=4096
 
       - name: Upload GH artifacts

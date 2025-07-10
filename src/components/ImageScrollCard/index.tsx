@@ -1,8 +1,9 @@
 import React from 'react';
 import { _cs } from '@togglecorp/fujs';
-import Image, { type StaticImageData } from 'next/image';
+import { type StaticImageData } from 'next/image';
 
 import Heading from '#components/Heading';
+import ImageWrapper from '#components/ImageWrapper';
 import Link from '#components/Link';
 
 import styles from './styles.module.css';
@@ -27,7 +28,6 @@ export default function Card(props: Props) {
         size = 'normal',
         linkText = 'View More',
     } = props;
-    console.log('here', link);
 
     return (
         <div
@@ -37,8 +37,9 @@ export default function Card(props: Props) {
             )}
         >
             {images && (
-                <Image
-                    className={styles.image}
+                <ImageWrapper
+                    className={styles.imageWrapper}
+                    imageClassName={styles.image}
                     src={images[0]}
                     alt={title ?? 'card-image'}
                 />

@@ -1,8 +1,8 @@
 import { MdArrowOutward } from 'react-icons/md';
-import Image from 'next/image';
 
 import Button from '#components/Button';
 import Heading from '#components/Heading';
+import Image from '#components/ImageWrapper';
 import lifeAtCapn1 from '#public/lifeAtCapn1.jpeg';
 import lifeAtCapn2 from '#public/lifeAtCapn2.jpeg';
 import lifeAtCapn3 from '#public/lifeAtCapn3.jpeg';
