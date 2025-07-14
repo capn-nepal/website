@@ -66,7 +66,8 @@ docker compose exec next bash -c 'pnpm prebuild'
 
 Generate type
 ```bash
-docker compose exec next bash -c 'pnpm generate:type'
+docker compose exec next bash -c 'pnpm generate:type'  
+```
 
 Open [http://localhost:3053](http://localhost:3053) with your browser to see the result.
 
