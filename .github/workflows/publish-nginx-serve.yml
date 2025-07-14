@@ -2,10 +2,10 @@ name: Publish nginx serve image
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-      - feature/*
+  # push:
+    # branches:
+    #   - main
+    #   - feature/*
 
 permissions:
   packages: write
