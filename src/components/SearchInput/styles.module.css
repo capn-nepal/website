@@ -8,7 +8,6 @@
         display: flex;
         align-items: center;
         width: 100%;
-        max-width: var(--width-page-max);
         background-color: var(--color-background);
         border-radius: var(--border-radius-extra-small);
         box-shadow: 0rem 3rem 4rem rgba(0, 48, 82, 0.1), 0px 1rem 4rem rgba(0, 48, 82, 0.2);
