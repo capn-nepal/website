@@ -4,8 +4,39 @@ import path from 'path';
 
 const datadir = path.join(__dirname, '../data');
 const GRAPHQL_ENDPOINT = process.env.APP_GRAPHQL_ENDPOINT || 'http://localhost:8000/graphql/';
+const pipelineType = process.env.PIPELINE_TYPE;
 
 const client = new GraphQLClient(GRAPHQL_ENDPOINT);
+
+const dummyData = {
+    events: {
+        results: [],
+    },
+    blogs: {
+        results: [],
+    },
+    teamMembers: {
+        results: [],
+    },
+    jobVacancies: {
+        results: [],
+    },
+    positions: {
+        results: [],
+    },
+    youtubeVideos: {
+        results: [],
+    },
+    voxpopEpisodes: {
+        results: [],
+    },
+    podcastEpisodes: {
+        results: [],
+    },
+    reports: {
+        results: [],
+    },
+};
 
 const query = gql`
     query AllData {
@@ -139,52 +170,27 @@ const query = gql`
 `;
 
 async function fetchAndWriteData() {
-    const data = await client.request(query);
+    console.log('Fetching data from GraphQL endpoint from ', GRAPHQL_ENDPOINT);
+
+    let data = {};
+    if (pipelineType === 'ci') {
+        console.log('Writing dummy data', GRAPHQL_ENDPOINT);
+        data = dummyData;
+    } else if (pipelineType === 'cd') {
+        data = await client.request(query);
+    } else {
+        // fallback to local dev behavior
+        data = await client.request(query);
+    }
 
     // ensure the `data` directory exists
     if (!fs.existsSync(datadir)) {
         fs.mkdirSync(datadir, { recursive: true });
     }
-    fs.writeFileSync(path.join(__dirname, '../data/staticData.json'), JSON.stringify(data, null, 2));
+    const outputPath = path.join(__dirname, '../data/staticData.json');
+    fs.writeFileSync(outputPath, JSON.stringify(data, null, 2));
+    console.log(`Data written to ${outputPath}`);
+    console.log(`Top-level keys: ${Object.keys(data ?? {}).join(', ')}`);
 }
 
-function writeDummyData() {
-    const dummy =
-    {
-        events: {
-            results: []
-        },
-        blogs: {
-            results: []
-        },
-        teamMembers: {
-            results: []
-        },
-        jobVacancies: {
-            results: []
-        },
-        positions: {
-            results: []
-        },
-        youtubeVideos: {
-            results: []
-        },
-        voxpopEpisodes: {
-            results: []
-        },
-        podcastEpisodes: {
-            results: []
-        }
-    };
-
-    if (!fs.existsSync(datadir)) {
-        fs.mkdirSync(datadir, { recursive: true });
-    }
-    fs.writeFileSync(path.join(__dirname, '../data/staticData.json'), JSON.stringify(dummy, null, 2));
-}
-
-if (process.env.GITHUB_WORKFLOW) {
-    writeDummyData();
-} else {
-    fetchAndWriteData();
-}
+fetchAndWriteData();

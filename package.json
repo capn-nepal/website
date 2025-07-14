@@ -7,7 +7,7 @@
         "prebuild": "pnpm generate:type && ts-node -P tsconfig.scripts.json scripts/fetchData.ts",
         "predev": "pnpm generate:type",
         "dev": "next dev -p $PORT",
-        "build": "next build && next-export-optimize-images",
+        "build": "next build",
         "export": "next export",
         "prestart": "pnpm generate:type",
         "start": "next start",
