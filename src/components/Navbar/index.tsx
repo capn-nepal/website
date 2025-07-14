@@ -71,6 +71,10 @@ const links = [
                 label: 'Videos',
                 link: '/videos/',
             },
+            {
+                label: 'Global Resources',
+                link: '/globalResources/',
+            },
         ],
     },
     {
