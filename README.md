@@ -25,9 +25,9 @@ touch .env
 ```
    Example `.env` file
    ```
-   PORT=
-   APP_GRAPHQL_ENDPOINT=
-   COMPOSE_FILE=
+    SECRET_KEY
+    TC_CMS_ADDITIONAL_TRUSTED_ORIGINS=
+    DJANGO_SECRET_KEY=
    ...
    ```
 
@@ -35,11 +35,12 @@ touch .env
 ```bash
 touch .env
 ```
-   Example `.env` file
+
+      Example `.env` file
    ```
-    SECRET_KEY
-    TC_CMS_ADDITIONAL_TRUSTED_ORIGINS=
-    DJANGO_SECRET_KEY=
+   PORT=
+   APP_GRAPHQL_ENDPOINT=
+   COMPOSE_FILE=
    ...
    ```
 
@@ -48,7 +49,6 @@ touch .env
 docker compose pull
 docker compose build 
 ```
-
 ### Run
 
 **Essentials**
