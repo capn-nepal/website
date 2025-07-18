@@ -46,6 +46,7 @@ jobs:
       - name: Run pnpm install
         run: pnpm install
 
+      # TODO: Remove this and make sure it autoruns
       - name: Prebuild (generate types + fetch data)
         run: pnpm prebuild
         env:
@@ -59,6 +60,7 @@ jobs:
           # Common
           APP_GRAPHQL_ENDPOINT: ${{ vars.APP_GRAPHQL_ENDPOINT }}
           APP_GRAPHQL_CODEGEN_ENDPOINT: ${{ vars.APP_GRAPHQL_CODEGEN_ENDPOINT }}
+          BASE_PREFIX: ${{ vars.BASE_PREFIX }}
           NODE_OPTIONS: --max_old_space_size=4096
 
       - name: Upload GH artifacts
