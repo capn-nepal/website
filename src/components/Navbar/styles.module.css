@@ -125,6 +125,6 @@
 }
 
 .popupLink {
-    padding: var(--spacing-super-small) var(--spacing-medium);
-    text-transform: capitalize;
+    padding: var(--spacing-super-small) var(--spacing-medium)!important;
+    text-transform: capitalize!important;
 }
