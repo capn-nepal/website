@@ -12,6 +12,8 @@ type Reports = NonNullable<NonNullable<AllDataQuery['reports']>['results']>;
 export default function Reports() {
     const allReportsData = data?.reports?.results as unknown as Reports;
 
+    const hasReports = allReportsData && allReportsData.length > 0;
+
     return (
         <Page className={styles.reports}>
             <Banner
@@ -23,17 +25,21 @@ export default function Reports() {
                 className={styles.section}
                 contentClassName={styles.reportsSection}
             >
-                {allReportsData?.map((item) => (
-                    <Card
-                        className={styles.card}
-                        key={item.id}
-                        // image={item.image}
-                        title={item.title}
-                        date={item.publishedDate}
-                        link={item.reportFile?.url}
-                        isExternalLink
-                    />
-                ))}
+                {hasReports ? (
+                    allReportsData.map((item) => (
+                        <Card
+                            className={styles.card}
+                            key={item.id}
+                            // image={item.image}
+                            title={item.title}
+                            date={item.publishedDate}
+                            link={item.reportFile?.url}
+                            isExternalLink
+                        />
+                    ))
+                ) : (
+                    <div className={styles.noReports}>No reports available at the moment.</div>
+                )}
             </Section>
         </Page>
     );

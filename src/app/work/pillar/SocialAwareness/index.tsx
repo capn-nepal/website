@@ -17,18 +17,14 @@ export default function SocialAwareness() {
             links={[
                 {
                     title: 'School Outreach Program',
-                    // TODO: Add links
-                    href: '',
                     description: 'The School Outreach Program educates students about birth registration and citizenship, teaching them early about legal identity and its impact on their future opportunities.',
                 },
                 {
                     title: 'Myth Busting Campaigns',
-                    href: '',
                     description: 'CAPN runs myth-busting campaigns to clear up misinformation about citizenship laws. Using multimedia, these efforts provide accurate, easy-to-understand information that helps the public and reduces confusion.',
                 },
                 {
                     title: 'Awareness Raising',
-                    href: '',
                     description: 'CAPN raises public awareness through videos, podcasts, outreach materials, and events. Its visual podcast “State of Statelessness” shares personal stories and expert insights to promote gender equality in citizenship laws.',
                 },
             ]}

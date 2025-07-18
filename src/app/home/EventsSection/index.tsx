@@ -59,7 +59,6 @@ export default function EventsSection(props: Props) {
                         className={styles.card}
                         date={firstElement?.startDate}
                         title={firstElement?.name}
-                        description={firstElement?.description}
                         link={`/work/events/${firstElement.id}`}
                         // FIXME: Send image from backend
                         // image={firstElement?.image}
@@ -71,7 +70,6 @@ export default function EventsSection(props: Props) {
                         className={styles.card}
                         date={item.startDate}
                         title={item.name}
-                        description={item.description}
                         link={`/work/events/${item.id}`}
                     />
                 ))}

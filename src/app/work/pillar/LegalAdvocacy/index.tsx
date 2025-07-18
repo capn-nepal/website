@@ -16,18 +16,14 @@ export default function LegalAdvocacy() {
             links={[
                 {
                     title: 'Evidence Based Advocacy',
-                    // TODO: Add links
-                    href: '#',
                     description: 'Research helps CAPN support gender-equal citizenship. Recent studies looked at how new citizenship laws are applied and how COVID-19 affected people without citizenship.',
                 },
                 {
                     title: 'Grassroot Advocacy',
-                    href: '#',
                     description: 'Paralegal Program expands CAPN’s legal support by training affected individuals to help others navigate the citizenship process. These paralegals offer free, personalized assistance and gain a means to support their own livelihood.',
                 },
                 {
                     title: 'National & International Efforts',
-                    href: '#',
                     description: 'CAPN advocates for gender-equal citizenship by engaging with policymakers and pushing for legal reforms. It also contributes to global forums like CEDAW, CRC, and UPR, sharing research and lived experiences to influence change.',
                 },
             ]}

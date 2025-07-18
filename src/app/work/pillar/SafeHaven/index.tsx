@@ -17,18 +17,14 @@ export default function SafeHaven() {
             links={[
                 {
                     title: 'Livelihood Support',
-                    // TODO: Add links
-                    href: '',
                     description: 'Livelihood Support provides affected individuals with practical skills, training, and resources to help them earn a stable income and achieve economic independence. It empowers them to build sustainable future through skill development.',
                 },
                 {
                     title: 'Psychosocial Support',
-                    href: '',
                     description: 'Lack of citizenship causes stress and trauma, leading to social exclusion and setbacks. CAPN provides psychosocial support through counseling and referrals to mental health professionals, helping individuals improve their well-being.',
                 },
                 {
                     title: 'Change of Narrative',
-                    href: '',
                     description: 'The initiative challenges the view of affected individuals as helpless by highlighting their skills and lack of opportunity. It also exposes how unequal citizenship laws limit many from contributing to Nepal’s economy.',
                 },
             ]}
