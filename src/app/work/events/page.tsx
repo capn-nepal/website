@@ -42,7 +42,6 @@ export default function Events() {
                             className={styles.card}
                             title={item.name}
                             date={item.startDate}
-                            description={item.description}
                             link={`/work/events/${item.id}/`}
                         />
                     ))}
