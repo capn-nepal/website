@@ -17,7 +17,6 @@ import journey5 from '#public/journey/journey5.jpg';
 import journey6 from '#public/journey/journey6.jpg';
 import journey7 from '#public/journey/journey7.jpg';
 import journey8 from '#public/journey/journey8.jpg';
-import journey9 from '#public/journey/journey9.jpg';
 import journey10 from '#public/journey/journey10.jpg';
 import journey11 from '#public/journey/journey11.png';
 

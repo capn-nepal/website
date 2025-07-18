@@ -24,7 +24,7 @@ const appConfigs = compat.config({
         'next/core-web-vitals',
         'airbnb',
         'plugin:@typescript-eslint/recommended',
-        // 'plugin:postcss-modules/recommended',
+        'plugin:postcss-modules/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -36,7 +36,7 @@ const appConfigs = compat.config({
         'react-refresh',
         'simple-import-sort',
         'import-newlines',
-        // 'postcss-modules',
+        'postcss-modules',
     ],
     settings: {
         'import/parsers': {
@@ -77,7 +77,7 @@ const appConfigs = compat.config({
                 devDependencies: [
                     '**/*.test.{ts,tsx}',
                     'eslint.config.js',
-                    // 'postcss.config.cjs',
+                    'postcss.config.cjs',
                     'stylelint.config.cjs',
                     'vite.config.ts',
                 ],
