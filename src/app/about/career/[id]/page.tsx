@@ -2,6 +2,7 @@ import ArticleBody from '#components/ArticleBody';
 import Banner from '#components/Banner';
 import Page from '#components/Page';
 import Section from '#components/Section';
+import ShareSection from '#components/ShareSection';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
 import careerImage from '#public/career.jpg';
@@ -43,6 +44,7 @@ export default async function CareerDetailPage({ params }: { params: Promise<{ i
                 <ArticleBody
                     content={vacancyDetails?.position?.description}
                 />
+                <ShareSection title={vacancyDetails?.position.name ?? ''} />
             </Section>
         </Page>
     );

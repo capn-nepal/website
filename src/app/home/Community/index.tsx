@@ -35,10 +35,10 @@ export default function Community(props: Props) {
                     className={styles.heading}
                     size="extraLarge"
                 >
-                    Meet our community of changemakers
+                    Advocacy Beyond Borders
                     <br />
                     <p>
-                        We’re proud to stand with partners whose stories reflect a shared vision.
+                        We’re proud to stand with partners whose work reflect a shared vision.
                         Learn more about their journeys and how we work together.
                     </p>
                 </Heading>

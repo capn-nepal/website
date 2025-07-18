@@ -3,13 +3,14 @@ import {
     IoLogoFacebook,
     IoLogoInstagram,
     IoLogoLinkedin,
-    IoLogoXbox,
     IoLogoYoutube,
 } from 'react-icons/io5';
+import { RiTwitterXFill } from 'react-icons/ri';
 import { _cs } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import Image from '#components/ImageWrapper';
+import Link from '#components/Link';
 import logo from '#public/logo.png';
 
 import styles from './styles.module.css';
@@ -31,7 +32,7 @@ export default function Footer(props: Props) {
             <div className={styles.topContainer}>
                 <div className={styles.leftContainer}>
                     <Image
-                        imageClassName={styles.image}
+                        className={styles.image}
                         src={logo}
                         alt="logo"
                     />
@@ -63,11 +64,36 @@ export default function Footer(props: Props) {
                                 Links
                             </Heading>
                             <div className={styles.links}>
-                                <p>About</p>
-                                <p>Work</p>
-                                <p>Resources</p>
-                                <p>Updates</p>
-                                <p>Contact</p>
+                                <Link
+                                    className={styles.link}
+                                    href="/about"
+                                >
+                                    About
+                                </Link>
+                                <Link
+                                    className={styles.link}
+                                    href="/work"
+                                >
+                                    Work
+                                </Link>
+                                <Link
+                                    className={styles.link}
+                                    href="/resources"
+                                >
+                                    Resources
+                                </Link>
+                                <Link
+                                    className={styles.link}
+                                    href="/updates/"
+                                >
+                                    Updates
+                                </Link>
+                                <Link
+                                    className={styles.link}
+                                    href="/contact/"
+                                >
+                                    Contact
+                                </Link>
                             </div>
                         </div>
                         <div className={styles.linkGroup}>
@@ -78,11 +104,46 @@ export default function Footer(props: Props) {
                                 Contact Us
                             </Heading>
                             <div className={styles.icons}>
-                                <IoLogoInstagram />
-                                <IoLogoFacebook />
-                                <IoLogoYoutube />
-                                <IoLogoLinkedin />
-                                <IoLogoXbox />
+                                <a
+                                    href="https://www.instagram.com/capnnepal2020"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.icon}
+                                >
+                                    <IoLogoInstagram />
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/capnnepal2020"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.icon}
+                                >
+                                    <IoLogoFacebook />
+                                </a>
+                                <a
+                                    href="https://www.youtube.com/@capn.nepal"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.icon}
+                                >
+                                    <IoLogoYoutube />
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/company/citizenship-affected-people-s-network-nepal"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.icon}
+                                >
+                                    <IoLogoLinkedin />
+                                </a>
+                                <a
+                                    href="https://twitter.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.icon}
+                                >
+                                    <RiTwitterXFill />
+                                </a>
                             </div>
                         </div>
                     </div>

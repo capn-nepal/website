@@ -12,9 +12,9 @@ import pillar3 from '#public/pillar3.png';
 
 import styles from './styles.module.css';
 
-const legalAdvocacy = 'CAPN engages with government and key stakeholders to advocate for gender-equal citizenship laws in Nepal. It supports both policy-level reform and individuals affected by discriminatory laws through legal aid and casework.';
-const safeHaven = 'CAPN engages with government and key stakeholders to advocate for gender-equal citizenship laws in Nepal. It supports both policy-level reform and individuals affected by discriminatory laws through legal aid and casework.';
-const socialAwareness = 'CAPN engages with government and key stakeholders to advocate for gender-equal citizenship laws in Nepal. It supports both policy-level reform and individuals affected by discriminatory laws through legal aid and casework.';
+const legalAdvocacy = 'CAPN works to reform discriminatory nationality laws by engaging in policy dialogues, lobbying, and legal consultations. Through collaboration with lawmakers, civil society, and legal experts, CAPN advocates for gender-equal citizenship rights in Nepal.';
+const safeHaven = 'Safe Haven is a CAPN initiative that empowers impacted individuals with skills, knowledge, and resources to access stable economic opportunities, addressing barriers caused by lack of citizenship.';
+const socialAwareness = 'CAPN aims to educate and aware individuals about these myths and mainstream the public discourse on citizenship. CAPN also shares research-based information and data to the public, raising awareness about key issues and recent findings related to citizenship.';
 
 export default function PillarsSection() {
     return (

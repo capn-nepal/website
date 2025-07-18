@@ -30,6 +30,7 @@ type Props = {
     links?: LinkItem[];
     imagePosition?: 'left' | 'right';
     headingSize?: 'large' | 'medium' | 'extraSmall';
+    darkenPillarIcon?: boolean;
 };
 
 export default function PillarSection(props: Props) {
@@ -46,6 +47,7 @@ export default function PillarSection(props: Props) {
         headingSize,
         headingDescription,
         headingClassName,
+        darkenPillarIcon = false,
     } = props;
 
     return (
@@ -65,6 +67,10 @@ export default function PillarSection(props: Props) {
                     <div className={styles.pillarHeading}>
                         <ImageWrapper
                             className={styles.pillarIcon}
+                            imageClassName={_cs(
+                                styles.pillarIconImage,
+                                darkenPillarIcon && styles.dark,
+                            )}
                             src={pillarSrc}
                             alt={imageAlt}
                         />

@@ -24,9 +24,6 @@ const dummyData = {
     artWorks:{
         results: [],
     },
-    reports:{
-        results: [],
-    },
     teamMembers: {
         results: [],
     },
@@ -43,6 +40,9 @@ const dummyData = {
         results: [],
     },
     podcastEpisodes: {
+        results: [],
+    },
+    reports:{
         results: [],
     },
 };

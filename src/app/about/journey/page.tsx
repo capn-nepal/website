@@ -39,7 +39,7 @@ const timelineData = [
     {
         id: 3,
         date: '2014-11-01',
-        description: 'Deepti Gurung co-organized and participated in Kathmandu’s 2000 Rising for Citizenship campaign organized by the Youth Network on Civil Society Organization (YNCSO) and the signature campaign in 13 districts of Nepal.',
+        description: 'Deepti Gurung participated in Kathmandu’s 2000 Rising for Citizenship campaign organized by the Youth Network on Civil Society Organization (YNCSO) and the signature campaign in 13 districts of Nepal.',
         image: journey3,
     },
     {
@@ -58,7 +58,6 @@ const timelineData = [
         id: 6,
         date: '2015-12-01',
         description: 'Citizenship Affected People’s Network was formed as a loose network of affected people with the support of FWLD.',
-        image: journey6,
     },
     {
         id: 7,
@@ -76,7 +75,7 @@ const timelineData = [
         id: 9,
         date: '2021-07-01',
         description: 'CAPN was officially registered as an NGO, Deepti Gurung took the position of Executive Director to continue to advocate for gender equal citizenship laws in Nepal.',
-        image: journey9,
+        image: journey6,
     },
     {
         id: 10,
@@ -167,12 +166,14 @@ export default function Journey() {
                                         <div className={_cs(styles.text, 'here')}>
                                             {eventItem.description}
                                         </div>
-                                        <ImageWrapper
-                                            className={styles.imageWrapper}
-                                            imageClassName={styles.image}
-                                            src={eventItem.image}
-                                            alt="timeline"
-                                        />
+                                        {eventItem.image && (
+                                            <ImageWrapper
+                                                className={styles.imageWrapper}
+                                                imageClassName={styles.image}
+                                                src={eventItem.image}
+                                                alt="timeline"
+                                            />
+                                        )}
                                     </div>
                                 ))}
                             </div>

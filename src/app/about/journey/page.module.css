@@ -42,10 +42,6 @@
                 .year {
                     font-size: calc(var(--font-size-galactic) * var(--multiplier) * var(--multiplier));
                 }
-
-                @media (max-width: 768px) {
-                    background: var(--color-background-gradient);
-                }
             }
 
             .yearContent {
@@ -79,6 +75,28 @@
 
                         @media (max-width: 768px) {
                             z-index: unset;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media(max-width: 768px) {
+            .timelineContent {
+                .yearContainer {
+                    position: unset;
+                    top: unset;
+                    height: unset;
+                }
+
+                .yearContent {
+                    flex-direction: column-reverse;
+
+                    .eventItem {
+                        gap: var(--spacing-large);
+
+                        .text {
+                            position: unset;
                         }
                     }
                 }

@@ -1,6 +1,5 @@
 .cause {
     position: relative;
-    background-color: var(--color-background-secondary);
 
     .imageGrid {
         display: flex;
