@@ -15,6 +15,18 @@ const dummyData = {
     blogs: {
         results: [],
     },
+    galleries:{
+        results: [],
+    },
+    galleryItems:{
+        results: [],
+    },
+    artWorks:{
+        results: [],
+    },
+    reports:{
+        results: [],
+    },
     teamMembers: {
         results: [],
     },
@@ -31,9 +43,6 @@ const dummyData = {
         results: [],
     },
     podcastEpisodes: {
-        results: [],
-    },
-    reports: {
         results: [],
     },
 };
@@ -70,6 +79,43 @@ const query = gql`
                     url
                     name
                 }
+            }
+        }
+
+        galleries {
+            results {
+                description
+                id
+                isArchived
+                name
+            }
+        }
+
+        galleryItems {
+            results {
+                caption
+                id
+                image {
+                    name
+                    url
+                }
+                gallery {
+                    id
+                    name
+                    description
+                }
+                isArchived
+            }
+        }
+
+        artWorks {
+            results {
+                id
+                image {
+                    url
+                    name
+                }
+                name
             }
         }
 
@@ -174,7 +220,6 @@ async function fetchAndWriteData() {
 
     let data = {};
     if (pipelineType === 'ci') {
-        console.log('Writing dummy data', GRAPHQL_ENDPOINT);
         data = dummyData;
     } else if (pipelineType === 'cd') {
         data = await client.request(query);

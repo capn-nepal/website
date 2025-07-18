@@ -3,6 +3,11 @@
     flex-direction: column;
     --border-radius-tabs: 25px;
 
+    .sectionContent {
+        gap: var(--spacing-super-large);
+        padding-bottom: var(--spacing-galactic);
+    }
+
     .tabs {
         display: flex;
         gap: var(--spacing-medium);
@@ -24,16 +29,24 @@
         gap: var(--spacing-large);
     }
 
-    .images {
-        gap: var(--spacing-medium);
-        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-        display: grid;
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-large);
 
-        .image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: var(--border-radius-medium);
+        .images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 20rem));
+            gap: var(--spacing-medium);
+
+            .imageWrapper {
+                width: 100%;
+                height: 16rem;
+
+                .image {
+                    border-radius: var(--border-radius-medium);
+                }
+            }
         }
     }
 }

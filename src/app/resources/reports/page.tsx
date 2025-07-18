@@ -10,7 +10,7 @@ import styles from './page.module.css';
 type Reports = NonNullable<NonNullable<AllDataQuery['reports']>['results']>;
 
 export default function Reports() {
-    const allReportsData = data.reports.results as unknown as Reports;
+    const allReportsData = data?.reports?.results as unknown as Reports;
 
     return (
         <Page className={styles.reports}>
