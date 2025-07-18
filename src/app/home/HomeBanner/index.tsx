@@ -51,9 +51,9 @@ export default function HomeBanner() {
                             a 60,60 0 1,1 -120,0"
                         />
                     </defs>
-                    <text fontSize="17" fill="#a3a3a3">
+                    <text fontSize="15" fill="#a3a3a3">
                         <textPath href="#circlePath" startOffset="0%">
-                            Transforming the fight for citizenship equality.
+                            Transformative Advocacy for gender equal citizenship.
                         </textPath>
                     </text>
                 </svg>

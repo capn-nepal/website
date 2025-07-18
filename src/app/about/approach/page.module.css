@@ -1,3 +1,4 @@
 .about {
     gap: var(--spacing-universal);
+    padding-bottom: var(--spacing-universal);
 }

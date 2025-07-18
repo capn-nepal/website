@@ -11,7 +11,7 @@ import { type AllDataQuery } from '#generated/types/graphql';
 
 import styles from './styles.module.css';
 
-const description = 'From the streets to the studio—hear the voices shaping the fight for equal citizenship through podcasts and voxpop features.';
+const description = 'From the streets to the studio (this text will also be changed, will send after being finalised) hear the voices shaping the narrative for equal citizenship through podcasts and voxpop features.';
 
 type PodcastEpisodes = NonNullable<NonNullable<AllDataQuery['podcastEpisodes']>['results']>;
 type VoxPopEpisodes = NonNullable<NonNullable<AllDataQuery['voxpopEpisodes']>['results']>;

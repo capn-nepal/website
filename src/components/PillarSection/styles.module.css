@@ -39,6 +39,12 @@
                     height:4.25rem;
                     bottom: -9px;
                     left: -20px;
+
+                    .pillarIconImage {
+                        &.dark {
+                            filter: brightness(70%);
+                        }
+                    }
                 }
 
                 .pillarHeading {
@@ -73,10 +79,12 @@
                         }
                     }
                 }
+
                 .quote {
                     display: flex;
                     flex-direction: column;
                     gap: var(--spacing-small);
+                    font-style: italic;
 
                     .attribution {
                         font-size: var(--font-size-medium);
@@ -86,26 +94,26 @@
             }
         }
 
-            .pillarImage {
-                width: 20rem;
-                height: 16rem;
-                justify-self: flex-end;
-                align-self: center;
-                filter: saturate(25%);
+        .pillarImage {
+            width: 20rem;
+            height: 16rem;
+            justify-self: flex-end;
+            align-self: center;
+            filter: saturate(25%);
 
-                .image {
-                    object-fit: cover;
-                    border-radius: var(--border-radius-small);
-                }
-
-                @media (max-width: 768px) {
-                    display: none;
-                }
-
-                &:hover {
-                    filter: saturate(80%);
-                }
+            .image {
+                object-fit: cover;
+                border-radius: var(--border-radius-small);
             }
+
+            @media (max-width: 768px) {
+                display: none;
+            }
+
+            &:hover {
+                filter: saturate(80%);
+            }
+        }
 
         @media (max-width: 768px) {
             display: flex;
@@ -127,7 +135,7 @@
         grid-template-columns: 1fr 1fr 1fr;
         background-color: var(--color-secondary);
         border-radius: var(--border-radius-extra-small);
-        padding: var(--spacing-medium);
+        padding: var(--spacing-large);
 
         @media (max-width: 768px) {
             grid-template-rows: 1fr 1fr 1fr;
@@ -138,15 +146,18 @@
             display: flex;
 
             .linksContent {
-                padding: 0 var(--spacing-medium);
+                padding: 0 var(--spacing-large);
 
                 .title {
                     font-weight: var(--font-weight-bold);
+                    text-transform: capitalize;
                     color: var(--color-primary);
                 }
 
                 .linkDescription {
                     color: var(--color-text-on-dark);
+                    font-size: var(--font-size-small);
+                    line-height: 1.25;
                 }
             }
 
@@ -159,7 +170,7 @@
         .separator {
             width: 2px;
             background-color: var(--color-secondary-light);
-            height: 8rem;
+            height: 100%;
 
             @media (max-width: 768px) {
                 width: 95%;

@@ -11,7 +11,7 @@ import { type AllDataQuery } from '#generated/types/graphql';
 
 import styles from './styles.module.css';
 
-const description = 'Explore our in-depth reports and publications, highlighting key initiatives, research, and stories that shape the fight for equal citizenship rights.';
+const description = 'Explore our in-depth reports and publications, highlighting key initiatives, research, and advocacy that shape the fight for equal citizenship rights.';
 
 type Reports = NonNullable<NonNullable<AllDataQuery['reports']>['results']>;
 
@@ -25,6 +25,10 @@ export default function Reports(props: Props) {
     const sortedReports = allReportsData
         .sort((a, b) => compareDate(a.publishedDate, b.publishedDate));
     const limitedItems = sortedReports.slice(0, 3);
+
+    if (limitedItems?.length === 0) {
+        return null;
+    }
 
     return (
         <div className={_cs(className, styles.reports)}>

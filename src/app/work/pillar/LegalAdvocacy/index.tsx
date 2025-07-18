@@ -9,28 +9,29 @@ export default function LegalAdvocacy() {
             imageSrc={Advocacy}
             imageAlt="Legal Advocacy image"
             pillarSrc={Pillar1}
-            quote="CAPN engages with government and key stakeholders to advocate for gender-equal citizenship laws in Nepal. It supports both policy-level reform and individuals affected by discriminatory laws through legal aid and casework."
-            attribution="DEEPTI GURUNG"
-            headingDescription="CAPN engages with government and key stakeholders to advocate for gender-equal citizenship laws in Nepal. It supports both policy-level reform and individuals affected by discriminatory laws through legal aid and casework."
+            quote="Although notable achievements have been made towards inclusivity in nationality laws. Gender equality in every aspect of citizenship laws is yet to be ensured."
+            attribution=""
+            headingDescription="CAPN has been active in legal advocacy for gender equal nationality rights in Nepal. It started as a loose network of affected individuals in 2015 and till date, CAPN has been involved in legal advocacy through policy roundtables, lobbying and discussions with lawmakers, Civil Society Organization (CSO) members, legal experts and government stakeholders. Thus, CAPN’s legal advocacy efforts are backed by evidence-based advocacy, lobbying with policy makers, research and legal assistance through paralegals."
             imagePosition="right"
             links={[
                 {
-                    title: 'Policy & Legislative Advocacy',
+                    title: 'Evidence Based Advocacy',
                     // TODO: Add links
                     href: '#',
-                    description: 'Engaging lawmakers, CSOs, and experts to reform discriminatory citizenship laws.',
+                    description: 'Research helps CAPN support gender-equal citizenship. Recent studies looked at how new citizenship laws are applied and how COVID-19 affected people without citizenship.',
                 },
                 {
-                    title: 'Evidence-Based Research',
+                    title: 'Grassroot Advocacy',
                     href: '#',
-                    description: 'Using data and lived experiences to support legal reform and awareness efforts.',
+                    description: 'Paralegal Program expands CAPN’s legal support by training affected individuals to help others navigate the citizenship process. These paralegals offer free, personalized assistance and gain a means to support their own livelihood.',
                 },
                 {
-                    title: 'Individual Case Support',
+                    title: 'National & International Efforts',
                     href: '#',
-                    description: 'Providing legal aid and documentation support to those denied citizenship.',
+                    description: 'CAPN advocates for gender-equal citizenship by engaging with policymakers and pushing for legal reforms. It also contributes to global forums like CEDAW, CRC, and UPR, sharing research and lived experiences to influence change.',
                 },
             ]}
+            darkenPillarIcon
         />
     );
 }

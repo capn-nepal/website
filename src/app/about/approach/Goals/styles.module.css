@@ -1,5 +1,6 @@
 .goals {
     display: flex;
+
     .goalsContent {
         display: flex;
         flex-direction: column;
@@ -14,7 +15,7 @@
 
     .goalDescription {
         font-size: var(--font-size-large);
-        width: 50%;
+        max-width: 40rem;
     }
 
     .goalLists {
@@ -40,14 +41,15 @@
             .card {
                 padding: var(--spacing-large) var(--spacing-galactic) var(--spacing-large) var(--spacing-large);
                 background-color: var(--color-card);
-                height: 13rem;
+                min-height: 13rem;
                 border-radius: var(--border-radius-large);
 
                 .cardTitle {
                     position: relative;
 
                     .number {
-                        position: relative;
+                        position: absolute;
+                        top: 0;
                         color: var(--color-primary);
                         opacity: 35%;
                         font-size: var(--font-size-galactic);
@@ -57,10 +59,7 @@
                     }
 
                     .title {
-                        position: absolute;
-                        left: 1.3rem;
-                        top: 1.7rem;
-                        padding-top: var(--spacing-large);
+                        padding-top: calc(1.6rem + var(--spacing-large));
                         z-index: 2;
                         font-weight: var(--font-weight-semi-bold);
                         text-wrap: balance;

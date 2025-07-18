@@ -53,15 +53,6 @@ export default function Contact() {
                                 Sanepa, Lalitpur
                             </span>
                         </div>
-                        <div className={styles.item}>
-                            <IoCallOutline className={styles.icon} />
-                            <a
-                                className={styles.text}
-                                href="tel:+977983626323"
-                            >
-                                977983626323
-                            </a>
-                        </div>
                         <span className={styles.text}>
                             {contactUsText}
                         </span>
