@@ -1,8 +1,8 @@
 import { MdArrowOutward } from 'react-icons/md';
 
-import Button from '#components/Button';
 import Heading from '#components/Heading';
 import Image from '#components/ImageWrapper';
+import Link from '#components/Link';
 import lifeAtCapn1 from '#public/lifeAtCapn1.jpeg';
 import lifeAtCapn2 from '#public/lifeAtCapn2.jpeg';
 import lifeAtCapn3 from '#public/lifeAtCapn3.jpeg';
@@ -66,10 +66,14 @@ export default function Cause() {
                         <br />
                         everyone deserves to belong.
                     </Heading>
-                    <Button className={styles.button}>
+                    <Link
+                        className={styles.button}
+                        variant="button"
+                        href="/support/"
+                    >
                         SUPPORT OUR CAUSE
                         <MdArrowOutward />
-                    </Button>
+                    </Link>
                 </div>
             </div>
         </div>

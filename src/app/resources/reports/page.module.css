@@ -14,4 +14,10 @@
             }
         }
     }
+    .noReports {
+        opacity: 0.5;
+        font-size: var(--font-size-super-large);
+        text-align: left;
+    }
+
 }

@@ -13,7 +13,7 @@ import styles from './styles.module.css';
 
 type LinkItem = {
     title: string;
-    href: string;
+    href?: string;
     description: string;
 };
 
@@ -135,12 +135,22 @@ export default function PillarSection(props: Props) {
                                 key={link.title}
                             >
                                 <div className={styles.linksContent}>
-                                    <Link
-                                        className={styles.title}
-                                        href={link.href}
-                                    >
-                                        {link.title}
-                                    </Link>
+                                    {link.href ? (
+                                        <Link
+                                            className={styles.title}
+                                            href={link.href}
+                                        >
+                                            {link.title}
+                                        </Link>
+                                    ) : (
+                                        <div className={_cs(
+                                            styles.title,
+                                            styles.nonClickableTitle,
+                                        )}
+                                        >
+                                            {link.title}
+                                        </div>
+                                    )}
                                     <div className={styles.linkDescription}>
                                         {link.description}
                                     </div>

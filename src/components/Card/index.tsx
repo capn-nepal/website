@@ -17,7 +17,6 @@ interface Props {
     image?: StaticImageData | string;
     title: string;
     date?: string;
-    description?: string;
     link?: string;
     isExternalLink?: boolean;
     headingSize?: SizeTypes;
@@ -29,7 +28,6 @@ export default function Card(props: Props) {
         title,
         image,
         date: fullDate,
-        description,
         link,
         headingSize = 'medium',
         isExternalLink = false,
@@ -69,11 +67,6 @@ export default function Card(props: Props) {
             >
                 {title}
             </Heading>
-            {description && (
-                <div className={styles.description}>
-                    {description}
-                </div>
-            )}
         </>
     );
 
