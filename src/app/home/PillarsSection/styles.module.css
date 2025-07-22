@@ -31,6 +31,9 @@
                     color: var(--color-text-on-dark);
                 }
             }
+            .link{
+                color: var(--color-primary);
+            }
         }
     }
 }
