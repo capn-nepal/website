@@ -127,6 +127,7 @@ const query = gql`
                 lastName
                 designation
                 memberType
+                bio
                 memberPhoto {
                     url
                     name
