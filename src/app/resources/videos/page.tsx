@@ -44,7 +44,9 @@ export default function Videos() {
     const [activeTab, setActiveTab] = useState<string>('youtube-videos');
 
     return (
-        <Page contentClassName={styles.videos}>
+        <Page
+            contentClassName={styles.videos}
+        >
             <Banner
                 withoutBackground
                 heading="Voices That Matter"
@@ -76,7 +78,8 @@ export default function Videos() {
                                         target="_blank"
                                     >
                                         <ImageWrapper
-                                            className={styles.image}
+                                            className={styles.imageWrapper}
+                                            imageClassName={styles.image}
                                             src={item.thumbnail?.url}
                                             alt={item.thumbnail?.name}
                                         />
@@ -97,6 +100,7 @@ export default function Videos() {
                                         target="_blank"
                                     >
                                         <ImageWrapper
+                                            className={styles.imageWrapper}
                                             imageClassName={styles.image}
                                             src={item.thumbnail?.url}
                                             alt={item.thumbnail?.name}
@@ -109,23 +113,20 @@ export default function Videos() {
                 )}
                 {activeTab === 'youtube-videos' && (
                     <div className={styles.videoSection}>
-                        {allYoutubeVideos.map((item) => (
-                            (item.thumbnail?.url && item.thumbnail.name)
-                                ? (
-                                    <Link
-                                        key={item.id}
-                                        href={item.videoUrl}
-                                        target="_blank"
-                                    >
-                                        <ImageWrapper
-                                            className={styles.image}
-                                            src={item.thumbnail?.url}
-                                            alt={item.thumbnail?.name}
-                                        />
-                                    </Link>
-                                )
-                                : null
-                        ))}
+                        {allYoutubeVideos.map((item) => {
+                            const videoId = item.videoUrl?.split('v=')[1]?.split('&')[0];
+                            return videoId ? (
+                                <iframe
+                                    key={item.id}
+                                    className={styles.videoEmbed}
+                                    src={`https://www.youtube.com/embed/${videoId}`}
+                                    title={item.title}
+                                    allowFullScreen
+                                />
+                            ) : (
+                                null
+                            );
+                        })}
                     </div>
                 )}
             </Section>

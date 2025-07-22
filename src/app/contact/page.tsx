@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-    IoCallOutline,
     IoLocationOutline,
     IoMailOutline,
 } from 'react-icons/io5';

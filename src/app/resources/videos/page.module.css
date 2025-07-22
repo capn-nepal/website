@@ -5,6 +5,7 @@
 
     .section {
         display: flex;
+        gap: var(--spacing-enormous);
 
         .tabs {
             display: flex;
@@ -22,14 +23,25 @@
         }
 
         .videoSection {
-            gap: var(--spacing-medium);
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
             display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            padding-bottom: var(--spacing-universal);
+            gap: var(--spacing-medium);
 
-            .image {
+            .imageWrapper {
                 width: 100%;
-                height: 100%;
-                object-fit: cover;
+                height: 16rem;
+
+                .image {
+                    border-radius: var(--border-radius-medium);
+                }
+            }
+
+            .videoEmbed {
+                width: 100%;
+                height: 16rem;
+                border-radius: var(--border-radius-medium);
+                outline: none;
             }
         }
     }
