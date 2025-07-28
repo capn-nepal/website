@@ -128,6 +128,8 @@ const query = gql`
                 designation
                 memberType
                 bio
+                instagramLink
+                linkedinLink
                 memberPhoto {
                     url
                     name
