@@ -14,6 +14,11 @@
         .memberHeading {
             color: var(--color-text-on-dark);
         }
+        .socialLink{
+            display:flex;
+            padding: var(--spacing-tiny);
+            gap: var(--spacing-small);
+        }
     }
 
     .cardImage {
