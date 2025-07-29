@@ -57,6 +57,10 @@ const query = gql`
                 location
                 startDate
                 endDate
+                thumbnail {
+                    url
+                    name
+                }
             }
         }
 
