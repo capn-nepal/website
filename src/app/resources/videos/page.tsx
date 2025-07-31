@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { IoPlay } from 'react-icons/io5';
 import { _cs } from '@togglecorp/fujs';
 
 import Banner from '#components/Banner';
@@ -70,44 +71,50 @@ export default function Videos() {
                 {activeTab === 'podcast' && (
                     <div className={styles.videoSection}>
                         {allPodcastVideos.map((item) => (
-                            (item.thumbnail?.url && item.thumbnail.name)
-                                ? (
-                                    <Link
-                                        key={item.id}
-                                        href={item.videoUrl}
-                                        target="_blank"
-                                    >
+                            (item.thumbnail?.url && item.thumbnail.name) ? (
+                                <Link
+                                    key={item.id}
+                                    href={item.videoUrl}
+                                    target="_blank"
+                                    className={styles.videoLink}
+                                >
+                                    <div className={styles.imageWrapper}>
                                         <ImageWrapper
-                                            className={styles.imageWrapper}
-                                            imageClassName={styles.image}
+                                            className={styles.image}
                                             src={item.thumbnail?.url}
                                             alt={item.thumbnail?.name}
                                         />
-                                    </Link>
-                                )
-                                : null
+                                        <div className={styles.playIcon}>
+                                            <IoPlay className={styles.icon} />
+                                        </div>
+                                    </div>
+                                </Link>
+                            ) : null
                         ))}
                     </div>
                 )}
                 {activeTab === 'voxpop' && (
                     <div className={styles.videoSection}>
                         {allVoxpopVideos.map((item) => (
-                            (item.thumbnail?.url && item.thumbnail.name)
-                                ? (
-                                    <Link
-                                        key={item.id}
-                                        href={item.videoUrl}
-                                        target="_blank"
-                                    >
+                            (item.thumbnail?.url && item.thumbnail.name) ? (
+                                <Link
+                                    key={item.id}
+                                    href={item.videoUrl}
+                                    target="_blank"
+                                    className={styles.videoLink}
+                                >
+                                    <div className={styles.imageWrapper}>
                                         <ImageWrapper
-                                            className={styles.imageWrapper}
-                                            imageClassName={styles.image}
+                                            className={styles.image}
                                             src={item.thumbnail?.url}
                                             alt={item.thumbnail?.name}
                                         />
-                                    </Link>
-                                )
-                                : null
+                                        <div className={styles.playIcon}>
+                                            <IoPlay className={styles.icon} />
+                                        </div>
+                                    </div>
+                                </Link>
+                            ) : null
                         ))}
                     </div>
                 )}

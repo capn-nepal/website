@@ -29,9 +29,9 @@ export default function Boards() {
         setShowMembersSection('Team Member');
     }, []);
 
-    const filteredMembers = allTeamMembersData.filter(
-        (member) => member.memberType === showMembersSection,
-    );
+    const filteredMembers = allTeamMembersData
+        .filter((member) => member.memberType === showMembersSection)
+        .sort((a, b) => Number(a.id) - Number(b.id));
 
     return (
         <Section>
