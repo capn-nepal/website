@@ -1,0 +1,41 @@
+.global {
+    flex-direction: column;
+    gap: var(--spacing-universal);
+    .heading{
+        color: var( --color-text-black);
+    }
+    
+    .searchWrapper {
+        display: flex;
+        align-items: center;
+        max-width: var(--width-page-max);
+    }
+    .section{
+        padding: var(--spacing-small);
+        .sectionWrapper{
+            display:flex;
+            flex-direction: column;
+            max-width: var(--width-page-min);
+            gap: var(--spacing-small);
+        }
+        .linkList {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-medium);
+
+            .linkItem a {
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: var(--spacing-small);
+            }
+        
+            .linkItem a:hover {
+                text-decoration: underline;
+                color: var(--color-primary-dark);
+            }
+        }
+    }
+   
+}
