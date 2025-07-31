@@ -16,14 +16,14 @@
     height: fit-content;
 }
 
-    .button {
-        color: var(--color-tertiary-dark);
-        font-size: var(--font-size-large);
+.button {
+    color: var(--color-tertiary-dark);
+    font-size: var(--font-size-large);
+}
 
-        &.active {
-            font-weight: var(--font-weight-extra-bold);
-        }
-    }
+.button.active {
+    font-weight: var(--font-weight-extra-bold);
+}
 
 .membersGrid {
     overflow-y: auto;
@@ -31,8 +31,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
     gap: var(--spacing-extra-large);
-    padding-right: 0.5rem;
-    scrollbar-width: none;
     -ms-overflow-style: none;
 }
 
@@ -40,15 +38,10 @@
     display: none;
 }
 
-    @media (max-width: 768px) {
+@media (max-width: 768px) {
     .boards {
         display: flex;
         flex-direction: column;
         gap: var(--spacing-super-large);
-
-        .buttonGroup {
-        flex-direction: row;
-        justify-content: center;
-        }
     }
 }

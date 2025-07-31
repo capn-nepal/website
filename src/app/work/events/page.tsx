@@ -37,17 +37,14 @@ export default function Events() {
             >
                 <div className={styles.pastEvents}>
                     {allEventsData?.map((item) => (
-                        (item.thumbnail?.url && item.thumbnail.name)
-                            ? (
-                                <Card
-                                    key={item.id}
-                                    className={styles.card}
-                                    title={item.name}
-                                    date={item.startDate}
-                                    link={`/work/events/${item.id}/`}
-                                />
-                            ) : null
-
+                        <Card
+                            key={item.id}
+                            className={styles.card}
+                            title={item.name}
+                            date={item.startDate}
+                            link={`/work/events/${item.id}/`}
+                            image={item.thumbnail?.url}
+                        />
                     ))}
                 </div>
             </Section>
