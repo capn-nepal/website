@@ -38,6 +38,7 @@ export default function PillarsSection() {
                         imageAlt="Legal Advocacy image"
                         attribution={(
                             <Link
+                                className={styles.link}
                                 href="/work/pillar/"
                                 showIcon
                             >
@@ -56,6 +57,7 @@ export default function PillarsSection() {
                         imageAlt="Safe Haven"
                         attribution={(
                             <Link
+                                className={styles.link}
                                 href="/work/pillar/"
                                 showIcon
                             >
@@ -74,6 +76,7 @@ export default function PillarsSection() {
                         imageAlt="Safe Haven"
                         attribution={(
                             <Link
+                                className={styles.link}
                                 href="/work/pillar/"
                                 showIcon
                             >

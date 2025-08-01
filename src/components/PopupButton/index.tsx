@@ -1,6 +1,10 @@
+'use client';
+
 import React, {
     useCallback,
     useEffect,
+    useRef,
+    useState,
 } from 'react';
 import {
     IoIosArrowDown,
@@ -27,6 +31,7 @@ export interface PopupButtonProps extends Omit<ButtonProps, 'label'> {
     elementRef?: React.RefObject<HTMLButtonElement>;
     actions?: React.ReactNode;
 }
+
 function PopupButton(props: PopupButtonProps) {
     const {
         popupClassName,
@@ -43,40 +48,44 @@ function PopupButton(props: PopupButtonProps) {
         ...otherProps
     } = props;
 
-    const internalButtonRef = React.useRef<HTMLButtonElement>(null);
-    const popupRef = React.useRef<HTMLDivElement>(null);
-
+    const internalButtonRef = useRef<HTMLButtonElement>(null);
+    const popupRef = useRef<HTMLDivElement>(null);
     const buttonRef = elementRef ?? internalButtonRef;
 
-    const [popupShown, setPopupShown] = React.useState(defaultShown ?? false);
+    const [popupShown, setPopupShown] = useState(defaultShown ?? false);
+    const [isHovered, setIsHovered] = useState(false);
 
-    useEffect(
-        () => {
-            if (componentRef) {
-                componentRef.current = {
-                    setPopupVisibility: setPopupShown,
-                };
-            }
-        },
-        [componentRef],
-    );
+    const showPopup = popupShown || isHovered;
+
+    useEffect(() => {
+        if (componentRef) {
+            componentRef.current = {
+                setPopupVisibility: setPopupShown,
+            };
+        }
+    }, [componentRef]);
 
     useBlurEffect(
-        popupShown && !persistent,
-        setPopupShown,
+        showPopup && !persistent,
+        () => {
+            if (!isHovered) {
+                setPopupShown(false);
+            }
+        },
         popupRef,
         buttonRef,
     );
 
-    const handleShowPopup = useCallback(
-        () => {
-            setPopupShown((prevState) => !prevState);
-        },
-        [],
-    );
+    const handleShowPopup = useCallback(() => {
+        setPopupShown((prev) => !prev);
+    }, []);
 
     return (
-        <>
+        <div
+            className={styles.popupButton}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
             <Button
                 /* eslint-disable-next-line react/jsx-props-no-spreading */
                 {...otherProps}
@@ -84,15 +93,13 @@ function PopupButton(props: PopupButtonProps) {
                 elementRef={buttonRef}
                 onClick={handleShowPopup}
                 variant="transparent"
-                className={_cs(popupShown && styles.active, styles.popupButton)}
+                className={_cs(showPopup && styles.active, styles.popupButton)}
             >
                 {label}
-                {!arrowHidden && (
-                    popupShown ? <IoIosArrowUp /> : <IoIosArrowDown />
-                )}
-                {actions && (actions)}
+                {!arrowHidden && (showPopup ? <IoIosArrowUp /> : <IoIosArrowDown />)}
+                {actions}
             </Button>
-            {popupShown && (
+            {showPopup && (
                 <Popup
                     elementRef={popupRef}
                     parentRef={buttonRef}
@@ -102,7 +109,7 @@ function PopupButton(props: PopupButtonProps) {
                     {children}
                 </Popup>
             )}
-        </>
+        </div>
     );
 }
 

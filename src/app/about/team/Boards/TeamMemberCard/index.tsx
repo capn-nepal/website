@@ -1,3 +1,7 @@
+import {
+    IoLogoInstagram,
+    IoLogoLinkedin,
+} from 'react-icons/io5';
 import { type StaticImageData } from 'next/image';
 
 import Heading from '#components/Heading';
@@ -13,6 +17,8 @@ export interface Props {
     designation?: string;
     showDescription?: boolean;
     link: string;
+    instagramLink?:string;
+    linkedInlink?: string;
 }
 
 export default function TeamMemberCard(props: Props) {
@@ -23,6 +29,8 @@ export default function TeamMemberCard(props: Props) {
         designation,
         showDescription,
         link,
+        instagramLink,
+        linkedInlink,
     } = props;
 
     return (
@@ -41,7 +49,34 @@ export default function TeamMemberCard(props: Props) {
                         {name}
                     </Heading>
                     {designation}
+                    <div className={styles.socialLink}>
+                        {instagramLink && (
+                            <Link
+                                href={instagramLink}
+                                variant="icon"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.socialIcon}
+                                title="Instagram"
+                            >
+                                <IoLogoInstagram />
+                            </Link>
+                        )}
+                        {linkedInlink && (
+                            <Link
+                                href={linkedInlink}
+                                variant="icon"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.socialIcon}
+                                title="LinkedIn"
+                            >
+                                <IoLogoLinkedin />
+                            </Link>
+                        )}
+                    </div>
                 </div>
+
             )}
             <ImageWrapper
                 imageClassName={styles.cardImage}

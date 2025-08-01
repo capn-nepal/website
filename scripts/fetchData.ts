@@ -57,6 +57,10 @@ const query = gql`
                 location
                 startDate
                 endDate
+                thumbnail {
+                    url
+                    name
+                }
             }
         }
 
@@ -127,6 +131,9 @@ const query = gql`
                 lastName
                 designation
                 memberType
+                bio
+                instagramLink
+                linkedinLink
                 memberPhoto {
                     url
                     name

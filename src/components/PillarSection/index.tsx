@@ -106,9 +106,9 @@ export default function PillarSection(props: Props) {
                                     &quot;
                                 </>
                             ) : null}
-                            <div className={styles.attribution}>
-                                {attribution}
-                            </div>
+                        </div>
+                        <div className={styles.attribution}>
+                            {attribution}
                         </div>
                     </div>
                 </div>
