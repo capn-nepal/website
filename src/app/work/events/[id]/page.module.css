@@ -1,4 +1,5 @@
 .eventPage {
+    padding-bottom: var(--spacing-universal);
     .otherEvents {
         display: grid;
         grid-gap: var(--spacing-medium);

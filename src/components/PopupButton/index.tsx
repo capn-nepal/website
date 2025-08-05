@@ -3,8 +3,6 @@
 import React, {
     useCallback,
     useEffect,
-    useRef,
-    useState,
 } from 'react';
 import {
     IoIosArrowDown,
@@ -48,14 +46,12 @@ function PopupButton(props: PopupButtonProps) {
         ...otherProps
     } = props;
 
-    const internalButtonRef = useRef<HTMLButtonElement>(null);
-    const popupRef = useRef<HTMLDivElement>(null);
+    const internalButtonRef = React.useRef<HTMLButtonElement>(null);
+    const popupRef = React.useRef<HTMLDivElement>(null);
     const buttonRef = elementRef ?? internalButtonRef;
 
-    const [popupShown, setPopupShown] = useState(defaultShown ?? false);
-    const [isHovered, setIsHovered] = useState(false);
-
-    const showPopup = popupShown || isHovered;
+    const [popupShown, setPopupShown] = React.useState(defaultShown ?? false);
+    // const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         if (componentRef) {
@@ -66,12 +62,13 @@ function PopupButton(props: PopupButtonProps) {
     }, [componentRef]);
 
     useBlurEffect(
-        showPopup && !persistent,
-        () => {
-            if (!isHovered) {
-                setPopupShown(false);
-            }
-        },
+        popupShown && !persistent,
+        // () => {
+        //     if (!isHovered) {
+        //         setPopupShown(false);
+        //     }
+        // },
+        setPopupShown,
         popupRef,
         buttonRef,
     );
@@ -81,11 +78,7 @@ function PopupButton(props: PopupButtonProps) {
     }, []);
 
     return (
-        <div
-            className={styles.popupButton}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
+        <>
             <Button
                 /* eslint-disable-next-line react/jsx-props-no-spreading */
                 {...otherProps}
@@ -93,13 +86,13 @@ function PopupButton(props: PopupButtonProps) {
                 elementRef={buttonRef}
                 onClick={handleShowPopup}
                 variant="transparent"
-                className={_cs(showPopup && styles.active, styles.popupButton)}
+                className={_cs(popupShown && styles.active, styles.popupButton)}
             >
                 {label}
-                {!arrowHidden && (showPopup ? <IoIosArrowUp /> : <IoIosArrowDown />)}
+                {!arrowHidden && (popupShown ? <IoIosArrowUp /> : <IoIosArrowDown />)}
                 {actions}
             </Button>
-            {showPopup && (
+            {popupShown && (
                 <Popup
                     elementRef={popupRef}
                     parentRef={buttonRef}
@@ -109,7 +102,7 @@ function PopupButton(props: PopupButtonProps) {
                     {children}
                 </Popup>
             )}
-        </div>
+        </>
     );
 }
 

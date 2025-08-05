@@ -62,10 +62,10 @@ export default async function EventDetailPage({ params }: PageProps) {
                         <Card
                             key={item.id}
                             className={styles.card}
-                            image={AboutUsImage}
                             title={item.name}
                             date={item.startDate}
                             link={`/work/events/${item.id}`}
+                            image={item.thumbnail?.url}
                         />
                     ))}
                 </div>

@@ -71,6 +71,7 @@ export default function EventsSection(props: Props) {
                         date={item.startDate}
                         title={item.name}
                         link={`/work/events/${item.id}`}
+                        image={item.thumbnail?.url}
                     />
                 ))}
             </div>
