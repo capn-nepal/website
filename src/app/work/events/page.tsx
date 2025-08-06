@@ -43,6 +43,7 @@ export default function Events() {
                             title={item.name}
                             date={item.startDate}
                             link={`/work/events/${item.id}/`}
+                            image={item.thumbnail?.url}
                         />
                     ))}
                 </div>

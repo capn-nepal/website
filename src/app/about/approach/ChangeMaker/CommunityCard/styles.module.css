@@ -1,0 +1,42 @@
+.card {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    gap: var(--font-size-extra-large);
+    background-color: var(--color-card);
+    padding: var(--font-size-extra-large);
+    border-radius: var(--border-radius-small);
+    transition: all ease-in-out 200ms;
+    width: 700px;
+    height: 250px;
+}
+
+.logo {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+}
+
+.content {
+    flex: 1;
+}
+
+.description {
+    font-size: var(--font-size-small);
+}
+
+.link {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-size-small);
+    color: var(--color-text);
+
+    .linkLabel {
+        padding-right: var(--spacing-super-small);
+    }
+  }
+
+.linkUrl {
+    color: var(--color-primary);
+    text-transform: lowercase;
+}

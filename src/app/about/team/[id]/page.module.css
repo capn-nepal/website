@@ -1,9 +1,9 @@
 .page {
     gap: var(--spacing-universal);
+    background: var(--color-background-gradient);
 
     .memberWrapper {
         padding: calc(2* var(--spacing-large) + 2.2rem + 2* var(--spacing-super-small) + var(--spacing-mega-large)) var(--spacing-super-large) 0 var(--spacing-super-large);
-
         .cardImage {
             width: 20rem;
             height: 28rem;
@@ -20,10 +20,29 @@
 
             .memberDescription {
                 display: flex;
+                flex: 1;
                 flex-direction: column;
                 gap: var(--spacing-medium);
             }
         }
     }
+    @media (max-width: 768px) {
+        .memberWrapper {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+    
+            .cardImage {
+                width: 30rem;
+                height: 28rem;
+                display: block; 
+            }
+    
+            .memberContent {
+                flex-direction: column; 
+                align-items: center;
+                text-align: center;
+            }
+        }
+    }
 }
-

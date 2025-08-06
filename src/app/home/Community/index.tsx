@@ -3,6 +3,7 @@ import { _cs } from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import Image from '#components/ImageWrapper';
+import Link from '#components/Link';
 import comLogo from '#public/partnerLogos/com.png';
 import familyLogo from '#public/partnerLogos/family.png';
 import isiLogo from '#public/partnerLogos/isi.png';
@@ -13,12 +14,12 @@ import statelessLogo from '#public/partnerLogos/stateless.png';
 import styles from './styles.module.css';
 
 const logos = [
-    isiLogo,
-    scrLogo,
-    familyLogo,
-    nfaLogo,
-    comLogo,
-    statelessLogo,
+    { src: isiLogo, link: 'https://www.institutesi.org/' },
+    { src: scrLogo, link: 'https://statelessnessandcitizenshipreview.com/index.php/journal' },
+    { src: familyLogo, link: 'https://familyfrontiers.org/' },
+    { src: nfaLogo, link: ' https://nationalityforall.org/' },
+    { src: comLogo, link: ' https://councilofminorities.org/' },
+    { src: statelessLogo, link: 'https://www.statelesshub.org/' },
 ];
 
 interface Props {
@@ -46,11 +47,17 @@ export default function Community(props: Props) {
                     <div className={styles.marqueeContent}>
                         {[...logos, ...logos].map((logo, index) => (
                             <div key={String(logo)} className={styles.item}>
-                                <Image
-                                    className={styles.logo}
-                                    src={logo}
-                                    alt={`partner-logo-${index}`}
-                                />
+                                <Link
+                                    href={logo.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    <Image
+                                        className={styles.logo}
+                                        src={logo.src}
+                                        alt={`partner-logo-${index}`}
+                                    />
+                                </Link>
                             </div>
                         ))}
                     </div>

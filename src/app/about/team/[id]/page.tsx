@@ -69,7 +69,7 @@ export default async function TeamDetailPage({ params }: PageProps) {
                             {memberDetails.designation}
                         </Heading>
                     </div>
-                    {/* {memberDetails.profileDescription} */}
+                    {memberDetails.bio}
                     <Link
                         href="/about/team"
                     >

@@ -53,6 +53,7 @@ export default function RecentWorksSection() {
                             date={item.startDate}
                             title={item.name}
                             link={`/work/events/${item.id}/`}
+                            image={item.thumbnail?.url}
                             // FIXME: Update image after its coming from backend
                             // image={vocies1Image}
                         />

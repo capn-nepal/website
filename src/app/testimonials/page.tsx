@@ -77,22 +77,22 @@ const testimonials: {
     {
         title: '',
         description: binitaContent,
-        author: 'Binita Mainali (Ms. B)',
+        author: 'Ms. B',
     },
     {
         title: '',
         description: sujanContent,
-        author: 'Sujan Pahari (Mr.S)',
+        author: 'Mr.S',
     },
     {
         title: '',
         description: diwakarContent,
-        author: 'Diwakar Chhetri (Mr. C)',
+        author: 'Mr. C',
     },
     {
         title: '',
         description: sangitaContent,
-        author: 'Sangita Karki (Ms. S)',
+        author: 'Ms. S',
     },
 ];
 

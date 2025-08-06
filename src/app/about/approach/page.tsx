@@ -3,6 +3,7 @@ import Divider from '#components/Divider';
 import Page from '#components/Page';
 import ApproachImage from '#public/approachBanner.png';
 
+import ChangeMaker from './ChangeMaker';
 import Goals from './Goals';
 import Values from './Values';
 import VisionMission from './VisionMission';
@@ -27,6 +28,7 @@ export default function About() {
             <Divider />
             <Goals />
             <Values />
+            <ChangeMaker />
         </Page>
     );
 }

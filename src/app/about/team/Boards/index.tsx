@@ -29,9 +29,9 @@ export default function Boards() {
         setShowMembersSection('Team Member');
     }, []);
 
-    const filteredMembers = allTeamMembersData.filter(
-        (member) => member.memberType === showMembersSection,
-    );
+    const filteredMembers = allTeamMembersData
+        .filter((member) => member.memberType === showMembersSection)
+        .sort((a, b) => Number(a.id) - Number(b.id));
 
     return (
         <Section>
@@ -63,6 +63,8 @@ export default function Boards() {
                                 alt={member.memberPhoto?.name}
                                 name={member.firstName}
                                 designation={member.designation}
+                                instagramLink={member.instagramLink ?? undefined}
+                                linkedInlink={member.linkedinLink ?? undefined}
                             />
                         ) : null
                     ))}

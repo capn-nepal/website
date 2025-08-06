@@ -1,3 +1,5 @@
+'use client';
+
 import React, {
     useCallback,
     useEffect,
@@ -27,6 +29,7 @@ export interface PopupButtonProps extends Omit<ButtonProps, 'label'> {
     elementRef?: React.RefObject<HTMLButtonElement>;
     actions?: React.ReactNode;
 }
+
 function PopupButton(props: PopupButtonProps) {
     const {
         popupClassName,
@@ -45,35 +48,34 @@ function PopupButton(props: PopupButtonProps) {
 
     const internalButtonRef = React.useRef<HTMLButtonElement>(null);
     const popupRef = React.useRef<HTMLDivElement>(null);
-
     const buttonRef = elementRef ?? internalButtonRef;
 
     const [popupShown, setPopupShown] = React.useState(defaultShown ?? false);
+    // const [isHovered, setIsHovered] = useState(false);
 
-    useEffect(
-        () => {
-            if (componentRef) {
-                componentRef.current = {
-                    setPopupVisibility: setPopupShown,
-                };
-            }
-        },
-        [componentRef],
-    );
+    useEffect(() => {
+        if (componentRef) {
+            componentRef.current = {
+                setPopupVisibility: setPopupShown,
+            };
+        }
+    }, [componentRef]);
 
     useBlurEffect(
         popupShown && !persistent,
+        // () => {
+        //     if (!isHovered) {
+        //         setPopupShown(false);
+        //     }
+        // },
         setPopupShown,
         popupRef,
         buttonRef,
     );
 
-    const handleShowPopup = useCallback(
-        () => {
-            setPopupShown((prevState) => !prevState);
-        },
-        [],
-    );
+    const handleShowPopup = useCallback(() => {
+        setPopupShown((prev) => !prev);
+    }, []);
 
     return (
         <>
@@ -87,10 +89,8 @@ function PopupButton(props: PopupButtonProps) {
                 className={_cs(popupShown && styles.active, styles.popupButton)}
             >
                 {label}
-                {!arrowHidden && (
-                    popupShown ? <IoIosArrowUp /> : <IoIosArrowDown />
-                )}
-                {actions && (actions)}
+                {!arrowHidden && (popupShown ? <IoIosArrowUp /> : <IoIosArrowDown />)}
+                {actions}
             </Button>
             {popupShown && (
                 <Popup
