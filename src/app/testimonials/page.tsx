@@ -2,7 +2,7 @@ import React from 'react';
 
 import Banner from '#components/Banner';
 import Page from '#components/Page';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import TestimonialImage from '#public/testimonialsImage.png';
 
 import Testimonial from './Testimonial';
 
@@ -103,8 +103,7 @@ export default function Testimonials() {
             contentClassName={styles.testimonialsContent}
         >
             <Banner
-                // NOTE: We need to replace with the real image as mentioned in figma
-                bannerImageSrc={AboutUsImage}
+                bannerImageSrc={TestimonialImage}
                 eyebrowHeading="Voices of Change"
                 heading={(
                     <>
