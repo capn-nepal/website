@@ -1,5 +1,8 @@
 .eventPage {
-    padding-bottom: var(--spacing-universal);
+    .section {
+        padding-bottom: var(--spacing-galactic);
+    }
+
     .otherEvents {
         display: grid;
         grid-gap: var(--spacing-medium);

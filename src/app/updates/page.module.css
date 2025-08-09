@@ -17,5 +17,6 @@
         font-size: var(--font-size-super-large);
         text-align: left;
         padding-bottom: var(--spacing-universal);
+        height: 40vh;
     }
 }

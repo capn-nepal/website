@@ -6,9 +6,8 @@
 
     .buttonGroup {
         position: sticky;
-        padding-top: calc(1.6rem + var(--spacing-large));
-        top: var(--spacing-galactic);
-        z-index: 1000;
+        top: 6rem;
+        padding-top: var(--spacing-large);
         display: flex;
         flex-direction: column;
         gap: var(--spacing-large);

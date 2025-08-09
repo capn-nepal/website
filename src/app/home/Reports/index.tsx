@@ -6,6 +6,7 @@ import {
 
 import Card from '#components/Card';
 import Link from '#components/Link';
+import Section from '#components/Section';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
 
@@ -31,7 +32,7 @@ export default function Reports(props: Props) {
     }
 
     return (
-        <div className={_cs(className, styles.reports)}>
+        <Section className={_cs(className, styles.reports)}>
             <div className={styles.content}>
                 <div className={styles.wrapper}>
                     <div className={styles.leftContainer}>
@@ -65,6 +66,6 @@ export default function Reports(props: Props) {
                     </Link>
                 </div>
             </div>
-        </div>
+        </Section>
     );
 }

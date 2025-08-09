@@ -6,6 +6,7 @@ import {
 
 import Card from '#components/Card';
 import Link from '#components/Link';
+import Section from '#components/Section';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
 
@@ -29,12 +30,10 @@ export default function Studio(props: Props) {
     const limitedItems = sortedPodcastEpisodes.slice(0, 3);
 
     return (
-        <div className={_cs(className, styles.studio)}>
+        <Section className={_cs(className, styles.studio)}>
             <div className={styles.content}>
                 <div className={styles.leftContainer}>
-                    <p
-                        className={styles.description}
-                    >
+                    <p className={styles.description}>
                         {description}
                     </p>
                     <Link
@@ -65,6 +64,6 @@ export default function Studio(props: Props) {
                     </div>
                 </div>
             </div>
-        </div>
+        </Section>
     );
 }

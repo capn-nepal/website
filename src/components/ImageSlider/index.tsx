@@ -21,7 +21,8 @@ export default function ImageSlider() {
             <div className={styles.joinImagesWrapper}>
                 {[...images, ...images].map((image, index) => (
                     <ImageWrapper
-                        key={String(image)}
+                        // eslint-disable-next-line react/no-array-index-key
+                        key={index}
                         imageClassName={styles.joinImages}
                         src={image}
                         alt={`images-${index}`}

@@ -47,12 +47,13 @@ export default async function EventDetailPage({ params }: PageProps) {
                 eyebrowHeading="Our Events"
                 heading={eventDetails?.name}
             />
-            <Section>
+            <Section className={styles.section}>
                 <ArticleBody
                     content={eventDetails?.description}
                 />
             </Section>
             <Section
+                className={styles.section}
                 heading="Explore Other Events"
             >
                 <div className={styles.otherEvents}>
