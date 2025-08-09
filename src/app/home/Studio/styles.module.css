@@ -5,6 +5,7 @@
     .content {
         display: grid;
         grid-template-columns: 1fr 1fr;
+        flex-direction: unset;
         padding: var(--spacing-large) var(--spacing-super-large);
         gap: var(--spacing-extra-large);
         margin: 0 auto;
@@ -62,7 +63,7 @@
                 }
             }
 
-            .img:nth-child(3) {
+            .img:nth-child(1) {
                 grid-column: 1;
                 grid-row: 1 / span 2;
                 align-self: start;

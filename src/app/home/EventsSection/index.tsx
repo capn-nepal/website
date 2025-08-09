@@ -3,6 +3,7 @@ import { compareDate } from '@togglecorp/fujs';
 
 import Card from '#components/Card';
 import Heading from '#components/Heading';
+import Section from '#components/Section';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
 
@@ -37,7 +38,7 @@ export default function EventsSection(props: Props) {
     }
 
     return (
-        <div className={styles.eventsSection}>
+        <Section className={styles.eventsSection}>
             <div className={styles.content}>
                 <div className={styles.leftContent}>
                     <Heading
@@ -75,6 +76,6 @@ export default function EventsSection(props: Props) {
                     />
                 ))}
             </div>
-        </div>
+        </Section>
     );
 }

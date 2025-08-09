@@ -8,7 +8,7 @@ import Banner from '#components/Banner';
 import Heading from '#components/Heading';
 import Page from '#components/Page';
 import Section from '#components/Section';
-import AboutUsImage from '#public/aboutUsImage.jpg';
+import ContactUsImage from '#public/contact.png';
 
 import styles from './page.module.css';
 
@@ -18,8 +18,7 @@ export default function Contact() {
     return (
         <Page contentClassName={styles.contact}>
             <Banner
-                // NOTE: We need to replace with the real image as mentioned in figma
-                bannerImageSrc={AboutUsImage}
+                bannerImageSrc={ContactUsImage}
                 eyebrowHeading="CONTACT US"
                 heading={(
                     <>

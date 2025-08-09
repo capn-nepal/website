@@ -49,34 +49,36 @@ export default function TeamMemberCard(props: Props) {
                         {name}
                     </Heading>
                     {designation}
-                    <div className={styles.socialLink}>
-                        {instagramLink && (
-                            <Link
-                                href={instagramLink}
-                                variant="icon"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.socialIcon}
-                                title="Instagram"
-                            >
-                                <IoLogoInstagram />
-                            </Link>
-                        )}
-                        {linkedInlink && (
-                            <Link
-                                href={linkedInlink}
-                                variant="icon"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={styles.socialIcon}
-                                title="LinkedIn"
-                            >
-                                <IoLogoLinkedin />
-                            </Link>
-                        )}
-                    </div>
                 </div>
-
+            )}
+            {showDescription && (
+                <div className={styles.socialLink}>
+                    {instagramLink && (
+                        <Link
+                            href={instagramLink}
+                            variant="icon"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.socialIcon}
+                            title="Instagram"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <IoLogoInstagram />
+                        </Link>
+                    )}
+                    {linkedInlink && (
+                        <Link
+                            href={linkedInlink}
+                            variant="icon"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.socialIcon}
+                            title="LinkedIn"
+                        >
+                            <IoLogoLinkedin />
+                        </Link>
+                    )}
+                </div>
             )}
             <ImageWrapper
                 imageClassName={styles.cardImage}

@@ -7,7 +7,6 @@ import Page from '#components/Page';
 import Section from '#components/Section';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
-import AboutUsImage from '#public/aboutUsImage.jpg';
 
 import styles from './page.module.css';
 
@@ -44,17 +43,17 @@ export default async function EventDetailPage({ params }: PageProps) {
     return (
         <Page contentClassName={styles.eventPage}>
             <Banner
-                // NOTE: We need to replace with the real image as mentioned in figma
-                bannerImageSrc={AboutUsImage}
+                bannerImageSrc={eventDetails?.thumbnail?.url}
                 eyebrowHeading="Our Events"
                 heading={eventDetails?.name}
             />
-            <Section>
+            <Section className={styles.section}>
                 <ArticleBody
                     content={eventDetails?.description}
                 />
             </Section>
             <Section
+                className={styles.section}
                 heading="Explore Other Events"
             >
                 <div className={styles.otherEvents}>

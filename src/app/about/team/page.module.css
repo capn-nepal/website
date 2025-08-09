@@ -1,5 +1,8 @@
 .teamPage {
+    height: 100vh;
     background: var(--color-background-gradient);
+    overflow-y: auto;
+    overflow-x: hidden;
 
     .teamContent {
         gap: var(--spacing-universal);

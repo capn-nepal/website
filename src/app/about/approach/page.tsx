@@ -12,7 +12,10 @@ import styles from './page.module.css';
 
 export default function About() {
     return (
-        <Page contentClassName={styles.about}>
+        <Page
+            className={styles.approach}
+            contentClassName={styles.about}
+        >
             <Banner
                 bannerImageSrc={ApproachImage}
                 eyebrowHeading="Our Approach"

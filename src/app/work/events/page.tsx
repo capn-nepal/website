@@ -6,7 +6,7 @@ import Page from '#components/Page';
 import Section from '#components/Section';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
-import careerImage from '#public/aboutUsImage.jpg';
+import eventImage from '#public/eventImage.jpg';
 
 import EventsSection from '../../home/EventsSection';
 
@@ -20,7 +20,7 @@ export default function Events() {
     return (
         <Page contentClassName={styles.events}>
             <Banner
-                bannerImageSrc={careerImage}
+                bannerImageSrc={eventImage}
                 eyebrowHeading="Our Events"
                 heading={(
                     <>

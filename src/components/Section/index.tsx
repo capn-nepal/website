@@ -1,4 +1,9 @@
-import React from 'react';
+'use client';
+
+import React, {
+    useEffect,
+    useRef,
+} from 'react';
 import { _cs } from '@togglecorp/fujs';
 
 import Heading, { type SizeTypes } from '#components/Heading';
@@ -24,8 +29,35 @@ export default function Section(props: Props) {
         contentClassName,
     } = props;
 
+    const ref = useRef<HTMLDivElement | null>(null);
+
+    useEffect(() => {
+        const element = ref.current;
+        if (!element) {
+            return undefined;
+        }
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    element.classList.add(styles.visible);
+                } else {
+                    element.classList.remove(styles.visible);
+                }
+            },
+            { threshold: 0.1 },
+        );
+
+        observer.observe(element);
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <div className={_cs(className, styles.section)}>
+        <div
+            ref={ref}
+            className={_cs(className, styles.section)}
+        >
             <div
                 className={_cs(contentClassName, styles.content)}
             >

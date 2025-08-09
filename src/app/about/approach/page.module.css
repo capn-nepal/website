@@ -1,4 +1,10 @@
-.about {
-    gap: var(--spacing-universal);
-    padding-bottom: var(--spacing-universal);
+.approach {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .about {
+        gap: var(--spacing-universal);
+        padding-bottom: var(--spacing-universal);
+    }
 }

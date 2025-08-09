@@ -1,3 +1,10 @@
+'use client';
+
+import {
+    useEffect,
+    useRef,
+} from 'react';
+
 import Heading from '#components/Heading';
 import ImageWrapper from '#components/ImageWrapper';
 import Section from '#components/Section';
@@ -7,11 +14,67 @@ import Empathy from '#public/valueIcons/Empathy.svg';
 import Gender from '#public/valueIcons/Gender Equality.svg';
 import Justice from '#public/valueIcons/Justice.svg';
 
-import ValueBox from './ValueBox';
-
 import styles from './styles.module.css';
 
+const values = [
+    {
+        title: 'Gender Equality',
+        description:
+        'We advocate for gender-equal citizenship laws to dismantle inequality and ensure everyone can thrive without discrimination.',
+        icon: Gender, // import Gender from your assets
+    },
+    {
+        title: 'Dignified Citizenship & Livelihood',
+        description:
+        'We support dignified livelihoods to empower impacted individuals with self-sufficiency and strengthen their citizenship rights.',
+        icon: Dignified, // import Dignified from your assets
+    },
+    {
+        title: 'Intersectional Justice',
+        description:
+        'CAPN addresses intersecting forms of discrimination and centers impacted voices with dignity, rejecting tokenism for real empowerment.',
+        icon: Justice, // import Justice from your assets
+    },
+    {
+        title: 'Accountability & Sensitivity',
+        description:
+        'We uphold accountability and sensitivity, ensuring transparent, respectful work grounded in integrity and empathy toward the communities we serve.',
+        icon: Accountability, // import Accountability from your assets
+    },
+    {
+        title: 'Empathy & Efficiency',
+        description:
+        'We prioritize sustainability and empathy, managing resources responsibly while building trust through compassionate engagement.',
+        icon: Empathy, // import Empathy from your assets
+    },
+];
+
 export default function Values() {
+    const itemsRef = useRef<HTMLDivElement[]>([]);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(styles.visible);
+                    } else {
+                        entry.target.classList.remove(styles.visible);
+                    }
+                });
+            },
+            {
+                threshold: 0.5,
+                root: null,
+                rootMargin: '0% 0px -200px 0px',
+            },
+        );
+
+        itemsRef.current.forEach((el) => el && observer.observe(el));
+
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <Section className={styles.values}>
             <div className={styles.valuesContent}>
@@ -26,113 +89,35 @@ export default function Values() {
                     </p>
                 </div>
                 <div className={styles.valuesList}>
-                    <ValueBox>
-                        <div className={styles.heading}>
-                            Gender Equality
-                        </div>
-                        <ImageWrapper
-                            className={styles.valueIcon}
-                            src={Gender}
-                            alt="gender"
-                        />
-                        <div className={styles.separator}>
-                            <div className={styles.outerCircle}>
-                                <div className={styles.innerCircle} />
+                    {values.map((item, index) => (
+                        <div
+                            key={item.title}
+                            className={styles.valueBox}
+                        >
+                            <div className={styles.heading}>
+                                {item.title}
                             </div>
-                            <div className={styles.line} />
-                        </div>
-                        <p>
-                            We advocate for gender-equal citizenship laws to
-                            dismantle inequality and ensure everyone can thrive
-                            without discrimination.
-                        </p>
-                    </ValueBox>
-                    <ValueBox>
-                        <div className={styles.heading}>
-                            Dignified citizenship
-                            & Livelihood
-                        </div>
-                        <ImageWrapper
-                            className={styles.valueIcon}
-                            src={Dignified}
-                            alt="dignified"
-                        />
-                        <div className={styles.separator}>
-                            <div className={styles.outerCircle}>
-                                <div className={styles.innerCircle} />
+                            <ImageWrapper
+                                className={styles.valueIcon}
+                                src={item.icon}
+                                alt={item.title}
+                            />
+                            <div
+                                className={styles.separator}
+                                ref={(el) => {
+                                    if (el) {
+                                        itemsRef.current[index] = el;
+                                    }
+                                }}
+                            >
+                                <div className={styles.outerCircle}>
+                                    <div className={styles.innerCircle} />
+                                </div>
+                                <div className={styles.line} />
                             </div>
-                            <div className={styles.line} />
+                            <p>{item.description}</p>
                         </div>
-                        <p>
-                            We support dignified livelihoods to empower
-                            impacted individuals with self-sufficiency and
-                            strengthen their citizenship rights.
-                        </p>
-                    </ValueBox>
-                    <ValueBox>
-                        <div className={styles.heading}>
-                            Intersectional Justice
-                        </div>
-                        <ImageWrapper
-                            className={styles.valueIcon}
-                            src={Justice}
-                            alt="justice"
-                        />
-                        <div className={styles.separator}>
-                            <div className={styles.outerCircle}>
-                                <div className={styles.innerCircle} />
-                            </div>
-                            <div className={styles.line} />
-                        </div>
-                        <p>
-                            CAPN addresses intersecting forms of
-                            discrimination and centers impacted voices
-                            with dignity, rejecting tokenism for real empowerment.
-                        </p>
-                    </ValueBox>
-                    <ValueBox>
-                        <div className={styles.heading}>
-                            Accountability & Sensitivity
-                        </div>
-                        <ImageWrapper
-                            className={styles.valueIcon}
-                            src={Accountability}
-                            alt="accountability"
-                        />
-                        <div className={styles.separator}>
-                            <div className={styles.outerCircle}>
-                                <div className={styles.innerCircle} />
-                            </div>
-                            <div className={styles.line} />
-                        </div>
-                        <p>
-                            We uphold accountability and sensitivity,
-                            ensuring transparent, respectful work
-                            grounded in integrity and empathy toward
-                            the communities we serve.
-                        </p>
-                    </ValueBox>
-                    <ValueBox>
-                        <div className={styles.heading}>
-                            Empathy & Efficiency
-                        </div>
-                        <ImageWrapper
-                            className={styles.valueIcon}
-                            src={Empathy}
-                            alt="empathy"
-                        />
-                        <div className={styles.separator}>
-                            <div className={styles.outerCircle}>
-                                <div className={styles.innerCircle} />
-                            </div>
-                            <div className={styles.line} />
-                        </div>
-                        <p>
-                            We prioritize sustainability and empathy,
-                            managing resources responsibly while
-                            building trust through compassionate engagement.
-                        </p>
-                    </ValueBox>
+                    ))}
                 </div>
             </div>
         </Section>

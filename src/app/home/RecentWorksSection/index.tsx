@@ -4,6 +4,7 @@ import { compareDate } from '@togglecorp/fujs';
 import Card from '#components/Card';
 import Heading from '#components/Heading';
 import Link from '#components/Link';
+import Section from '#components/Section';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
 
@@ -27,39 +28,40 @@ export default function RecentWorksSection() {
     }
 
     return (
-        <div className={styles.recentWorksSection}>
-            <div className={styles.content}>
-                <div className={styles.topContent}>
-                    <Heading
-                        className={styles.heading}
-                        size="extraLarge"
-                    >
-                        Empowering Communities:
-                        <br />
-                        <span>CAPN&apos;s Recent Works & Events</span>
-                    </Heading>
-                    <Link
-                        href="/work/events/"
-                        variant="button"
-                    >
-                        View all
-                    </Link>
-                </div>
-                <div className={styles.bottomContent}>
-                    {limitedItems?.map((item) => (
-                        <Card
-                            key={item.id}
-                            className={styles.card}
-                            date={item.startDate}
-                            title={item.name}
-                            link={`/work/events/${item.id}/`}
-                            image={item.thumbnail?.url}
-                            // FIXME: Update image after its coming from backend
-                            // image={vocies1Image}
-                        />
-                    ))}
-                </div>
+        <Section
+            className={styles.recentWorksSection}
+            contentClassName={styles.content}
+        >
+            <div className={styles.topContent}>
+                <Heading
+                    className={styles.heading}
+                    size="extraLarge"
+                >
+                    Empowering Communities:
+                    <br />
+                    <span>CAPN&apos;s Recent Works & Events</span>
+                </Heading>
+                <Link
+                    href="/work/events/"
+                    variant="button"
+                >
+                    View all
+                </Link>
             </div>
-        </div>
+            <div className={styles.bottomContent}>
+                {limitedItems?.map((item) => (
+                    <Card
+                        key={item.id}
+                        className={styles.card}
+                        date={item.startDate}
+                        title={item.name}
+                        link={`/work/events/${item.id}/`}
+                        image={item.thumbnail?.url}
+                        // FIXME: Update image after its coming from backend
+                        // image={vocies1Image}
+                    />
+                ))}
+            </div>
+        </Section>
     );
 }
