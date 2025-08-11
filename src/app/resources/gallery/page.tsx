@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 import Banner from '#components/Banner';
 import Button from '#components/Button';
@@ -13,8 +14,8 @@ import { type AllDataQuery } from '#generated/types/graphql';
 
 import styles from './page.module.css';
 
-type Galleries= NonNullable<NonNullable<AllDataQuery['galleries']>['results']>
-type GalleryItem = NonNullable<NonNullable<AllDataQuery['galleryItems']>['results']>
+type Galleries = NonNullable<NonNullable<AllDataQuery['galleries']>['results']>;
+type GalleryItem = NonNullable<NonNullable<AllDataQuery['galleryItems']>['results']>;
 type Artwork = NonNullable<NonNullable<AllDataQuery['artWorks']>['results']>;
 
 const tabs = [
@@ -26,8 +27,9 @@ const allGalleryItems = data.galleryItems.results as unknown as GalleryItem;
 const allArtWorkItems = data.artWorks.results as unknown as Artwork;
 
 export default function Gallery() {
-    const [activeTab, setActiveTab] = useState<string>('gallery');
-
+    const searchParams = useSearchParams();
+    const tabParam = searchParams.get('tab');
+    const [activeTab, setActiveTab] = useState<string>(tabParam === 'artwork' ? 'artwork' : 'gallery');
     const groupedGalleryItems = galleries.map((gallery) => ({
         ...gallery,
         images: allGalleryItems.filter(
@@ -82,17 +84,23 @@ export default function Gallery() {
                         </>
                     )}
                     {activeTab === 'artwork' && (
-                        <div className={styles.images}>
-                            {allArtWorkItems.map((artwork) => (
-                                <Image
-                                    key={artwork.id}
-                                    className={styles.imageWrapper}
-                                    imageClassName={styles.image}
-                                    src={artwork.image.url}
-                                    alt={artwork.name}
-                                />
-                            ))}
-                        </div>
+                        allArtWorkItems.length > 0 ? (
+                            <div className={styles.images}>
+                                {allArtWorkItems.map((artwork) => (
+                                    <Image
+                                        key={artwork.id}
+                                        className={styles.imageWrapper}
+                                        imageClassName={styles.image}
+                                        src={artwork.image.url}
+                                        alt={artwork.name}
+                                    />
+                                ))}
+                            </div>
+                        ) : (
+                            <div className={styles.noArtWork}>
+                                No artwork at the moment.
+                            </div>
+                        )
                     )}
                 </div>
             </Section>
