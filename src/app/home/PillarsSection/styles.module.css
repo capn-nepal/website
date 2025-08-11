@@ -7,7 +7,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: var(--spacing-universal) var(--spacing-super-large);
+        padding: var(--spacing-universal) 0;
         gap: var(--spacing-galactic);
         flex-grow: 1;
         margin: 0 auto;

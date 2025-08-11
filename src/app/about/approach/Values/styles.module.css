@@ -96,7 +96,7 @@
                 @media (max-width: 768px) {
                     display: flex;
                     flex-direction: column;
-                    border-bottom: 1px solid var(--color-secondary-light);
+                    gap: var(--spacing-large);
                 }
 
                 &:last-child {
@@ -118,14 +118,16 @@
             }
 
             .valuesList {
-                gap: var(--spacing-large);
+                gap: var(--spacing-gigantic);
 
                 .heading {
                     font-weight: var(--font-weight-extra-bold);
                 }
 
-                .separator {
-                    display: none;
+                .valueBox {
+                    .separator {
+                        display: none;
+                    }
                 }
             }
         }
