@@ -25,4 +25,8 @@
         opacity: 1;
         transform: translateY(0);
     }
+
+    @media(max-width: 768px) {
+        padding: 0 var(--spacing-extra-small);
+    }
 }

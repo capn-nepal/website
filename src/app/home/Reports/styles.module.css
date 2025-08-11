@@ -77,19 +77,22 @@
             display: flex;
             flex-direction: column;
 
-            .leftContainer {
-                display: flex;
-                flex-direction: column;
-                flex-grow: 1;
-                order: 2;
+            .wrapper {
+                .leftContainer {
+                    display: flex;
+                    flex-direction: column;
+                    flex-grow: 1;
+                    order: 2;
 
-                .img {
-                    grid-column: auto;
-                    grid-row: auto;
-                    align-self: unset;
+                    .img {
+                        grid-column: auto;
+                        grid-row: auto;
+                        align-self: unset;
 
-                    .image {
-                        height: 12rem;
+                        .image {
+                            height: 12rem;
+                            width: 100%;
+                        }
                     }
                 }
             }

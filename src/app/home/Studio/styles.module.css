@@ -79,17 +79,20 @@
             display: flex;
             flex-direction: column;
 
-            .rightContainer {
-                display: flex;
-                flex-direction: column;
+            .wrapper {
+                .rightContainer {
+                    display: flex;
+                    flex-direction: column;
 
-                .img {
-                    grid-column: auto;
-                    grid-row: auto;
-                    align-self: unset;
+                    .img {
+                        grid-column: auto;
+                        grid-row: auto;
+                        align-self: unset;
 
-                    .image {
-                        height: 10rem;
+                        .image {
+                            height: 10rem;
+                            width: 100%;
+                        }
                     }
                 }
             }

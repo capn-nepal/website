@@ -33,6 +33,10 @@
             .goalImage {
                 border-radius: var(--border-radius-large);
             }
+
+            @media (max-width: 768px) {
+                position: unset;
+            }
         }
 
         .listCard {
