@@ -64,7 +64,7 @@ export default function Boards() {
                                 name={member.firstName}
                                 designation={member.designation}
                                 instagramLink={member.instagramLink ?? undefined}
-                                linkedInlink={member.linkedinLink ?? undefined}
+                                linkedInLink={member.linkedinLink ?? undefined}
                             />
                         ) : null
                     ))}

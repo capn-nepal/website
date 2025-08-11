@@ -18,7 +18,7 @@ export interface Props {
     showDescription?: boolean;
     link: string;
     instagramLink?:string;
-    linkedInlink?: string;
+    linkedInLink?: string;
 }
 
 export default function TeamMemberCard(props: Props) {
@@ -30,7 +30,7 @@ export default function TeamMemberCard(props: Props) {
         showDescription,
         link,
         instagramLink,
-        linkedInlink,
+        linkedInLink,
     } = props;
 
     return (
@@ -66,14 +66,15 @@ export default function TeamMemberCard(props: Props) {
                             <IoLogoInstagram />
                         </Link>
                     )}
-                    {linkedInlink && (
+                    {linkedInLink && (
                         <Link
-                            href={linkedInlink}
+                            href={linkedInLink}
                             variant="icon"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.socialIcon}
                             title="LinkedIn"
+                            onClick={(e) => e.stopPropagation()}
                         >
                             <IoLogoLinkedin />
                         </Link>

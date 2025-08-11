@@ -1,8 +1,7 @@
 .changeMaker {
     display: flex;
     flex-direction: column;
-    padding-top: var(--spacing-galactic);
-    
+
     .content {
         display: flex;
         flex-direction: column;
