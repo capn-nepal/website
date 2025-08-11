@@ -1,6 +1,5 @@
 .values {
     --color-inner-circle: #b4e1e1;
-    padding-bottom: var(--spacing-galactic);
 
     .valuesContent {
         display: flex;
