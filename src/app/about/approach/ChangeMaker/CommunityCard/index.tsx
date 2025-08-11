@@ -31,12 +31,12 @@ export default function CommunityCard(props: Props) {
     return (
         <div className={`${styles.card} ${className || ''}`}>
             {logoSrc && (
-                <div className={styles.logo}>
-                    <ImageWrapper
-                        src={logoSrc}
-                        alt={logoAlt || ''}
-                    />
-                </div>
+                <ImageWrapper
+                    className={styles.logo}
+                    imageClassName={styles.logoImage}
+                    src={logoSrc}
+                    alt={logoAlt || ''}
+                />
             )}
             <div className={styles.content}>
                 <p className={styles.description}>

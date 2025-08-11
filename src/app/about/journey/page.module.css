@@ -1,8 +1,7 @@
 .journey {
     position: relative;
     height: 100vh;
-    background: var(--color-background-gradient);
-
+    background: var( --color-background-gradient-primary);
     .banner {
         display: flex;
         flex-direction: column;
@@ -20,6 +19,7 @@
     }
 
     .content {
+        background: var( --color-background-gradient-primary);
         .timelineContent {
             display: flex;
             position: relative;

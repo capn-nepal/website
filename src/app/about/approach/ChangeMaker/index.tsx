@@ -5,6 +5,7 @@ import Heading from '#components/Heading';
 import Section from '#components/Section';
 import kathaharuLogo from '#public/CommunityMaker/Kathaharu.png';
 import noahsArkLogo from '#public/CommunityMaker/NoahsArk.png';
+import togglecorpLogo from '#public/CommunityMaker/togglecorpLogo.png';
 
 import CommunityCard from './CommunityCard';
 
@@ -39,6 +40,15 @@ const community = [
         description: ' Production is a dynamic audio-visual company with over 10 years of experience across documentaries, short films, TV commercials, and more. Led by Executive Director Mr. Shashank Shrestha, the team collaborated with CAPN to produce two seasons of the State of Statelessness Podcast series. Their professionalism, creativity, and dedication from shooting, editing, and final delivery played a vital role in the success of the series. The collaboration was not only seamless but also filled with valuable learnings at every stage of production.',
         links: [
             { label: 'Website', url: 'https://kathaharu.com/' },
+        ],
+    },
+    {
+        logoSrc: togglecorpLogo,
+        logoAlt: 'Togglecorp Logo',
+        title: 'Togglecorp',
+        description: 'Togglecorp Solutions is a team specializing in software development and data-driven solutions with whom CAPN had the pleasure of collaborating to revamp our website. Their team of young, passionate, and fun professionals made the entire process both enjoyable and enriching. They patiently guided us through every stage, simplifying the complexities of website development and ensuring we understood the technical aspects in clear, accessible terms. Throughout multiple changes and fixes, they remained flexible, responsive, and committed to our vision. Thanks to their expertise, our revamped website now truly reflects our work, vision, values, and mission, while providing a polished and user-friendly experience.',
+        links: [
+            { label: 'Website', url: 'https://togglecorp.com/' },
         ],
     },
 ];

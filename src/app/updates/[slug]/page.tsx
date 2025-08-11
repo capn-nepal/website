@@ -7,13 +7,12 @@ import Page from '#components/Page';
 import Section from '#components/Section';
 import data from '#data/staticData.json';
 import { type AllDataQuery } from '#generated/types/graphql';
-import AboutUsImage from '#public/aboutUsImage.jpg';
 
 import styles from './page.module.css';
 
-type Blogs = NonNullable<NonNullable<AllDataQuery['blogs']>['results']>;
+type News = NonNullable<NonNullable<AllDataQuery['news']>['results']>;
 async function getUpdates() {
-    return data.blogs.results as unknown as Blogs;
+    return data.news.results as unknown as News;
 }
 
 /* eslint-disable react-refresh/only-export-components */
@@ -22,30 +21,32 @@ export async function generateStaticParams() {
     if (!updates.length) {
         return [{ slug: 'empty' }];
     }
-    return updates.map((item) => ({ slug: item.id }));
+    return updates.map((item) => ({ slug: item.slug }));
 }
 
 export default async function UpdateDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
     const updates = await getUpdates();
 
-    const updateDetails = updates?.find((item) => item.id === slug);
-    const lessUpdates = updates?.filter((item) => item.id !== slug).slice(0, 4);
+    const updateDetails = updates?.find((item) => item.slug === slug);
+    const lessUpdates = updates?.filter((item) => item.slug !== slug).slice(0, 4);
 
     return (
         <Page contentClassName={styles.updatePage}>
             <Banner
                 // NOTE: We need to replace with the real image as mentioned in figma
-                bannerImageSrc={updateDetails?.coverImage.url}
+                // bannerImageSrc={updateDetails?.coverImage.url}
                 eyebrowHeading="Our Updates"
                 heading={updateDetails?.title}
+                withoutBackground
             />
-            <Section>
+            <Section className={styles.section}>
                 <ArticleBody
-                    content={updateDetails?.content}
+                    content={updateDetails?.description}
                 />
             </Section>
             <Section
+                className={styles.section}
                 heading="Explore Other Updates"
             >
                 <div className={styles.otherUpdates}>
@@ -53,10 +54,9 @@ export default async function UpdateDetailPage({ params }: { params: Promise<{ s
                         <Card
                             key={item.id}
                             className={styles.card}
-                            image={AboutUsImage}
                             title={item.title}
                             date={item.publishedDate}
-                            link={`/updates/${item.id}`}
+                            link={`/updates/${item.slug}/`}
                         />
                     ))}
                 </div>

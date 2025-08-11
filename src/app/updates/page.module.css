@@ -1,4 +1,6 @@
 .updates {
+    padding-bottom: var(--spacing-enormous);
+
     .otherUpdates {
         display: grid;
         grid-gap: var(--spacing-medium);
