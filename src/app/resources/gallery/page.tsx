@@ -1,7 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import React, {
+    useEffect,
+    useState,
+} from 'react';
 
 import Banner from '#components/Banner';
 import Button from '#components/Button';
@@ -27,9 +29,16 @@ const allGalleryItems = data.galleryItems.results as unknown as GalleryItem;
 const allArtWorkItems = data.artWorks.results as unknown as Artwork;
 
 export default function Gallery() {
-    const searchParams = useSearchParams();
-    const tabParam = searchParams.get('tab');
-    const [activeTab, setActiveTab] = useState<string>(tabParam === 'artwork' ? 'artwork' : 'gallery');
+    const [activeTab, setActiveTab] = useState<string>('gallery');
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        const tab = params.get('tab');
+        if (tab === 'artwork') {
+            setActiveTab('artwork');
+        }
+    }, []);
+
     const groupedGalleryItems = galleries.map((gallery) => ({
         ...gallery,
         images: allGalleryItems.filter(
