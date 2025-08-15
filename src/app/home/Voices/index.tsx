@@ -40,8 +40,8 @@ export default function Voices(props: Props) {
                     title="Creative Collaboration for Change"
                     description="This space highlights artwork, photography, and creative expressions from individuals affected showcasing their talent, resilience, and stories beyond the struggle."
                     images={[himalayaImage]}
-                    link="/resources/gallery/"
-                    linkText="View Gallery"
+                    link="/resources/gallery/?tab=artwork"
+                    linkText="View ArtWork"
                 />
             </div>
         </Section>

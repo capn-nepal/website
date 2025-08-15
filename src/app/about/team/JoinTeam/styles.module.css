@@ -4,7 +4,7 @@
     gap: var(--spacing-extra-large);
 
     .joinDescription {
-        gap: var(--spacing-extrasmall);
+        gap: 0 !important;
         align-items: center;
     }
 }

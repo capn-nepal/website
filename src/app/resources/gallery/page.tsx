@@ -1,6 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, {
+    useEffect,
+    useState,
+} from 'react';
 
 import Banner from '#components/Banner';
 import Button from '#components/Button';
@@ -27,6 +30,13 @@ const allArtWorkItems = data.artWorks.results as unknown as Artwork;
 
 export default function Gallery() {
     const [activeTab, setActiveTab] = useState<string>('gallery');
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        const tab = params.get('tab');
+        if (tab === 'artwork') {
+            setActiveTab('artwork');
+        }
+    }, []);
 
     const groupedGalleryItems = galleries.map((gallery) => ({
         ...gallery,
@@ -82,17 +92,23 @@ export default function Gallery() {
                         </>
                     )}
                     {activeTab === 'artwork' && (
-                        <div className={styles.images}>
-                            {allArtWorkItems.map((artwork) => (
-                                <Image
-                                    key={artwork.id}
-                                    className={styles.imageWrapper}
-                                    imageClassName={styles.image}
-                                    src={artwork.image.url}
-                                    alt={artwork.name}
-                                />
-                            ))}
-                        </div>
+                        allArtWorkItems.length > 0 ? (
+                            <div className={styles.images}>
+                                {allArtWorkItems.map((artwork) => (
+                                    <Image
+                                        key={artwork.id}
+                                        className={styles.imageWrapper}
+                                        imageClassName={styles.image}
+                                        src={artwork.image.url}
+                                        alt={artwork.name}
+                                    />
+                                ))}
+                            </div>
+                        ) : (
+                            <div className={styles.noArtWork}>
+                                No artwork available at the moment.
+                            </div>
+                        )
                     )}
                 </div>
             </Section>
