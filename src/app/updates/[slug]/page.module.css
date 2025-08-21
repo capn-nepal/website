@@ -1,4 +1,10 @@
 .updatePage {
+    padding: var(--spacing-galactic) 0;
+
+    .section {
+        padding-top: var(--spacing-galactic);
+    }
+
     .otherUpdates {
         display: grid;
         grid-gap: var(--spacing-medium);

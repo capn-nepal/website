@@ -15,6 +15,9 @@ const dummyData = {
     blogs: {
         results: [],
     },
+    news: {
+        results: [],
+    },
     galleries:{
         results: [],
     },
@@ -85,6 +88,17 @@ const query = gql`
                 }
             }
         }
+
+        news {
+            results {
+                id
+                title
+                publishedDate
+                description
+                slug
+            }
+        }
+
 
         galleries {
             results {

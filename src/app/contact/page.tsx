@@ -40,9 +40,9 @@ export default function Contact() {
                             <IoMailOutline className={styles.icon} />
                             <a
                                 className={styles.text}
-                                href="mailto:info.contact@capn.org"
+                                href="mailto:info@capnnepal.org.np"
                             >
-                                info.contact@capn.org
+                                info@capnnepal.org.np
                             </a>
                         </div>
                         <div className={styles.item}>

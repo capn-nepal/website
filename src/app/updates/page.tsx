@@ -10,12 +10,12 @@ import presentationImage from '#public/presentation.jpg';
 
 import styles from './page.module.css';
 
-type Blogs = NonNullable<NonNullable<AllDataQuery['blogs']>['results']>;
+type News = NonNullable<NonNullable<AllDataQuery['news']>['results']>;
 
-const allBlogsData = data.blogs.results as unknown as Blogs;
+const allNewsData = data.news.results as unknown as News;
 
 export default function Updates() {
-    const hasUpdates = allBlogsData && allBlogsData.length > 0;
+    const hasUpdates = allNewsData && allNewsData.length > 0;
 
     return (
         <Page contentClassName={styles.updates}>
@@ -27,13 +27,13 @@ export default function Updates() {
             <Section>
                 <div className={styles.otherUpdates}>
                     {hasUpdates ? (
-                        allBlogsData.map((item) => (
+                        allNewsData.map((item) => (
                             <Card
                                 key={item.id}
                                 className={styles.card}
                                 title={item.title}
                                 date={item.publishedDate}
-                                link={`/updates/${item.id}`}
+                                link={`/updates/${item.slug}`}
                             />
                         ))
                     ) : (

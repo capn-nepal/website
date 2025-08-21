@@ -27,7 +27,7 @@ export default async function Support() {
                 <p>
                     For more information on how your donation
                     can create impact, please contact us at:
-                    <a href="mailto:info.contact@capn.org">info.contact@capn.org</a>
+                    <a href="mailto:info@capnnepal.org.np">info@capnnepal.org.np</a>
                 </p>
             </Section>
         </Page>
