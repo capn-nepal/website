@@ -1,3 +1,5 @@
+name: capn-website
+
 services:
   next:
     build:

@@ -115,6 +115,7 @@ export default function Testimonials() {
             />
             {testimonials.map((item) => (
                 <Testimonial
+                    className={styles.testimonial}
                     key={item.title}
                     title={item.title}
                     description={item.description}

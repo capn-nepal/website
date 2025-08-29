@@ -51,7 +51,6 @@ function PopupButton(props: PopupButtonProps) {
     const buttonRef = elementRef ?? internalButtonRef;
 
     const [popupShown, setPopupShown] = React.useState(defaultShown ?? false);
-    // const [isHovered, setIsHovered] = useState(false);
 
     useEffect(() => {
         if (componentRef) {
@@ -73,6 +72,21 @@ function PopupButton(props: PopupButtonProps) {
         buttonRef,
     );
 
+    const closeTimeout = React.useRef<NodeJS.Timeout | null>(null);
+
+    const handleMouseEnter = () => {
+        if (closeTimeout.current) {
+            clearTimeout(closeTimeout.current);
+        }
+        setPopupShown(true);
+    };
+
+    const handleMouseLeave = () => {
+        closeTimeout.current = setTimeout(() => {
+            setPopupShown(false);
+        }, 200); // delay so user can move into popup
+    };
+
     const handleShowPopup = useCallback(() => {
         setPopupShown((prev) => !prev);
     }, []);
@@ -85,6 +99,8 @@ function PopupButton(props: PopupButtonProps) {
                 name={name}
                 elementRef={buttonRef}
                 onClick={handleShowPopup}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
                 variant="transparent"
                 className={_cs(popupShown && styles.active, styles.popupButton)}
             >
@@ -97,9 +113,14 @@ function PopupButton(props: PopupButtonProps) {
                     elementRef={popupRef}
                     parentRef={buttonRef}
                     className={_cs(styles.popup, popupClassName)}
-                    contentClassName={_cs(styles.popupContent, popupContentClassName)}
                 >
-                    {children}
+                    <div
+                        onMouseEnter={handleMouseEnter}
+                        onMouseLeave={handleMouseLeave}
+                        className={_cs(styles.popupContent, popupContentClassName)}
+                    >
+                        {children}
+                    </div>
                 </Popup>
             )}
         </>

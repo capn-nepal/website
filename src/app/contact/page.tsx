@@ -20,10 +20,11 @@ export default function Contact() {
             <Banner
                 bannerImageSrc={ContactUsImage}
                 eyebrowHeading="CONTACT US"
+                className={styles.banner}
                 heading={(
                     <>
                         Have a Question?
-                        <span>Get in Touch</span>
+                        <span className={styles.headingSpan}>Get in Touch</span>
                     </>
                 )}
             />

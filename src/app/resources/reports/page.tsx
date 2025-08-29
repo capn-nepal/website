@@ -30,7 +30,7 @@ export default function Reports() {
                         <Card
                             className={styles.card}
                             key={item.id}
-                            // image={item.image}
+                            image={item.coverImage?.url}
                             title={item.title}
                             date={item.publishedDate}
                             link={item.reportFile?.url}

@@ -1,6 +1,12 @@
 .contact {
     padding-bottom: var(--spacing-universal);
 
+    .banner {
+        .headingSpan {
+            padding: 0 var(--spacing-super-small);
+        }
+    }
+
     .wrapper {
         display: grid;
         grid-gap: var(--spacing-medium);

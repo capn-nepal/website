@@ -31,7 +31,7 @@ export default function Boards() {
 
     const filteredMembers = allTeamMembersData
         .filter((member) => member.memberType === showMembersSection)
-        .sort((a, b) => Number(a.id) - Number(b.id));
+        .sort((a, b) => Number(a.memberOrder) - Number(b.memberOrder));
 
     return (
         <Section>

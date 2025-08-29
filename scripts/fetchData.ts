@@ -42,6 +42,9 @@ const dummyData = {
     voxpopEpisodes: {
         results: [],
     },
+    changemakers: {
+        results: [],
+    },
     podcastEpisodes: {
         results: [],
     },
@@ -52,7 +55,7 @@ const dummyData = {
 
 const query = gql`
     query AllData {
-        events {
+        events(pagination: { limit: 10000 }) {
             results {
                 id
                 name
@@ -67,7 +70,7 @@ const query = gql`
             }
         }
 
-        blogs {
+        blogs(pagination: { limit: 10000 }) {
             results {
                 id
                 title
@@ -89,18 +92,39 @@ const query = gql`
             }
         }
 
-        news {
+        changemakers(pagination: { limit: 10000 }) {
+            results {
+                description
+                facebookLink
+                id
+                instagramLink
+                isArchived
+                linkdinLink
+                websiteLink
+                name
+                logo {
+                    name
+                    size
+                    url
+                }
+            }
+        }
+
+        news(pagination: { limit: 10000 }) {
             results {
                 id
                 title
                 publishedDate
+                coverImage {
+                    url
+                    name
+                }
                 description
                 slug
             }
         }
 
-
-        galleries {
+        galleries(pagination: { limit: 10000 }) {
             results {
                 description
                 id
@@ -109,7 +133,7 @@ const query = gql`
             }
         }
 
-        galleryItems {
+        galleryItems(pagination: { limit: 10000 }) {
             results {
                 caption
                 id
@@ -126,7 +150,7 @@ const query = gql`
             }
         }
 
-        artWorks {
+        artWorks(pagination: { limit: 10000 }) {
             results {
                 id
                 image {
@@ -137,7 +161,7 @@ const query = gql`
             }
         }
 
-        teamMembers {
+        teamMembers(pagination: { limit: 10000 }) {
             results {
                 id
                 firstName
@@ -146,6 +170,7 @@ const query = gql`
                 designation
                 memberType
                 bio
+                memberOrder
                 instagramLink
                 linkedinLink
                 memberPhoto {
@@ -155,7 +180,7 @@ const query = gql`
             }
         }
 
-        jobVacancies {
+        jobVacancies(pagination: { limit: 10000 }) {
             results {
                 id
                 numberOfVacancies
@@ -171,7 +196,7 @@ const query = gql`
             }
         }
 
-        positions {
+        positions(pagination: { limit: 10000 }) {
             results {
                 id
                 name
@@ -180,7 +205,7 @@ const query = gql`
             }
         }
 
-        youtubeVideos {
+        youtubeVideos(pagination: { limit: 10000 }) {
             results {
                 id
                 videoUrl
@@ -193,21 +218,7 @@ const query = gql`
             }
         }
 
-        voxpopEpisodes {
-            results {
-                id
-                episodeNumber
-                releaseDate
-                title
-                videoUrl
-                thumbnail {
-                    url
-                    name
-                }
-            }
-        }
-
-        podcastEpisodes {
+        voxpopEpisodes(pagination: { limit: 10000 }) {
             results {
                 id
                 episodeNumber
@@ -221,12 +232,30 @@ const query = gql`
             }
         }
 
-        reports {
+        podcastEpisodes(pagination: { limit: 10000 }) {
+            results {
+                id
+                episodeNumber
+                releaseDate
+                title
+                videoUrl
+                thumbnail {
+                    url
+                    name
+                }
+            }
+        }
+
+        reports(pagination: { limit: 10000 }) {
             results {
                 id
                 title
                 status
                 publishedDate
+                coverImage {
+                    url
+                    name
+                }
                 reportFile {
                     url
                     name

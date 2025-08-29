@@ -8,15 +8,26 @@ import lifeAtCapn2 from '#public/lifeAtCapn2.jpeg';
 import lifeAtCapn3 from '#public/lifeAtCapn3.jpeg';
 import lifeAtCapn4 from '#public/lifeAtCapn4.jpeg';
 import lifeAtCapn5 from '#public/lifeAtCapn5.jpeg';
+import lifeAtCapn10 from '#public/lifeatcapn10.jpg';
+import lifeAtCapn11 from '#public/lifeatcapn11.jpg';
+import lifeAtCapn12 from '#public/lifeatcapn12.jpg';
+import lifeAtCapn13 from '#public/lifeatcapn13.jpg';
+import lifeAtCapn14 from '#public/lifeatcapn14.jpg';
+import lifeAtCapn15 from '#public/lifeatcapn15.jpg';
+import lifeAtCapn16 from '#public/lifeatcapn16.jpg';
+import lifeAtCapn17 from '#public/lifeatcapn17.jpg';
+import lifeAtCapn18 from '#public/lifeatcapn18.jpg';
+import lifeAtCapn19 from '#public/lifeatcapn19.jpg';
 
 import styles from './styles.module.css';
 
-function chunkImages<T>(images: T[], size: number) {
-    const result = [];
-    for (let i = 0; i < images.length; i += size) {
-        result.push(images.slice(i, i + size));
-    }
-    return result;
+function chunkImages<T>(arr: T[]): [T[], T[], T[]] {
+    const len = arr.length;
+    const size = Math.ceil(len / 3); // max size for each part
+    const first = arr.slice(0, size);
+    const second = arr.slice(size, 2 * size);
+    const third = arr.slice(2 * size);
+    return [first, second, third];
 }
 
 const images = [
@@ -25,6 +36,16 @@ const images = [
     lifeAtCapn3,
     lifeAtCapn4,
     lifeAtCapn5,
+    lifeAtCapn10,
+    lifeAtCapn11,
+    lifeAtCapn12,
+    lifeAtCapn13,
+    lifeAtCapn14,
+    lifeAtCapn15,
+    lifeAtCapn16,
+    lifeAtCapn17,
+    lifeAtCapn18,
+    lifeAtCapn19,
     lifeAtCapn1,
     lifeAtCapn3,
     lifeAtCapn4,
@@ -35,7 +56,7 @@ export default function Cause() {
     return (
         <div className={styles.cause}>
             <div className={styles.imageGrid}>
-                {chunkImages(images, 3).map((row, rowIndex) => (
+                {chunkImages(images).map((row, rowIndex) => (
                     <div
                         key={row.map((item) => item).join(', ')}
                         className={`${styles.marqueeRow} ${

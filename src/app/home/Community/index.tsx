@@ -14,12 +14,12 @@ import statelessLogo from '#public/partnerLogos/stateless.png';
 import styles from './styles.module.css';
 
 const logos = [
-    { src: isiLogo, link: 'https://www.institutesi.org/' },
-    { src: scrLogo, link: 'https://statelessnessandcitizenshipreview.com/index.php/journal' },
-    { src: familyLogo, link: 'https://familyfrontiers.org/' },
-    { src: nfaLogo, link: ' https://nationalityforall.org/' },
-    { src: comLogo, link: ' https://councilofminorities.org/' },
-    { src: statelessLogo, link: 'https://www.statelesshub.org/' },
+    { src: isiLogo, link: 'https://www.institutesi.org/resources' },
+    { src: scrLogo, link: 'https://statelessnessandcitizenshipreview.com/index.php/journal/issue/archive' },
+    { src: familyLogo, link: 'https://familyfrontiers.org/resources/research/' },
+    { src: nfaLogo, link: 'https://nationalityforall.org/resource/' },
+    { src: comLogo, link: 'https://councilofminorities.org/publication-resources/' },
+    { src: statelessLogo, link: 'https://statelessness.uwazi.io/library/' },
 ];
 
 interface Props {
