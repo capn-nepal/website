@@ -18,6 +18,7 @@
 
         .articleBody {
             color: var(--color-secondary);
+            text-align: justify;
         }
     }
 }

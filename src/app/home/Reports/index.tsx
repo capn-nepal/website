@@ -44,8 +44,7 @@ export default function Reports(props: Props) {
                                 <Card
                                     className={styles.image}
                                     title={item.title}
-                                    // FIXME: Add image later
-                                    // image={}
+                                    image={item.coverImage?.url}
                                     link={item.reportFile?.url}
                                     headingSize="extraSmall"
                                     isExternalLink

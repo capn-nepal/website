@@ -10,6 +10,7 @@ import ImageWrapper from '#components/ImageWrapper';
 import styles from './styles.module.css';
 
 interface Props {
+    className?: string;
     eyebrowHeading?: string;
     heading?: React.ReactNode;
     headingSize?: SizeTypes;
@@ -19,6 +20,7 @@ interface Props {
 
 export default function Banner(props: Props) {
     const {
+        className,
         eyebrowHeading,
         heading,
         bannerImageSrc,
@@ -28,6 +30,7 @@ export default function Banner(props: Props) {
 
     return (
         <div className={_cs(
+            className,
             styles.banner,
             bannerImageSrc && styles.imageBanner,
             withoutBackground && styles.withoutBackground,

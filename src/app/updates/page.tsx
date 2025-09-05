@@ -32,6 +32,7 @@ export default function Updates() {
                                 key={item.id}
                                 className={styles.card}
                                 title={item.title}
+                                image={item.coverImage?.url}
                                 date={item.publishedDate}
                                 link={`/updates/${item.slug}`}
                             />

@@ -1,60 +1,27 @@
 import React from 'react';
-import { _cs } from '@togglecorp/fujs';
+import {
+    _cs,
+    isDefined,
+} from '@togglecorp/fujs';
 
 import Heading from '#components/Heading';
 import Section from '#components/Section';
-import kathaharuLogo from '#public/CommunityMaker/Kathaharu.png';
-import noahsArkLogo from '#public/CommunityMaker/NoahsArk.png';
-import togglecorpLogo from '#public/CommunityMaker/togglecorpLogo.png';
+import data from '#data/staticData.json';
+import { type AllDataQuery } from '#generated/types/graphql';
 
 import CommunityCard from './CommunityCard';
 
 import styles from './styles.module.css';
 
+type ChangeMakers = NonNullable<NonNullable<AllDataQuery['changemakers']>['results']>
+
 interface Props {
     className?: string;
 }
 
-const community = [
-    {
-        title: 'Ms. Upashana Shrestha',
-        description: ' is a versatile filmmaker based in Kathmandu whose work thoughtfully explores gender politics and mental health, often challenging the complexities of human nature. She collaborated with CAPN to direct Beyond the Barbed Wire, a documentary profiling CAPN’s Executive Director. Upashana brought immense creativity, adaptability, and passion to the project, making the collaboration both enjoyable and deeply enriching. Her approach not only elevated the storytelling but also made the entire process a meaningful and inspiring experience.',
-        links: [
-            { label: 'Instagram', url: 'https://www.instagram.com/themodestnarcissist' },
-        ],
-    },
-    {
-        logoSrc: noahsArkLogo,
-        logoAlt: "Noah's Ark Logo",
-        title: 'Noah’s Ark',
-        description: ' is a creative animation studio established in 2013 that uses the power of art and animation to promote social awareness. In collaboration with CAPN, the studio’s creative director, Mr. Prabhakar Chhetri led the production of two animated videos focused on raising awareness about gender-equal citizenship laws and the importance of birth registration. This collaboration offered us a meaningful opportunity to learn, exchange ideas, and co-create impactful content that blends creativity with advocacy.',
-        links: [
-            { label: 'Facebook', url: 'https://www.facebook.com/NoahsArkAnimation/' },
-            { label: 'Youtube', url: 'https://www.youtube.com/watch?v=O-rpx6TmR3k' },
-        ],
-    },
-    {
-        logoSrc: kathaharuLogo,
-        logoAlt: 'Kathaharu Logo',
-        title: 'Kathaharu',
-        description: ' Production is a dynamic audio-visual company with over 10 years of experience across documentaries, short films, TV commercials, and more. Led by Executive Director Mr. Shashank Shrestha, the team collaborated with CAPN to produce two seasons of the State of Statelessness Podcast series. Their professionalism, creativity, and dedication from shooting, editing, and final delivery played a vital role in the success of the series. The collaboration was not only seamless but also filled with valuable learnings at every stage of production.',
-        links: [
-            { label: 'Website', url: 'https://kathaharu.com/' },
-        ],
-    },
-    {
-        logoSrc: togglecorpLogo,
-        logoAlt: 'Togglecorp Logo',
-        title: 'Togglecorp',
-        description: 'Togglecorp Solutions is a team specializing in software development and data-driven solutions with whom CAPN had the pleasure of collaborating to revamp our website. Their team of young, passionate, and fun professionals made the entire process both enjoyable and enriching. They patiently guided us through every stage, simplifying the complexities of website development and ensuring we understood the technical aspects in clear, accessible terms. Throughout multiple changes and fixes, they remained flexible, responsive, and committed to our vision. Thanks to their expertise, our revamped website now truly reflects our work, vision, values, and mission, while providing a polished and user-friendly experience.',
-        links: [
-            { label: 'Website', url: 'https://togglecorp.com/' },
-        ],
-    },
-];
-
 export default function ChangeMaker(props: Props) {
     const { className } = props;
+    const changemakers = (data.changemakers.results ?? []) as unknown as ChangeMakers;
 
     return (
         <div className={_cs(className, styles.changeMaker)}>
@@ -72,14 +39,27 @@ export default function ChangeMaker(props: Props) {
                 </Heading>
                 <div className={styles.marqueeWrapper}>
                     <div className={styles.marqueeContent}>
-                        {community.map((partner) => (
-                            <Section key={partner.title} className={styles.cardWrapper}>
+                        {changemakers.map((partner) => (
+                            <Section key={partner.id} className={styles.cardWrapper}>
                                 <CommunityCard
-                                    title={partner.title}
-                                    logoAlt={partner.logoAlt}
-                                    logoSrc={partner.logoSrc}
+                                    title={partner.name}
+                                    logoAlt={partner.logo?.name}
+                                    logoSrc={partner.logo?.url}
                                     description={partner.description}
-                                    links={partner.links}
+                                    links={[
+                                        partner.facebookLink ? {
+                                            label: 'Facebook',
+                                            url: partner.facebookLink,
+                                        } : undefined,
+                                        partner.linkdinLink ? {
+                                            label: 'LinkedIn',
+                                            url: partner.linkdinLink,
+                                        } : undefined,
+                                        partner.websiteLink ? {
+                                            label: 'Website',
+                                            url: partner.websiteLink,
+                                        } : undefined,
+                                    ].filter(isDefined)}
                                 />
                             </Section>
                         ))}

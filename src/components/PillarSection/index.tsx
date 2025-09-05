@@ -93,6 +93,7 @@ export default function PillarSection(props: Props) {
                             ? (
                                 <ImageWrapper
                                     className={styles.quoteIcon}
+                                    imageClassName={styles.image}
                                     alt="quote icon"
                                     src={Quote}
                                 />
