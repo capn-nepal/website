@@ -1,4 +1,5 @@
 import React from 'react';
+import { compareDate } from '@togglecorp/fujs';
 
 import Banner from '#components/Banner';
 import Card from '#components/Card';
@@ -16,6 +17,8 @@ type Events = NonNullable<NonNullable<AllDataQuery['events']>['results']>;
 
 export default function Events() {
     const allEventsData = data.events.results as unknown as Events;
+    const sortedEvents = [...allEventsData];
+    sortedEvents.sort((a, b) => compareDate(a.startDate, b.startDate, -1));
 
     return (
         <Page contentClassName={styles.events}>
@@ -36,7 +39,7 @@ export default function Events() {
                 headingSize="extraLarge"
             >
                 <div className={styles.pastEvents}>
-                    {allEventsData?.map((item) => (
+                    {sortedEvents?.map((item) => (
                         <Card
                             key={item.id}
                             className={styles.card}

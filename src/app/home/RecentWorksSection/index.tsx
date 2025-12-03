@@ -20,7 +20,7 @@ export default function RecentWorksSection() {
             const formatted = today.toISOString().split('T')[0];
             return compareDate(item.endDate, formatted) < 0;
         })
-        .sort((a, b) => compareDate(a.startDate, b.startDate));
+        .sort((a, b) => compareDate(a.startDate, b.startDate, -1));
     const limitedItems = sortedEvents.slice(0, 2);
 
     if (limitedItems.length <= 0) {

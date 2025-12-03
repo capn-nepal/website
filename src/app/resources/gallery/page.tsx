@@ -1,7 +1,9 @@
 'use client';
 
 import React, {
+    useCallback,
     useEffect,
+    useMemo,
     useState,
 } from 'react';
 
@@ -30,6 +32,8 @@ const allArtWorkItems = data.artWorks.results as unknown as Artwork;
 
 export default function Gallery() {
     const [activeTab, setActiveTab] = useState<string>('gallery');
+    const [currentItems, setCurrentItems] = useState<number>(3);
+
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
         const tab = params.get('tab');
@@ -38,12 +42,22 @@ export default function Gallery() {
         }
     }, []);
 
-    const groupedGalleryItems = galleries.map((gallery) => ({
-        ...gallery,
-        images: allGalleryItems.filter(
-            (item) => item.gallery?.id === gallery.id && !item.isArchived,
-        ),
-    })).filter((item) => item.images.length > 0);
+    const groupedGalleryItems = useMemo(() => (
+        galleries.map((gallery) => ({
+            ...gallery,
+            images: allGalleryItems.filter(
+                (item) => item.gallery?.id === gallery.id && !item.isArchived,
+            ),
+        })).filter((item) => item.images.length > 0)
+    ), []);
+
+    const limitedAlbums = useMemo(() => (
+        [...groupedGalleryItems].slice(0, currentItems)
+    ), [groupedGalleryItems, currentItems]);
+
+    const handleShowMoreClick = useCallback(() => {
+        setCurrentItems((oldVal) => oldVal + 2);
+    }, []);
 
     return (
         <Page contentClassName={styles.gallery}>
@@ -66,7 +80,7 @@ export default function Gallery() {
                 <div className={styles.content}>
                     {activeTab === 'gallery' && (
                         <>
-                            {groupedGalleryItems.map((album) => (
+                            {limitedAlbums.map((album) => (
                                 <div
                                     key={album.id}
                                     className={styles.album}
@@ -89,6 +103,16 @@ export default function Gallery() {
                                     </div>
                                 </div>
                             ))}
+                            {limitedAlbums.length < groupedGalleryItems.length && (
+                                <div>
+                                    <Button
+                                        onClick={handleShowMoreClick}
+                                        variant="border"
+                                    >
+                                        Show More
+                                    </Button>
+                                </div>
+                            )}
                         </>
                     )}
                     {activeTab === 'artwork' && (
