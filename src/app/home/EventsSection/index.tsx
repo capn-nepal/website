@@ -61,8 +61,7 @@ export default function EventsSection(props: Props) {
                         date={firstElement?.startDate}
                         title={firstElement?.name}
                         link={`/work/events/${firstElement.id}`}
-                        // FIXME: Send image from backend
-                        // image={firstElement?.image}
+                        image={firstElement?.thumbnail?.url}
                     />
                 </div>
                 {remainingElements?.map((item) => (
